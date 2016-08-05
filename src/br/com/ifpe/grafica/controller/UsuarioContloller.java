@@ -25,25 +25,26 @@ public class UsuarioContloller {
 		List<TipoUsuario> listaTipoUsuarioDao = dao.listar();
 		model.addAttribute("listaTipoUsuarioDao", listaTipoUsuarioDao);
 
-		return "usuario/incluirUsuario";
+		return "usuario/cadastroUsuario";
 	}
 
 	@RequestMapping("incluirUsuario")
-	public String incluirUsuario(@Valid Usuario usuario,BindingResult result, Model model) {
-		
+	public String incluirUsuario(@Valid Usuario usuario, BindingResult result, Model model) {
+
 		if (result.hasErrors()) {
 			return "forward:ixibir";
-			}
-		
-		
-		
+		}
+
 		UsuarioDao dao = new UsuarioDao();
 		dao.salvar(usuario);
 		model.addAttribute("mensagem", "O usuario " + usuario.getNome() + " foi inserida com sucesso !");
 
-		return "usuario/incluirUsuario";
+		return "usuario/cadastroUsuario";
 	}
-	
-	
-	
+
+	@RequestMapping("login")
+	public String TelaLogin() {
+		return "index";
+	}
+
 }
