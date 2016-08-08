@@ -16,9 +16,11 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!--[endif]-->
 
+	<script>
 
+</script>
   </head><body>
   <div class=logoinicio><a href="/login"><img src="view/assets/images/logo.png" height=24px></a></div>
     <section class="container login-form">
@@ -29,30 +31,32 @@
           
            <div style="text-align: center; color: red;">${mensagem}</div>
            
-            <input type="text" name="nome" required="" class="form-control" placeholder="Nome Completo" maxlength="50">
+            <input type="text" name="nome" required=""  pattern="[a-z\s]+$" class="form-control" placeholder="Nome Completo" maxlength="50">
             <span class="glyphicon glyphicon-pencil"></span>
           </div>
           
-          <form:errors path="Usuario.nome" cssStyle="color:red" />
           
           <div class="form-group">
-            <input type="text" name="siape" required="" class="form-control" placeholder="Matí­cula SIAPE" maxlength="7" onkeypress='return SomenteNumero(event)'/>
+            <input type="text" name="siape" required=""  pattern="[0-9]+$" class="form-control" placeholder="Matí­cula SIAPE" maxlength="7" onkeypress='return SomenteNumero(event)'/>
             <span class="glyphicon glyphicon-user"></span>
           </div>
+          
           <div class="form-group">
             <input type="text" name="cargo" required="" class="form-control" placeholder="Cargo do Funcionário" maxlength="50">
             <span class="glyphicon glyphicon-briefcase"></span>
           </div>
+          
           <div class="form-group">
             <input type="email" name="email" required="" class="form-control" placeholder="E-mail" maxlength="50">
             <span class="glyphicon glyphicon-envelope"></span>
           </div>
+          
           <div class="form-group">
             <input type="password" name="senha" required="" class="form-control" placeholder="Senha" maxlength="20">
             <span class="glyphicon glyphicon-lock"></span>
           </div>
           <div class="form-group">
-            <input type="password" name="Csenha" required="" class="form-control" placeholder="Confirmar Senha" maxlength="20">
+            <input type="password" name="senha" required="" class="form-control" placeholder="Confirmar Senha" maxlength="20">
             <span class="glyphicon glyphicon-lock"></span>
           </div>
           
