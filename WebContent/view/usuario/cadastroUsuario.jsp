@@ -18,19 +18,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!--Script para Validar Apenas Números no "Varchar"-->
-    <script language='JavaScript'>
-    function SomenteNumero(e){
-    var tecla=(window.event)?event.keyCode:e.which;   
-    if((tecla>47 && tecla<58)) return true;
-    else{
-        if (tecla==8 || tecla==0) return true;
-    else  return false;
-    }
-}
-</script>
 
-<div style="text-align: center; color: red;">${mensagem}</div>
   </head><body>
   <div class=logoinicio><a href="/login"><img src="view/assets/images/logo.png" height=24px></a></div>
     <section class="container login-form">
@@ -39,9 +27,14 @@
           <img src="view/assets/images/cadastro.png" alt="" class="img-responsive">
           <div class="form-group">
           
+           <div style="text-align: center; color: red;">${mensagem}</div>
+           
             <input type="text" name="nome" required="" class="form-control" placeholder="Nome Completo" maxlength="50">
             <span class="glyphicon glyphicon-pencil"></span>
           </div>
+          
+          <form:errors path="Usuario.nome" cssStyle="color:red" />
+          
           <div class="form-group">
             <input type="text" name="siape" required="" class="form-control" placeholder="Matí­cula SIAPE" maxlength="7" onkeypress='return SomenteNumero(event)'/>
             <span class="glyphicon glyphicon-user"></span>
@@ -62,15 +55,17 @@
             <input type="password" name="Csenha" required="" class="form-control" placeholder="Confirmar Senha" maxlength="20">
             <span class="glyphicon glyphicon-lock"></span>
           </div>
-          <p>
-			Tipo Usuario: <br /> <select name="tipoUsuario">
-				<option value="">Selecione</option>
+          
+          <div>
+			Tipo Usuario: <br /> <select name="tipoUsuario" class="form-control">
+				<option value="" class="form-group" >Selecione</option>
 				<c:forEach items="${listaTipoUsuarioDao}" var="obj">
-					<option value="${obj.id}">${obj.descricao}</option>
+					<option value="1">UserComum</option>
 				</c:forEach>
 			</select>
-		</p>
-          <button type="submit" name="go" class="btn btn-primary btn-block">Cadastrar</button>
+		</div>
+		
+          <button type="submit" name="go" class="btn btn-primary btn-block" onClick="validarSenha()">Cadastrar</button>
           <p>
           <a href="login">Voltar ao Início</a>
         </form>

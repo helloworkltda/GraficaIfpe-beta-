@@ -17,26 +17,30 @@ import br.com.ifpe.grafica.model.UsuarioDao;
 @Controller
 public class UsuarioContloller {
 
-	@RequestMapping("ixibir")
-	public String ixibirUsuario(Model model) {
+	@RequestMapping("exibir")
+	public String exibirUsuario(Model model) {
 
 		// Código para popular o combo de categoria de produto
 		TipoUsuarioDao dao = new TipoUsuarioDao();
 		List<TipoUsuario> listaTipoUsuarioDao = dao.listar();
 		model.addAttribute("listaTipoUsuarioDao", listaTipoUsuarioDao);
 
-		return "usuario/incluirUsuario";
+		return "usuario/cadastroUsuario";
 	}
 
 	@RequestMapping("incluirUsuario")
 	public String incluirUsuario(@Valid Usuario usuario, BindingResult result, Model model) {
 
-		
+		if (result.hasErrors()) {
+			return "forward:exibir";
+		}
+
 		UsuarioDao dao = new UsuarioDao();
 		dao.salvar(usuario);
+		
 		model.addAttribute("mensagem", "O usuario " + usuario.getNome() + " foi inserida com sucesso !");
 
-		return "usuario/incluirUsuario";
+		return "usuario/cadastroUsuario";
 	}
 
 	@RequestMapping("login")

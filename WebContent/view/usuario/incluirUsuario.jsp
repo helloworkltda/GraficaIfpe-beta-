@@ -26,7 +26,7 @@
 			Nome: <br /> <input type="text" name="nome" style="width: 80px;"
 				maxlength="5" />
 		</p>
-		
+		<form:errors path="usuario.nome" cssStyle="color:red" />
 
 		<p>
 			Cargo: <br /> <input type="text" name="cargo"
@@ -38,13 +38,13 @@
 			Email: <br /> <input type="text" name="email"
 				style="width: 100px;" />
 		</p>
-		
+		<form:errors path="usuario.email" cssStyle="color:red" />
 		
 		<p>
 			Siape: <br /> <input type="text" name="siape"
 				style="width: 100px;" />
 		</p>
-		
+	
 		
 		<p>
 			Senha: <br /> <input type="password" name="senha"

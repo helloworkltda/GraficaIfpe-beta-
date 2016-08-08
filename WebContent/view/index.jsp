@@ -40,7 +40,7 @@
             <span class="glyphicon glyphicon-lock"></span>
           </div>
           <button type="submit" name="go" class="btn btn-primary btn-block">Entrar</button>
-          <a href="ixibir">Ainda não é cadastrado?</a>
+          <a href="exibir">Ainda não é cadastrado?</a>
         </form>
       </section>
     </section>

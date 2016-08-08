@@ -1,15 +1,24 @@
 package br.com.ifpe.grafica.model;
 
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotEmpty;
 
 
 
 public class Usuario {
 	
-
+	@NotEmpty(message="O nome deve ser preenchido")
+	@Size(min = 3, max = 50, message="O nome deve ter o minomo de 3 caracteres")
 	private String nome;
+	
 	private String cargo;
+	
+	@NotEmpty(message="O email deve ser preenchido")
+	@Pattern(regexp = "^[\\w\\-]+(\\.[\\w\\-]+)*@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$", message="E-mail com formato incorreto.")
 	private String email;
+	
 	private int siape;
 	private String senha;
 	private TipoUsuario tipoUsuario;
