@@ -22,10 +22,11 @@
 
 </script>
   </head><body>
-  <div class=logoinicio><a href="/login"><img src="view/assets/images/logo.png" height=24px></a></div>
+
     <section class="container login-form">
       <section>
         <form method="post" action="incluirUsuario" role="login">
+        <a href="/login"><img src="view/assets/images/logo.png" height=24px></a>
           <img src="view/assets/images/cadastro.png" alt="" class="img-responsive">
           <div class="form-group">
           
@@ -60,14 +61,9 @@
             <span class="glyphicon glyphicon-lock"></span>
           </div>
           
-          <div>
-			Tipo Usuario: <br /> <select name="tipoUsuario" class="form-control">
-				<option value="" class="form-group" >Selecione</option>
-				<c:forEach items="${listaTipoUsuarioDao}" var="obj">
-					<option value="1">UserComum</option>
-				</c:forEach>
-			</select>
-		</div>
+          
+		
+		<input type="hidden" name="tipoUsuario" value="1">
 		
           <button type="submit" name="go" class="btn btn-primary btn-block" onClick="validarSenha()">Cadastrar</button>
           <p>
