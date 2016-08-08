@@ -1,3 +1,9 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <html><head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=1,initial-scale=1,user-scalable=1">
@@ -24,6 +30,7 @@
 }
 </script>
 
+<div style="text-align: center; color: red;">${mensagem}</div>
   </head><body>
   <div class=logoinicio><a href="/login"><img src="view/assets/images/logo.png" height=24px></a></div>
     <section class="container login-form">
@@ -31,6 +38,7 @@
         <form method="post" action="incluirUsuario" role="login">
           <img src="view/assets/images/cadastro.png" alt="" class="img-responsive">
           <div class="form-group">
+          
             <input type="text" name="nome" required="" class="form-control" placeholder="Nome Completo" maxlength="50">
             <span class="glyphicon glyphicon-pencil"></span>
           </div>
@@ -51,9 +59,17 @@
             <span class="glyphicon glyphicon-lock"></span>
           </div>
           <div class="form-group">
-            <input type="password" name="senha" required="" class="form-control" placeholder="Confirmar Senha" maxlength="20">
+            <input type="password" name="Csenha" required="" class="form-control" placeholder="Confirmar Senha" maxlength="20">
             <span class="glyphicon glyphicon-lock"></span>
           </div>
+          <p>
+			Tipo Usuario: <br /> <select name="tipoUsuario">
+				<option value="">Selecione</option>
+				<c:forEach items="${listaTipoUsuarioDao}" var="obj">
+					<option value="${obj.id}">${obj.descricao}</option>
+				</c:forEach>
+			</select>
+		</p>
           <button type="submit" name="go" class="btn btn-primary btn-block">Cadastrar</button>
           <p>
           <a href="login">Voltar ao Início</a>
