@@ -61,8 +61,6 @@
             <span class="glyphicon glyphicon-lock"></span>
           </div>
           
-          
-		
 		<input type="hidden" name="tipoUsuario" value="1">
 		
           <button type="submit" name="go" class="btn btn-primary btn-block" onClick="validarSenha()">Cadastrar</button>

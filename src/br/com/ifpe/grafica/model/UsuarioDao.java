@@ -119,6 +119,23 @@ public class UsuarioDao {
 	    throw new RuntimeException(e);
 	}
     }
+    public Usuario buscarUsuario(Usuario usuario) {
+    	try {
+    	Usuario usuarioConsultado = null;
+    	PreparedStatement stmt = this.connection.prepareStatement("select * from usuario where siape = ? and senha = ?");
+    	stmt.setInt(1, usuario.getSiape());
+    	stmt.setString(2, usuario.getSenha());
+    	ResultSet rs = stmt.executeQuery();
+    	if (rs.next()) {
+    	usuarioConsultado = montarObjeto2(rs);
+    	}
+    	rs.close();
+    	stmt.close();
+    	return usuarioConsultado;
+    	} catch (SQLException e) {
+    	throw new RuntimeException(e);
+    	}
+    	}
 
     private Usuario montarObjeto(ResultSet rs) throws SQLException {
 
@@ -136,5 +153,19 @@ public class UsuarioDao {
 	
 	return usuario;
     }
+    
+    
+    private Usuario montarObjeto2(ResultSet rs) throws SQLException {
+
+    	Usuario usuario = new Usuario();
+    	usuario.setNome(rs.getString("nome"));
+    	usuario.setCargo(rs.getString("cargo"));
+    	usuario.setEmail(rs.getString("email"));
+    	usuario.setSenha(rs.getString("senha"));
+    	usuario.setSiape(rs.getInt("siape"));
+    	
+    	return usuario;
+        }
+    
 }
 

@@ -29,7 +29,7 @@
   <br>
     <section class="container login-form">
       <section>
-        <form method="post" action="" role="login">
+        <form method="post" action="efetuarLogin" role="login">
           <img src="view/assets/images/logo.png" alt="" class="img-responsive">
           <div class="form-group">
             <input type="text" name="siape" required="" class="form-control" placeholder="Digite seu SIAPE" maxlength="7" onkeypress='return SomenteNumero(event)'/>

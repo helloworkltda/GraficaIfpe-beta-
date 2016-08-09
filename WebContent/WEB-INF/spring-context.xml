@@ -38,4 +38,9 @@
 			</list>
 		</property>
 	</bean>
+
+
+	<mvc:interceptors>
+		<bean class="br.com.ifpe.grafica.util.AutorizadorInterceptor" />
+	</mvc:interceptors>
 </beans>
