@@ -13,159 +13,158 @@ public class UsuarioDao {
 
 	private Connection connection;
 
-    public UsuarioDao() {
+	public UsuarioDao() {
 
-	try {
-	    this.connection = new ConnectionFactory().getConnection();
-	} catch (SQLException e) {
-	    throw new RuntimeException(e);
+		try {
+			this.connection = new ConnectionFactory().getConnection();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
-    }
 
-    public void salvar(Usuario usuario) {
+	public void salvar(Usuario usuario) {
 
-	try {
-	    String sql = "INSERT INTO usuario (siape,nome,cargo,email,senha,tipo_id) VALUES (?,?,?,?,?,?)";
-	    PreparedStatement stmt = connection.prepareStatement(sql);
-	    stmt.setInt(1, usuario.getSiape());
-	    stmt.setString(2, usuario.getNome());
-	    stmt.setString(3, usuario.getCargo());
-	    stmt.setString(4, usuario.getEmail());
-	    stmt.setString(5, usuario.getSenha());
-	    stmt.setInt(6, usuario.getTipoUsuario().getId());
-	    stmt.execute();
-	    stmt.close();
-	    connection.close();
-	} catch (SQLException e) {
-	    throw new RuntimeException(e);
+		try {
+			String sql = "INSERT INTO usuario (siape,nome,cargo,email,senha,tipo_id) VALUES (?,?,?,?,?,?)";
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setInt(1, usuario.getSiape());
+			stmt.setString(2, usuario.getNome());
+			stmt.setString(3, usuario.getCargo());
+			stmt.setString(4, usuario.getEmail());
+			stmt.setString(5, usuario.getSenha());
+			stmt.setInt(6, usuario.getTipoUsuario().getId());
+			stmt.execute();
+			stmt.close();
+			connection.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
-    }
-    
 
-    public void alterar(Usuario usuario) {
+	public void alterar(Usuario usuario) {
 
-	String sql = "UPDATE usuario SET siape = ? , nome = ? , cargo = ? , email  = ? , senha = ? WHERE id = ?";
+		String sql = "UPDATE usuario SET siape = ? , nome = ? , cargo = ? , email  = ? , senha = ? WHERE id = ?";
 
-	try {
+		try {
 
-	    PreparedStatement stmt = connection.prepareStatement(sql);
-	    stmt.setInt(1, usuario.getSiape());
-	    stmt.setString(2, usuario.getNome());
-	    stmt.setString(3, usuario.getCargo());
-	    stmt.setString(4, usuario.getEmail());
-	    stmt.setString(5, usuario.getSenha());
-	    stmt.execute();
-	    stmt.close();
-	    connection.close();
-	} catch (SQLException e) {
-	    throw new RuntimeException(e);
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setInt(1, usuario.getSiape());
+			stmt.setString(2, usuario.getNome());
+			stmt.setString(3, usuario.getCargo());
+			stmt.setString(4, usuario.getEmail());
+			stmt.setString(5, usuario.getSenha());
+			stmt.execute();
+			stmt.close();
+			connection.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
-    }
 
-    public void remover(Usuario usuario) {
+	public void remover(Usuario usuario) {
 
-	try {
-	    PreparedStatement stmt = connection.prepareStatement("DELETE FROM usuaeio WHERE siape = ?");
-	    stmt.setLong(1, usuario.getSiape());
-	    stmt.execute();
-	    stmt.close();
-	    connection.close();
-	} catch (SQLException e) {
-	    throw new RuntimeException(e);
+		try {
+			PreparedStatement stmt = connection.prepareStatement("DELETE FROM usuaeio WHERE siape = ?");
+			stmt.setLong(1, usuario.getSiape());
+			stmt.execute();
+			stmt.close();
+			connection.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
-    }
 
-    public List<Usuario> listar() {
+	public List<Usuario> listar() {
 
-	try {
+		try {
 
-	    List<Usuario> listaUsuario = new ArrayList<Usuario>();
-	    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM usuario ORDER BY cargo");
+			List<Usuario> listaUsuario = new ArrayList<Usuario>();
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM usuario ORDER BY cargo");
 
-	    ResultSet rs = stmt.executeQuery();
+			ResultSet rs = stmt.executeQuery();
 
-	    while (rs.next()) {
-	    	listaUsuario.add(montarObjeto(rs));
-	    }
+			while (rs.next()) {
+				listaUsuario.add(montarObjeto(rs));
+			}
 
-	    rs.close();
-	    stmt.close();
-	    connection.close();
+			rs.close();
+			stmt.close();
+			connection.close();
 
-	    return listaUsuario;
+			return listaUsuario;
 
-	} catch (SQLException e) {
-	    throw new RuntimeException(e);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
-    }
 
-    public Usuario buscarPorSiape(int siape) {
+	public Usuario buscarPorSiape(int siape) {
 
-	try {
-	    PreparedStatement stmt = connection.prepareStatement("SELECT * FROM usuario WHERE siape = ?");
-	    stmt.setInt(1, siape);
-	    ResultSet rs = stmt.executeQuery();
+		try {
+			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM usuario WHERE siape = ?");
+			stmt.setInt(1, siape);
+			ResultSet rs = stmt.executeQuery();
 
-	    Usuario usuario = null;
-	    if (rs.next()) {
-		usuario = montarObjeto(rs);
-	    }
+			Usuario usuario = null;
+			if (rs.next()) {
+				usuario = montarObjeto(rs);
+			}
 
-	    rs.close();
-	    stmt.close();
-	    connection.close();
-	    return usuario;
-	} catch (SQLException e) {
-	    throw new RuntimeException(e);
+			rs.close();
+			stmt.close();
+			connection.close();
+			return usuario;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
-    }
-    public Usuario buscarUsuario(Usuario usuario) {
-    	try {
-    	Usuario usuarioConsultado = null;
-    	PreparedStatement stmt = this.connection.prepareStatement("select * from usuario where siape = ? and senha = ?");
-    	stmt.setInt(1, usuario.getSiape());
-    	stmt.setString(2, usuario.getSenha());
-    	ResultSet rs = stmt.executeQuery();
-    	if (rs.next()) {
-    	usuarioConsultado = montarObjeto2(rs);
-    	}
-    	rs.close();
-    	stmt.close();
-    	return usuarioConsultado;
-    	} catch (SQLException e) {
-    	throw new RuntimeException(e);
-    	}
-    	}
 
-    private Usuario montarObjeto(ResultSet rs) throws SQLException {
+	public Usuario buscarUsuario(Usuario usuario) {
+		try {
+			Usuario usuarioConsultado = null;
+			PreparedStatement stmt = this.connection
+					.prepareStatement("select * from usuario where siape = ? and senha = ?");
+			stmt.setInt(1, usuario.getSiape());
+			stmt.setString(2, usuario.getSenha());
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				usuarioConsultado = montarObjeto2(rs);
+			}
+			rs.close();
+			stmt.close();
+			return usuarioConsultado;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
-	Usuario usuario = new Usuario();
-	usuario.setNome(rs.getString("nome"));
-	usuario.setCargo(rs.getString("cargo"));
-	usuario.setEmail(rs.getString("email"));
-	
-	TipoUsuarioDao dao = new TipoUsuarioDao();
-	TipoUsuario tipoUsuario = dao.buscarPorId(rs.getInt("id"));
-	usuario.setTipoUsuario(tipoUsuario);
+	private Usuario montarObjeto(ResultSet rs) throws SQLException {
 
-	usuario.setSenha(rs.getString("senha"));
-	usuario.setSiape(rs.getInt("siape"));
-	
-	return usuario;
-    }
-    
-    
-    private Usuario montarObjeto2(ResultSet rs) throws SQLException {
+		Usuario usuario = new Usuario();
+		usuario.setNome(rs.getString("nome"));
+		usuario.setCargo(rs.getString("cargo"));
+		usuario.setEmail(rs.getString("email"));
 
-    	Usuario usuario = new Usuario();
-    	usuario.setNome(rs.getString("nome"));
-    	usuario.setCargo(rs.getString("cargo"));
-    	usuario.setEmail(rs.getString("email"));
-    	usuario.setSenha(rs.getString("senha"));
-    	usuario.setSiape(rs.getInt("siape"));
-    	
-    	return usuario;
-        }
-    
+		TipoUsuarioDao dao = new TipoUsuarioDao();
+		TipoUsuario tipoUsuario = dao.buscarPorId(rs.getInt("id"));
+		usuario.setTipoUsuario(tipoUsuario);
+
+		usuario.setSenha(rs.getString("senha"));
+		usuario.setSiape(rs.getInt("siape"));
+
+		return usuario;
+	}
+
+	private Usuario montarObjeto2(ResultSet rs) throws SQLException {
+
+		Usuario usuario = new Usuario();
+		usuario.setNome(rs.getString("nome"));
+		usuario.setCargo(rs.getString("cargo"));
+		usuario.setEmail(rs.getString("email"));
+		usuario.setSenha(rs.getString("senha"));
+		usuario.setSiape(rs.getInt("siape"));
+
+		return usuario;
+	}
+
 }
-
