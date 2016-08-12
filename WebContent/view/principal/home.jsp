@@ -13,8 +13,8 @@
 
 
 	<p>Bem vindo, ${usuarioLogado.nome}</p> ||||||  <a href="logout">Logout</a>
-
-
+	<br><br>
+	 <a href="solicitacao">Solicitar Cópias</a>
 
 
 
