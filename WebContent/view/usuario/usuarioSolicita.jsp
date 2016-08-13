@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Solicitção</title>
+<title>Solicitação</title>
 </head>
 <body>
 
@@ -17,7 +17,7 @@
 	<div style="text-align: center; color: red;">${mensagem}</div>
 
 	<hr>
-	<h3>Solicitaçao</h3>
+	<h3>Solicitação</h3>
 	<hr>
 
 	<form action="incluirSolicitacao" method="post"
@@ -26,7 +26,7 @@
 		<div style="text-align: center; color: red;">${mensagem}</div>
 
 		<p>
-			Descricao: <br /> <input type="text" name="descricao"
+			Descrição: <br /> <input type="text" name="descricao"
 				style="width: 200px;" />
 		</p>
 

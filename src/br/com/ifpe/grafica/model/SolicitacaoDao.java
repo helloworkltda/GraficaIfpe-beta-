@@ -30,6 +30,7 @@ public class SolicitacaoDao {
 			stmt.setString(3, solicitacao.getAnexo2());
 			stmt.setString(4, solicitacao.getAnexo3());
 			stmt.setString(5, solicitacao.getAnexo4());
+			stmt.setString(6, solicitacao.getDescricao());
 			stmt.execute();
 			stmt.close();
 			connection.close();

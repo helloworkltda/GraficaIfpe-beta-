@@ -35,7 +35,7 @@ public class UsuarioDao {
 			stmt.setInt(6, usuario.getTipoUsuario().getId());
 			stmt.execute();
 			stmt.close();
-			connection.close();
+			
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -55,7 +55,7 @@ public class UsuarioDao {
 			stmt.setString(5, usuario.getSenha());
 			stmt.execute();
 			stmt.close();
-			connection.close();
+			
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -68,7 +68,7 @@ public class UsuarioDao {
 			stmt.setLong(1, usuario.getSiape());
 			stmt.execute();
 			stmt.close();
-			connection.close();
+			
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -89,7 +89,7 @@ public class UsuarioDao {
 
 			rs.close();
 			stmt.close();
-			connection.close();
+			
 
 			return listaUsuario;
 
@@ -112,7 +112,7 @@ public class UsuarioDao {
 
 			rs.close();
 			stmt.close();
-			connection.close();
+			
 			return usuario;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -165,6 +165,9 @@ public class UsuarioDao {
 		usuario.setSiape(rs.getInt("siape"));
 
 		return usuario;
+	}
+	public void fecharConexao() throws SQLException{
+		connection.close();
 	}
 
 }

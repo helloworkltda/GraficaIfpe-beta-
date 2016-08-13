@@ -12,17 +12,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script language='JavaScript'>
-    function SomenteNumero(e){
-    var tecla=(window.event)?event.keyCode:e.which;   
-    if((tecla>47 && tecla<58)) return true;
-    else{
-        if (tecla==8 || tecla==0) return true;
-    else  return false;
-    }
-}
-</script>
-
   </head><body>
   <br>
   <br>

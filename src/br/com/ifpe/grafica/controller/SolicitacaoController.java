@@ -11,12 +11,11 @@ import br.com.ifpe.grafica.model.SolicitacaoDao;
 
 public class SolicitacaoController {
 	
-	
 	@RequestMapping("solicitacao")
 	public String solicitacao() {
 		return "usuario/usuarioSolicita";
 	}
-	
+
 	@RequestMapping("incluirSolicitacao")
 	public String incluirSolicitacao(@Valid Solicitacao solicitacao, BindingResult result, Model model) {
 
@@ -25,12 +24,17 @@ public class SolicitacaoController {
 		}
 
 		SolicitacaoDao dao = new SolicitacaoDao();
-		
+
 		dao.salvar(solicitacao);
 
 		model.addAttribute("mensagem", "Solicitação foi enviada !");
 
 		return "usuario/usuarioSolicita";
 	}
+	
+
+	
+	
+	
 
 }

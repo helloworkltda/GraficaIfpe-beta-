@@ -1,5 +1,6 @@
 package br.com.ifpe.grafica.controller;
 
+
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -10,11 +11,12 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 import br.com.ifpe.grafica.model.TipoUsuario;
 import br.com.ifpe.grafica.model.TipoUsuarioDao;
 import br.com.ifpe.grafica.model.Usuario;
 import br.com.ifpe.grafica.model.UsuarioDao;
-import br.com.ifpe.grafica.util.Criptografia;
+
 
 @Controller
 public class UsuarioContloller {
@@ -38,7 +40,7 @@ public class UsuarioContloller {
 		}
 
 		UsuarioDao dao = new UsuarioDao();
-		
+
 		dao.salvar(usuario);
 
 		model.addAttribute("mensagem", "O usuario " + usuario.getNome() + " foi inserida com sucesso !");
@@ -69,4 +71,5 @@ public class UsuarioContloller {
 		return "index";
 	}
 
+	
 }
