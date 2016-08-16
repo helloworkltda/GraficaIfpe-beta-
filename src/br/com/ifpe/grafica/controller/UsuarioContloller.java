@@ -61,8 +61,10 @@ public class UsuarioContloller {
 
 	@RequestMapping("efetuarLogin")
 	public String efetuarLogin(Usuario usuario, HttpSession session, Model model) {
+		
 		UsuarioDao dao = new UsuarioDao();
 		Usuario usuarioLogado = dao.buscarUsuario(usuario);
+		
 		if (usuarioLogado != null) {
 			session.setAttribute("usuarioLogado", usuarioLogado);
 			return "principal/homeFuncionario";
