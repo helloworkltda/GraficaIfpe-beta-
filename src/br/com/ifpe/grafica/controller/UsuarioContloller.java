@@ -59,7 +59,7 @@ public class UsuarioContloller {
 		Usuario usuarioLogado = dao.buscarUsuario(usuario);
 		if (usuarioLogado != null) {
 			session.setAttribute("usuarioLogado", usuarioLogado);
-			return "principal/home";
+			return "principal/homeFuncionario";
 		}
 		model.addAttribute("msg", "Não foi encontrado um usuário com o login e senha informados.");
 		return "index";
