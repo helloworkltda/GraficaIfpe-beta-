@@ -1,6 +1,5 @@
 package br.com.ifpe.grafica.controller;
 
-
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -11,12 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 import br.com.ifpe.grafica.model.TipoUsuario;
 import br.com.ifpe.grafica.model.TipoUsuarioDao;
 import br.com.ifpe.grafica.model.Usuario;
 import br.com.ifpe.grafica.model.UsuarioDao;
-
 
 @Controller
 public class UsuarioContloller {
@@ -47,6 +44,15 @@ public class UsuarioContloller {
 
 		return "usuario/cadastroUsuario";
 	}
+	@RequestMapping("homeFuncionario")
+	public String Voltar() {
+		return "principal/homeFuncionario";
+	}
+
+	@RequestMapping("solicitarCopias")
+	public String SolicitarCopias() {
+		return "usuario/solicitarCopias";
+	}
 
 	@RequestMapping("login")
 	public String TelaLogin() {
@@ -71,5 +77,4 @@ public class UsuarioContloller {
 		return "index";
 	}
 
-	
 }

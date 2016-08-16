@@ -59,10 +59,13 @@
         <ul class="ts-sidebar-menu">
           <li class="ts-label">Menu</li>
           <li class="open">
-            <a href="javascript;"><i class="fa fa-home"></i>Home</a>
+            <a href="homeFuncionario"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
-            <a href="javascript;"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+            <a href="solicitarCopias"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-table"></i>Consultar Solicitação</a>
           </li>
         </ul>
       </nav>

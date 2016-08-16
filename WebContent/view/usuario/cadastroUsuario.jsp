@@ -28,15 +28,15 @@
         <form method="post" action="incluirUsuario" role="login">
           <img src="view/assets/images/cadastro.png" alt="" class="img-responsive">
           <div class="form-group">
-            <input pattern=”[a-Z\s][][a-Z]+$” type="text" name="nome" required="" class="form-control" placeholder="Nome Completo" maxlength="50">
+            <input pattern=”[a-Z\s][a-Z]+$” type="text" name="nome" required="" class="form-control" placeholder="Nome Completo" maxlength="50">
             <span class="glyphicon glyphicon-pencil"></span>
           </div>
           <div class="form-group">
-            <input pattern="[0-9]+$" type="text" name="siape" required="" class="form-control" placeholder="Matí­cula SIAPE" maxlength="7" onkeypress='return SomenteNumero(event)'/>
+            <input pattern="[0-9]+$" type="text" name="siape" required="" class="form-control" placeholder="Matricula SIAPE" maxlength="7" onkeypress='return SomenteNumero(event)'/>
             <span class="glyphicon glyphicon-user"></span>
           </div>
           <div class="form-group">
-            <input type="text" name="cargo" required="" class="form-control" placeholder="Cargo do Funcionário" maxlength="50">
+            <input type="text" name="cargo" required="" class="form-control" placeholder="Cargo do Funcionario" maxlength="50">
             <span class="glyphicon glyphicon-briefcase"></span>
           </div>
           <div class="form-group">
@@ -53,7 +53,7 @@
           </div>
           <button type="submit" name="go" class="btn btn-primary btn-block">Cadastrar</button>
           <p>
-          <a href="login">Voltar ao Início</a>
+          <a href="login">Voltar ao Inicio</a>
         </form>
       </section>
     </section>
