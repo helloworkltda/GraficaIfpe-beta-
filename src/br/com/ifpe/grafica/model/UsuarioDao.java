@@ -128,7 +128,7 @@ public class UsuarioDao {
 			stmt.setString(2, usuario.getSenha());
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
-				usuarioConsultado = montarObjeto2(rs);
+				usuarioConsultado = montarObjeto(rs);
 			}
 			rs.close();
 			stmt.close();
@@ -146,7 +146,7 @@ public class UsuarioDao {
 		usuario.setEmail(rs.getString("email"));
 
 		TipoUsuarioDao dao = new TipoUsuarioDao();
-		TipoUsuario tipoUsuario = dao.buscarPorId(rs.getInt("id"));
+		TipoUsuario tipoUsuario = dao.buscarPorId(rs.getInt("tipo_id"));
 		usuario.setTipoUsuario(tipoUsuario);
 
 		usuario.setSenha(rs.getString("senha"));
@@ -154,7 +154,7 @@ public class UsuarioDao {
 
 		return usuario;
 	}
-
+  // motar o usuario para logar
 	private Usuario montarObjeto2(ResultSet rs) throws SQLException {
 
 		Usuario usuario = new Usuario();

@@ -19,7 +19,7 @@
     <!-- Bootstrap file input -->
     <link rel="stylesheet" href="view/assets/css/fileinput.min.css">
     <!-- Awesome Bootstrap checkbox -->
-    <link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
+    <link rel="stylesheet" href="view/assets/css/awesome-bootstrap-checkbox.css">
     <!-- Admin Stye -->
     <link rel="stylesheet" href="view/assets/css/style.css">
     <!--[if lt IE 9]>
@@ -170,7 +170,7 @@
                                                                                         			responsive: true,
                                                                                         			scaleShowVerticalLines: false,
                                                                                         			scaleBeginAtZero : true,
-                                                                                        			multiTooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
+                                                                                        			
                                                                                         		}); 
                                                                                         		
                                                                                         		// Pie Chart from doughutData

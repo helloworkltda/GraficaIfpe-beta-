@@ -17,6 +17,10 @@ import br.com.ifpe.grafica.model.UsuarioDao;
 
 @Controller
 public class UsuarioContloller {
+	
+	
+	private static int USUARIOCOMUM=1;
+	private static int USUARIOADM=2;
 
 	@RequestMapping("exibir")
 	public String exibirUsuario(Model model) {
@@ -65,9 +69,14 @@ public class UsuarioContloller {
 		UsuarioDao dao = new UsuarioDao();
 		Usuario usuarioLogado = dao.buscarUsuario(usuario);
 		
-		if (usuarioLogado != null) {
+		
+		if (usuarioLogado.getTipoUsuario().getId() == USUARIOCOMUM) {
 			session.setAttribute("usuarioLogado", usuarioLogado);
 			return "principal/homeFuncionario";
+			
+		}else if (usuarioLogado.getTipoUsuario().getId() == USUARIOADM) {
+			session.setAttribute("usuarioLogado", usuarioLogado);
+			return "principal/homeAdministrador";
 		}
 		model.addAttribute("msg", "Não foi encontrado um usuário com o login e senha informados.");
 		return "index";
