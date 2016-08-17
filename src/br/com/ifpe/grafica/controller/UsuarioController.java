@@ -16,7 +16,7 @@ import br.com.ifpe.grafica.model.Usuario;
 import br.com.ifpe.grafica.model.UsuarioDao;
 
 @Controller
-public class UsuarioContloller {
+public class UsuarioController {
 	
 	
 	private static int USUARIOCOMUM=1;
@@ -30,23 +30,28 @@ public class UsuarioContloller {
 		List<TipoUsuario> listaTipoUsuarioDao = dao.listar();
 		model.addAttribute("listaTipoUsuarioDao", listaTipoUsuarioDao);
 
-		return "usuario/cadastroUsuario";
+		return "usuario/incluirUsuario";
 	}
 
 	@RequestMapping("incluirUsuario")
-	public String incluirUsuario(@Valid Usuario usuario, BindingResult result, Model model) {
+	public String incluirUsuario(@Valid Usuario usuario, BindingResult result, Model model)throws Exception {
 
-		if (result.hasErrors()) {
-			return "forward:exibir";
+	
+		try {
+			if (result.hasErrors()) {
+				return "forward:exibir";
+			}
+
+			UsuarioDao dao = new UsuarioDao();
+
+			dao.salvar(usuario);
+			model.addAttribute("mensagem", usuario.getNome()+" Cadastrado com sucesso");
+			
+		} catch (Exception e) {
+			System.out.println("OKOKOKOKOK");
 		}
-
-		UsuarioDao dao = new UsuarioDao();
-
-		dao.salvar(usuario);
-
-		model.addAttribute("mensagem", "O usuario " + usuario.getNome() + " foi inserida com sucesso !");
-
-		return "usuario/cadastroUsuario";
+		return "usuario/sucessoCadastro";
+		
 	}
 	@RequestMapping("homeFuncionario")
 	public String Voltar() {
@@ -87,5 +92,6 @@ public class UsuarioContloller {
 		session.invalidate();
 		return "index";
 	}
+
 
 }

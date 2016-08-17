@@ -1,12 +1,35 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<!-- arquivo  -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
+<script>
+
+$(document).ready(function(){
+    $('#signupform').validate({
+        rules:{
+            email:{ required: true },
+            nome:{ required: true }
+   
+        },
+        messages:{
+            email:{ required: 'Este Campo é obrigatório' },
+            nome:{ required: 'Este Campo é obrigatório' }
+                      
+        }
+
+    });
+});
+
+</script>
+
+
+
 <title>Incluir Usuario Teste</title>
 </head>
 <body>
@@ -19,14 +42,13 @@
 	<h3>Incluir Usuario Teste</h3>
 	<hr>
 
-	<form action="incluirUsuario" method="post"
-		enctype="multipart/form-data" id="formulario">
+	<form id="signupform"  method="post">
 
 		<p>
 			Nome: <br /> <input type="text" name="nome" style="width: 80px;"
 				maxlength="5" />
 		</p>
-		<form:errors path="usuario.nome" cssStyle="color:red" />
+		
 
 		<p>
 			Cargo: <br /> <input type="text" name="cargo"
@@ -38,7 +60,7 @@
 			Email: <br /> <input type="text" name="email"
 				style="width: 100px;" />
 		</p>
-		<form:errors path="usuario.email" cssStyle="color:red" />
+		
 		
 		<p>
 			Siape: <br /> <input type="text" name="siape"

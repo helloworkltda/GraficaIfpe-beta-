@@ -31,7 +31,7 @@
             <input type="text" name="nome" required="" class="form-control" placeholder="Nome Completo" maxlength="50">
             <span class="glyphicon glyphicon-pencil"></span>
             
-           <form:errors path="Usuario.nome" cssStyle="color:red" />
+           <form:errors path="usuario.nome" cssStyle="color:red" />
           </div>
           <div class="form-group">
             <input pattern="[0-9]+$" type="text" name="siape" required="" class="form-control" placeholder="Matricula SIAPE" maxlength="7" onkeypress='return SomenteNumero(event)'/>

@@ -42,7 +42,7 @@
               <a href="#">Editar Conta</a>
             </li>
             <li>
-              <a href="#">Logout</a>
+              <a href="logout">Logout</a>
             </li>
           </ul>
         </li>
@@ -57,16 +57,16 @@
             <a href="javascript:;"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
-            <a href="javascript:;"><i class="fa fa-copy"></i>Solicitar C√≥pias</a>
+            <a href="javascript:;"><i class="fa fa-copy"></i>Solicitar CÛpias</a>
           </li>
           <li>
-            <a href="javascript:;"><i class="fa fa-table"></i>Consultar Solicita√ß√µes</a>
+            <a href="javascript:;"><i class="fa fa-table"></i>Consultar SolicitaÁıes</a>
           </li>
           <li>
-            <a href="javascript:;"><i class="fa fa-user"></i>Lista de Usu√°rios</a>
+            <a href="javascript:;"><i class="fa fa-user"></i>Lista de Usu·rio</a>
           </li>
           <li>
-            <a href="javascript:;"><i class="fa fa-edit"></i>Cadastrar Usu√°rio</a>
+            <a href="incluirUsuarioAdm"><i class="fa fa-edit"></i>Cadastrar Usu·rio</a>
           </li>
         </ul>
       </nav>
