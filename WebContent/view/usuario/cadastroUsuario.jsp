@@ -21,6 +21,7 @@
         <form method="post" action="incluirUsuario" role="login" id="form_contato">
           <img src="view/assets/images/cadastro.png" alt="" class="img-responsive">
           <div class="form-group">
+          
             <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome Completo" maxlength="50">
             <span class="glyphicon glyphicon-pencil"></span>
             

@@ -13,14 +13,14 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 			throws Exception {
 
 		String uri = request.getRequestURI();
+		Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
+																	
 		if (uri.contains("bootstrap") || uri.contains("css") || uri.contains("images") || uri.contains("js")
 				|| uri.endsWith("testee/") || uri.endsWith("efetuarLogin") || uri.endsWith("login") || uri.endsWith("exibir")
 				|| uri.endsWith("incluirUsuario")) {
 			return true;
 		}
 		
-		Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
-
 		if (usuario != null) {
 			
 			if(usuario.getTipoUsuario().getId() == 1){

@@ -76,7 +76,7 @@ public class UsuarioController {
 		
 		if(usuarioLogado == null){
 			
-			model.addAttribute("mensagem"," Usuário não e cadastrado");
+			model.addAttribute("mensagem"," Usuário não é cadastrado");
 			return "index";
 		}
 		else if (usuarioLogado.getTipoUsuario().getId() == USUARIOCOMUM) {
