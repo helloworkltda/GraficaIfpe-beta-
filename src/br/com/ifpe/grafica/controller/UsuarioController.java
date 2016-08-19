@@ -30,7 +30,7 @@ public class UsuarioController {
 		List<TipoUsuario> listaTipoUsuarioDao = dao.listar();
 		model.addAttribute("listaTipoUsuarioDao", listaTipoUsuarioDao);
 
-		return "usuario/incluirUsuario";
+		return "usuario/cadastroUsuario";
 	}
 
 	@RequestMapping("incluirUsuario")

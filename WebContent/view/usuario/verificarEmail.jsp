@@ -2,9 +2,9 @@
 <%@page import="br.com.ifpe.grafica.model.UsuarioDao"%>
 <%
 
-String siape = request.getParameter("mensagem");
+String email = request.getParameter("email");
 UsuarioDao dao = new UsuarioDao();
-Usuario usuario = dao.buscarPorSiape( Integer.valueOf(siape));
+Usuario usuario = dao.buscarPorEmail(String.valueOf(email));
 if(usuario != null){
 	out.write("false");
 }else{
