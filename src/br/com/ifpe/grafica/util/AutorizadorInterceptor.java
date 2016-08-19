@@ -24,9 +24,15 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 		if (usuario != null) {
 			
 			if(usuario.getTipoUsuario().getId() == 1){
-				
+				if (uri.contains("bootstrap") || uri.contains("css") || uri.contains("images") || uri.contains("js")
+						|| uri.endsWith("testee/") || uri.endsWith("homeFuncionario")) {
+					return true;
+				}
 			}else{
-				
+				if (uri.contains("bootstrap") || uri.contains("css") || uri.contains("images") || uri.contains("js")
+						|| uri.endsWith("testee/") || uri.endsWith("homeAdministrador")) {
+					return true;
+				}
 			}
 			
 		}

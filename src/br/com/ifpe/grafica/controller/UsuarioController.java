@@ -74,8 +74,12 @@ public class UsuarioController {
 		UsuarioDao dao = new UsuarioDao();
 		Usuario usuarioLogado = dao.buscarUsuario(usuario);
 		
-		
-		if (usuarioLogado.getTipoUsuario().getId() == USUARIOCOMUM) {
+		if(usuarioLogado == null){
+			
+			model.addAttribute("mensagem"," Usuário não e cadastrado");
+			return "index";
+		}
+		else if (usuarioLogado.getTipoUsuario().getId() == USUARIOCOMUM) {
 			session.setAttribute("usuarioLogado", usuarioLogado);
 			return "principal/homeFuncionario";
 			
@@ -83,8 +87,9 @@ public class UsuarioController {
 			session.setAttribute("usuarioLogado", usuarioLogado);
 			return "principal/homeAdministrador";
 		}
-		model.addAttribute("msg", "Não foi encontrado um usuário com o login e senha informados.");
 		return "index";
+		
+		
 	}
 
 	@RequestMapping("logout")

@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="theme-color" content="#3e454c">
-    <title>AdministraÃ§Ã£o - IFPE CÃ³pias</title>
+    <title>Administração - IFPE Cópias</title>
     <!-- Font awesome -->
     <link rel="stylesheet" href="view/assets/css/font-awesome.min.css">
     <!-- Sandstone Bootstrap CSS -->
@@ -29,14 +29,14 @@
   </head><body>
     <div class="brand clearfix">
       <span class="logo">
-        <img src="img/logo.png" class="img-responsive" alt="">
+        <img src="view/assets/img/logo.png" class="img-responsive" alt="">
       </span>
       <span class="menu-btn">
         <i class="fa fa-bars"></i>
       </span>
       <ul class="ts-profile-nav">
         <li class="ts-account">
-          <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> Cicrano Fulano da Silva<i class="fa fa-angle-down hidden-side"></i></a>
+          <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> ${usuarioLogado.nome}<span>&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
           <ul>
             <li>
               <a href="#">Editar Conta</a>
@@ -54,19 +54,19 @@
         <ul class="ts-sidebar-menu">
           <li class="ts-label">Menu</li>
           <li class="open">
-            <a href="javascript:;"><i class="fa fa-home"></i>Home</a>
+            <a href="#"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
-            <a href="javascript:;"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+            <a href="#"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
           <li>
-            <a href="javascript:;"><i class="fa fa-table"></i>Consultar Solicitações</a>
+            <a href="#"><i class="fa fa-table"></i>Consultar Solicitações</a>
           </li>
           <li>
-            <a href="javascript:;"><i class="fa fa-user"></i>Lista de Usuário</a>
+            <a href="#"><i class="fa fa-user"></i>Lista de Usuário</a>
           </li>
           <li>
-            <a href="incluirUsuarioAdm"><i class="fa fa-edit"></i>Cadastrar Usuário</a>
+            <a href="#"><i class="fa fa-edit"></i>Cadastrar Usuário</a>
           </li>
         </ul>
       </nav>
@@ -78,8 +78,8 @@
                 <font color="#999999">&nbsp;AdministraÃ§Ã£o /</font>
                 <font color="#666666">Home</font>
               </h2>
-              <center>
-                <font size="5">Selecione a opÃ§Ã£o desejada:</font>
+             
+                <font size="5">Selecione a opção desejada:</font>
                 <br>
                 <br>
                 <div>
@@ -98,7 +98,7 @@
                               </div>
                             </div>
                             </a>
-                            <a href="#" class="block-anchor panel-footer text-center">Solicitar CÃ³pias &nbsp; <i class="fa fa-arrow-right"></i></a>
+                            <a href="#" class="block-anchor panel-footer text-center">Solicitar Cópias &nbsp; <i class="fa fa-arrow-right"></i></a>
                           </div>
                         </div>
                         <div class="col-md-3">
@@ -112,7 +112,7 @@
                               </div>
                             </div>
                             </a>
-                            <a href="#" class="block-anchor panel-footer text-center">Consultar SolicitaÃ§Ãµes &nbsp; <i class="fa fa-arrow-right"></i></a>
+                            <a href="#" class="block-anchor panel-footer text-center">Consultar Solicitações &nbsp; <i class="fa fa-arrow-right"></i></a>
                           </div>
                         </div>
                       </div>
@@ -132,7 +132,7 @@
                           </div>
                         </div>
                         </a>
-                        <a href="#" class="block-anchor panel-footer text-center">Acessar Lista de UsuÃ¡rios &nbsp; <i class="fa fa-arrow-right"></i></a>
+                        <a href="#" class="block-anchor panel-footer text-center">Acessar Lista de Usuários &nbsp; <i class="fa fa-arrow-right"></i></a>
                       </div>
                     </div>
                     <div class="col-md-3">
@@ -146,7 +146,7 @@
                           </div>
                         </div>
                         </a>
-                        <a href="#" class="block-anchor panel-footer text-center">Cadastrar UsuÃ¡rio &nbsp; <i class="fa fa-arrow-right"></i></a>
+                        <a href="#" class="block-anchor panel-footer text-center">Cadastrar Usuário &nbsp; <i class="fa fa-arrow-right"></i></a>
                       </div>
                     </div>
                   </div>
@@ -183,7 +183,7 @@
                                                                                         
                                                                                         	}
                 </script>
-              </center>
+              
             </div>
           </div>
         </div>

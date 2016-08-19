@@ -1,3 +1,20 @@
+/*!
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2015
+ * @version 4.2.6
+ *
+ * File input styled for Bootstrap 3.0 that utilizes HTML5 File Input's advanced 
+ * features including the FileReader API. 
+ * 
+ * The plugin drastically enhances the HTML file input to preview multiple files on the client before
+ * upload. In addition it provides the ability to preview content of images, text, videos, audio, html, 
+ * flash and other objects. It also offers the ability to upload and delete files using AJAX, and add 
+ * files in batches (i.e. preview, append, or remove before upload).
+ * 
+ * Author: Kartik Visweswaran
+ * Copyright: 2015, Kartik Visweswaran, Krajee.com
+ * For more JQuery plugins visit http://plugins.krajee.com
+ * For more Yii related demos visit http://demos.krajee.com
+ */
 (function ($) {
     "use strict";
 
@@ -2241,13 +2258,13 @@
     $.fn.fileinputLocales.en = {
         fileSingle: 'file',
         filePlural: 'files',
-        browseLabel: '&nbsp;Procurar &hellip;',
-        removeLabel: '&nbsp;Remover',
-        removeTitle: '&nbsp;Limpar arquivos selecionados',
-        cancelLabel: '&nbsp;Cancelar',
-        cancelTitle: '&nbsp;Abortar Upload',
-        uploadLabel: '&nbsp;Fazer Upload',
-        uploadTitle: '&nbsp;Fazer Upload dos arquivos selecionados',
+        browseLabel: 'Procurar &hellip;',
+        removeLabel: 'Remover',
+        removeTitle: 'Limpar arquivos selecionados',
+        cancelLabel: 'Cancelar',
+        cancelTitle: 'Abortar Upload',
+        uploadLabel: 'Fazer Upload',
+        uploadTitle: 'Fazer Upload dos arquivos selecionados',
         msgSizeTooLarge: 'File "{name}" (<b>{size} KB</b>) exceeds maximum allowed upload size of <b>{maxSize} KB</b>. Please retry your upload!',
         msgFilesTooLess: 'You must select at least <b>{n}</b> {files} to upload. Please retry your upload!',
         msgFilesTooMany: 'Number of files selected for upload <b>({n})</b> exceeds maximum allowed limit of <b>{m}</b>. Please retry your upload!',

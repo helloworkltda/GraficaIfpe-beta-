@@ -28,6 +28,7 @@
             <input style:"font-color: white" type="password" name="senha" required="" class="form-control" placeholder="Digite sua Senha" maxlength="20">
             <span class="glyphicon glyphicon-lock"></span>
           </div>
+          <div style="text-align: center; color: white;"> ${mensagem} </div>
           <button type="submit" name="go" class="btn btn-primary btn-block">Entrar</button>
           <a href="exibir">Ainda não é cadastrado?</a>
         </form>
