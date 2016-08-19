@@ -1,104 +1,72 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-	<!-- arquivo  -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"></script>
-<script>
-
-$(document).ready(function(){
-    $('#signupform').validate({
-        rules:{
-            email:{ required: true },
-            nome:{ required: true }
-   
-        },
-        messages:{
-            email:{ required: 'Este Campo é obrigatório' },
-            nome:{ required: 'Este Campo é obrigatório' }
-                      
-        }
-
-    });
-});
-
-</script>
-
-
-
-<title>Incluir Usuario Teste</title>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">    
 </head>
 <body>
+       <div class="col-md-6 col-offset-2">
+             <div class="panel panel-primary">
+                    <div class="panel-heading">Envie sua mensagem</div>
+                    <div class="panel-body">
+                           <form action="enviar_mensagem.php" method="post" id="form_contato" class="form">
+                                  <div class="form-group">
+                                        <label for="nome">Nome</label>
+                                        <input type="text" name="nome" id="nome" required minlength="5" class="form-control"/>
+                                  </div>
+                                  <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" id="email" required class="form-control"/>
+                                  </div>
+                                  <div class="form-group">
+                                        <label for="mensagem">Nome</label>
+                                        <textarea type="text" name="mensagem" id="mensagem" required class="form-control"></textarea>
+                                  </div>
+                                  <div>
+                                        <input type="submit" class="btn btn-success" value="Enviar"/>
+                                  </div>
+                           </form>
+                    </div>
+             </div>
+       </div>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
+       <script>
+             $(function(){
+            	 $("#form_contato").validate({
+            	       rules : {
+            	             nome:{
+            	                    required:true,
+            	                    minlength:3
+            	             },
+            	             email:{
+            	                    required:true
+            	                    
+            	             },
+            	             mensagem:{
+            	                    required:true,
+            	                    remote:"view/usuario/verificarEmail.jsp"
+            	             }                                
+            	       },
+            	       messages:{
+            	             nome:{
+            	                    required:"Por favor, informe seu nome",
+            	                    minlength:"O nome deve ter pelo menos 3 caracteres"
+            	             },
+            	             email:{
+            	                    required:"É necessário informar um email"
+            	                    
+            	             },
+            	             mensagem:{
+            	                    required:"A mensagem não pode ficar em branco",
+            	                    remote: "Email Existente"
+            	             }     
+            	       }
+            	});
 
-	
-	
-	<div style="text-align: center; color: red;">${mensagem}</div>
 
-	<hr>
-	<h3>Incluir Usuario Teste</h3>
-	<hr>
-
-	<form id="signupform"  method="post">
-
-		<p>
-			Nome: <br /> <input type="text" name="nome" style="width: 80px;"
-				maxlength="5" />
-		</p>
-		
-
-		<p>
-			Cargo: <br /> <input type="text" name="cargo"
-				style="width: 100px;" />
-		</p>
-		
-		
-		<p>
-			Email: <br /> <input type="text" name="email"
-				style="width: 100px;" />
-		</p>
-		
-		
-		<p>
-			Siape: <br /> <input type="text" name="siape"
-				style="width: 100px;" />
-		</p>
-	
-		
-		<p>
-			Senha: <br /> <input type="password" name="senha"
-				style="width: 100px;" />
-		</p>
-		
-		<p>
-			Confirma Senha: <br /> <input type="password" name="Csenha"
-				style="width: 100px;" />
-		</p>
-		
-		
-
-		<p>
-			Tipo Usuario: <br /> <select name="tipoUsuario">
-				<option value="">Selecione</option>
-				<c:forEach items="${listaTipoUsuarioDao}" var="obj">
-					<option value="${obj.id}">${obj.descricao}</option>
-				</c:forEach>
-			</select>
-		</p>
-
-		<br />
-
-		<p>
-			<input type="reset" value="Limpar"> &nbsp; &nbsp; <input
-				type="submit" value="Incluir">
-		</p>
-
-	</form>
-		
-	
-
+            	
+             });
+       </script>
 </body>
 </html>

@@ -5,6 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import br.com.ifpe.grafica.model.Usuario;
+
 public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object controller)
@@ -16,9 +18,17 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 				|| uri.endsWith("incluirUsuario")) {
 			return true;
 		}
+		
+		Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
 
-		if (request.getSession().getAttribute("usuarioLogado") != null) {
-			return true;
+		if (usuario != null) {
+			
+			if(usuario.getTipoUsuario().getId() == 1){
+				
+			}else{
+				
+			}
+			
 		}
 
 		response.sendRedirect("login");
