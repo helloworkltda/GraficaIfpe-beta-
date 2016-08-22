@@ -39,7 +39,7 @@
           <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> ${usuarioLogado.nome} <span>&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
           <ul>
             <li>
-              <a href="exibirAlterarUsuario?siape=${usuario.siape}">Editar Conta</a>
+              <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}">Editar Conta</a>
             </li>
             <li>
               <a href="logout">Logout</a>
@@ -66,7 +66,7 @@
           <div class="row">
             <div class="col-md-12">
               <h2 class="page-title">
-                <font color="#666666">Solicitar Cópias</font>
+                <font color="exibirAlterarUsuario?siape=${usuario.siape}">Solicitar Cópias</font>
               </h2>
               <center>
                 <div class="col-md-2"></div>

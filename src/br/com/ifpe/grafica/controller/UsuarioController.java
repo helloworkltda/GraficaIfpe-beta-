@@ -78,6 +78,8 @@ public class UsuarioController {
 		UsuarioDao dao = new UsuarioDao();
 		Usuario usuarioPreenchido = dao.buscarPorSiape(usuario.getSiape());
 		model.addAttribute("usuario", usuarioPreenchido);
+		
+		
 
 		return "usuario/alteraUsuario";
 						
