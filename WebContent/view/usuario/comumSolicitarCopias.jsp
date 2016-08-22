@@ -76,7 +76,7 @@
 <form method="get" class="form-horizontal">
                       <label class="col-sm-2 control-label">Anexo #1</label>
                       
-                        <input id="input-43" type="file" multiple="">
+                        <input id="input-43" type="file" multiple="" name="anexo1">
 
                         <div class="help-block" id="errorBlock43"></div>
                       <br><br>
@@ -85,7 +85,7 @@
 <label class="col-sm-2 control-label">Anexo #2</label>
                       <form method="get" class="form-horizontal">
 
-                        <input id="input-44" type="file" multiple="">
+                        <input id="input-44" type="file" multiple="" name="anexo2">
 
                         <div class="help-block" id="errorBlock44"></div>
                       <br><br>
@@ -93,7 +93,7 @@
 <label class="col-sm-2 control-label">Anexo #3</label>
                       <form method="get" class="form-horizontal">
 
-                        <input id="input-45" type="file" multiple="">
+                        <input id="input-45" type="file" multiple="" name="anexo3">
 
                         <div class="help-block" id="errorBlock45"></div>
                       <br><br>
@@ -101,15 +101,16 @@
 <label class="col-sm-2 control-label">Anexo #4</label>
                       <form method="get" class="form-horizontal">
 
-                        <input id="input-46" type="file" multiple="">
+                        <input id="input-46" type="file" multiple="" name="anexo4">
 
                         <div class="help-block" id="errorBlock46"></div>
                       <br><br>
 
                         <div class="form-group">
                           <label class="col-sm-2 control-label">Descrição</label>
+                       
                           <div class="col-sm-8">
-                            <textarea class="form-control" style="resize:none" name="name" rows="5" cols="3"></textarea>
+                            <textarea class="form-control" style="resize:none" name="descricao" rows="5" cols="3"></textarea>
 
                           </div>
                   <br><br><br><br><br><br><br>
