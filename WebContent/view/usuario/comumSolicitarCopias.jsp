@@ -39,7 +39,7 @@
           <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> ${usuarioLogado.nome} <span>&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
           <ul>
             <li>
-              <a href="#">Editar Conta</a>
+              <a href="exibirAlterarUsuario?siape=${usuario.siape}">Editar Conta</a>
             </li>
             <li>
               <a href="logout">Logout</a>

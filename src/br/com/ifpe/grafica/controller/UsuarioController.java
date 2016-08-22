@@ -25,7 +25,7 @@ public class UsuarioController {
 	@RequestMapping("exibir")
 	public String exibirUsuario(Model model) {
 
-		// Código para popular o combo de categoria de produto
+		// Código para lista o combo tipo usuario
 		TipoUsuarioDao dao = new TipoUsuarioDao();
 		List<TipoUsuario> listaTipoUsuarioDao = dao.listar();
 		model.addAttribute("listaTipoUsuarioDao", listaTipoUsuarioDao);
@@ -72,15 +72,16 @@ public class UsuarioController {
 		return "index";
 	}
 	
-	@RequestMapping("exibirAlteraUsuario")
-	public String exibirAlteraUsuario(Usuario usuario,Model model) {
-		
+	 @RequestMapping("exibirAlterarUsuario")
+	    public String exibirAlterarUsuario(Usuario usuario, Model model) {
+
 		UsuarioDao dao = new UsuarioDao();
-		Usuario usuarioPreenchido = dao.buscarPorSiape((usuario.getSiape()));
+		Usuario usuarioPreenchido = dao.buscarPorSiape(usuario.getSiape());
 		model.addAttribute("usuario", usuarioPreenchido);
-		
+
 		return "usuario/alteraUsuario";
-	}
+						
+	    }
 
 	@RequestMapping("efetuarLogin")
 	public String efetuarLogin(Usuario usuario, HttpSession session, Model model) {

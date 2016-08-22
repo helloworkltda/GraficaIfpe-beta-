@@ -1,4 +1,4 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
@@ -7,14 +7,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Alterar Usu·rio</title>
+<title>Alterar Usu√°rio</title>
 </head>
 <body>
 
 	
 
 	<hr>
-	<h3>Alterar Usu·rio</h3>
+	<h3>Alterar Usu√°rio</h3>
 	<hr>
 	
 	<form action="alterarUsuario" method="post">
@@ -29,6 +29,17 @@
 		<p>
 			E-mail: <br />
 			<input type="text" name="email" style="width: 400px;" value="${usuario.email}" />
+		</p>
+		
+		<p>
+			Tipo Usuario: <br /> <select name="categoriaProduto">
+				<option value="">Selecione</option>
+				<c:forEach items="${tipoUsuario}" var="obj">
+					<option value="${obj.id}"
+						<c:if test="${obj.id eq p.tipoUsuario.id}">selected="selected"</c:if>>
+						${obj.descricao}</option>
+				</c:forEach>
+			</select>
 		</p>
 		
 		<p>
