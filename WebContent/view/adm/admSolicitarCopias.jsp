@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="theme-color" content="#3e454c">
-    <title>Solicitação - IFPE Copias</title>
+    <title>Administração - IFPE Cópias</title>
     <!-- Font awesome -->
     <link rel="stylesheet" href="view/assets/css/font-awesome.min.css">
     <!-- Sandstone Bootstrap CSS -->
@@ -15,7 +15,7 @@
     <!-- Bootstrap social button library -->
     <link rel="stylesheet" href="view/assets/css/bootstrap-social.css">
     <!-- Bootstrap select -->
-    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <link rel="stylesheet" href="view/assets/css/bootstrap-select.css">
     <!-- Bootstrap file input -->
     <link rel="stylesheet" href="view/assets/css/fileinput.min.css">
     <!-- Awesome Bootstrap checkbox -->
@@ -36,7 +36,7 @@
       </span>
       <ul class="ts-profile-nav">
         <li class="ts-account">
-          <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> ${usuarioLogado.nome}<i class="fa fa-angle-down hidden-side"></i></a>
+          <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> ${usuarioLogado.nome} <span>&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
           <ul>
             <li>
               <a href="#">Editar Conta</a>
@@ -54,13 +54,19 @@
         <ul class="ts-sidebar-menu">
           <li class="ts-label">Menu</li>
           <li>
-            <a href="homeFuncionario"><i class="fa fa-home"></i>Home</a>
+            <a href="homeAdm"><i class="fa fa-home"></i>Home</a>
           </li>
           <li class="open">
-            <a href="#"><i class="fa fa-copy"></i>Solicitar Copias</a>
+            <a href="#;"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
           <li>
-            <a href="#"><i class="fa fa-table"></i>Consultar Solicitação</a>
+            <a href="#"><i class="fa fa-table"></i>Consultar Solicitações</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-user"></i>Lista de Usuários</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-edit"></i>Cadastrar Usuário</a>
           </li>
         </ul>
       </nav>
@@ -77,29 +83,58 @@
                 <div class="col-md-8">
                   <div class="panel panel-default">
                     <div class="panel-body">
+<form method="get" class="form-horizontal">
                       <label class="col-sm-2 control-label">Anexo #1</label>
-                      <form method="get" class="form-horizontal">
+                      
                         <input id="input-43" type="file" multiple="">
+
                         <div class="help-block" id="errorBlock43"></div>
-                        <div class="hr-dashed"></div>
+                      <br><br>
+
+
+<label class="col-sm-2 control-label">Anexo #2</label>
+                      <form method="get" class="form-horizontal">
+
+                        <input id="input-44" type="file" multiple="">
+
+                        <div class="help-block" id="errorBlock44"></div>
+                      <br><br>
+
+<label class="col-sm-2 control-label">Anexo #3</label>
+                      <form method="get" class="form-horizontal">
+
+                        <input id="input-45" type="file" multiple="">
+
+                        <div class="help-block" id="errorBlock45"></div>
+                      <br><br>
+
+<label class="col-sm-2 control-label">Anexo #4</label>
+                      <form method="get" class="form-horizontal">
+
+                        <input id="input-46" type="file" multiple="">
+
+                        <div class="help-block" id="errorBlock46"></div>
+                      <br><br>
+
                         <div class="form-group">
                           <label class="col-sm-2 control-label">Descrição</label>
                           <div class="col-sm-8">
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control" style="resize:none" name="name" rows="5" cols="3"></textarea>
+
                           </div>
-                          <div class="hr-dashed"></div>
-                          <div class="hr-dashed"></div>
+                  <br><br><br><br><br><br><br>
                           <div class="form-group">
-                            <div class="hr-dashed"></div>
+                      
                             <div class="col-sm-8 col-sm-offset-2">
-                              <button class="btn btn-danger" type="submit">Cancelar SolicitaÃ§Ã£o</button>
-                              <button class="btn btn-primary" type="submit">Fazer SolicitaÃ§Ã£o</button>
+                              <button class="btn btn-danger" type="submit">Cancelar Solicitação</button>
+                              <button class="btn btn-primary" type="submit">Fazer Solicitação</button>
                             </div>
                           </div>
                         </div>
                       </form>
                     </div>
                   </div>
+                  
                   <!-- Loading Scripts -->
                   <script src="view/assets/js/jquery.min.js"></script>
                   <script src="view/assets/js/bootstrap-select.min.js"></script>

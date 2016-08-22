@@ -23,7 +23,7 @@ public class SolicitacaoDao {
 	public void salvar(Solicitacao solicitacao) {
 
 		try {
-			String sql = "INSERT INTO solicitacao (codigo,anexo1,anexo2,anexo3,anexo4,descricao) VALUES (?,?,?,?,?,?)";
+			String sql = "INSERT INTO solicitacao (codigo,siape_solicitante,siape_executor,anexo1,anexo2,anexo3,anexo4,descricao,usuariofk) VALUES (?,?,?,?,?,?)";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setInt(1, solicitacao.getCodigo());
 			stmt.setString(2, solicitacao.getAnexo1());
@@ -31,6 +31,7 @@ public class SolicitacaoDao {
 			stmt.setString(4, solicitacao.getAnexo3());
 			stmt.setString(5, solicitacao.getAnexo4());
 			stmt.setString(6, solicitacao.getDescricao());
+			stmt.setInt(7, solicitacao.getUsuariofk().getSiape());
 			stmt.execute();
 			stmt.close();
 			connection.close();

@@ -57,7 +57,7 @@
             <a href="#"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
-            <a href="#"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+            <a href="AdmSolitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
           <li>
             <a href="#"><i class="fa fa-table"></i>Consultar Solicitações</a>
@@ -75,7 +75,7 @@
           <div class="row">
             <div class="col-md-12">
               <h2 class="page-title">
-                <font color="#999999">&nbsp;AdministraÃ§Ã£o /</font>
+                <font color="#999999">&nbsp;Administração /</font>
                 <font color="#666666">Home</font>
               </h2>
              
@@ -98,7 +98,7 @@
                               </div>
                             </div>
                             </a>
-                            <a href="#" class="block-anchor panel-footer text-center">Solicitar Cópias &nbsp; <i class="fa fa-arrow-right"></i></a>
+                            <a href="AdmSolitar" class="block-anchor panel-footer text-center">Solicitar Cópias &nbsp; <i class="fa fa-arrow-right"></i></a>
                           </div>
                         </div>
                         <div class="col-md-3">

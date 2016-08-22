@@ -15,7 +15,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 		String uri = request.getRequestURI();
 		Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
 																	
-		if (uri.contains("bootstrap") || uri.contains("css") || uri.contains("images") || uri.contains("js")
+		if (uri.contains("assets") || uri.contains("css") || uri.contains("images") || uri.contains("js")
 				|| uri.endsWith("testee/") || uri.endsWith("efetuarLogin") || uri.endsWith("login") || uri.endsWith("exibir")
 				|| uri.endsWith("incluirUsuario")) {
 			return true;
@@ -25,12 +25,14 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 			
 			if(usuario.getTipoUsuario().getId() == 1){
 				if (uri.contains("assets") || uri.contains("css") || uri.contains("images") || uri.contains("js")
-						|| uri.endsWith("testee/") || uri.endsWith("homeFuncionario")) {
+						|| uri.endsWith("testee/") || uri.endsWith("homeFuncionario") || uri.endsWith("comumSolicita")
+						|| uri.endsWith("homeComum") || uri.endsWith("exibirAlteraUsuario")) {
 					return true;
 				}
 			}else{
 				if (uri.contains("assets") || uri.contains("css") || uri.contains("images") || uri.contains("js")
-						|| uri.endsWith("testee/") || uri.endsWith("homeAdministrador")) {
+						|| uri.endsWith("testee/") || uri.endsWith("homeAdministrador") || uri.endsWith("AdmSolitar")
+						|| uri.endsWith("homeAdm")) {
 					return true;
 				}
 			}

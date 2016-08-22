@@ -17,7 +17,16 @@ import br.com.ifpe.grafica.model.UsuarioDao;
 @Controller
 public class UsuarioAdmController {
 
-
+	@RequestMapping("homeAdm")
+	public String Voltar() {
+		return "principal/homeAdministrador";
+	}
+	
+	@RequestMapping("AdmSolitar")
+	public String AdmSolitar() {
+		return "adm/admSolicitarCopias";
+	}
+	
 	@RequestMapping("exibirCadastroAdm")
 	public String exibirUsuarioAdm(Model model) {
 

@@ -1,6 +1,6 @@
 create table solicitacao(
 
-codigo	int(11) primary key,
+codigo	int(11) primary key  AUTO_INCREMENT, // colocar auto incremente na tabela 
 siape_solicitante	int(11) not null unique,
 siape_executor	int(11) not null unique,
 anexo1	varchar(100) not null,

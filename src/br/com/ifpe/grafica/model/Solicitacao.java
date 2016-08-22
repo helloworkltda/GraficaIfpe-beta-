@@ -14,7 +14,16 @@ public class Solicitacao {
 	private String anexo2;
 	private String anexo3;
 	private String anexo4;
+	private Usuario usuariofk;
 	
+	
+	
+	public Usuario getUsuariofk() {
+		return usuariofk;
+	}
+	public void setUsuariofk(Usuario usuariofk) {
+		this.usuariofk = usuariofk;
+	}
 	public int getCodigo() {
 		return codigo;
 	}

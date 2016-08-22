@@ -44,7 +44,7 @@
           <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> ${usuarioLogado.nome}<i class="fa fa-angle-down hidden-side"></i></a>
           <ul>
             <li>
-              <a href="#">Editar Conta</a>
+              <a href="exibirAlteraUsuario">Editar Conta</a>
             </li>
             <li>
               <a href="logout">Logout</a>
@@ -62,11 +62,9 @@
             <a href="homeFuncionario"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
-            <a href="solicitarCopias"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+            <a href="comumSolicita"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
-          <li>
-            <a href="#"><i class="fa fa-table"></i>Consultar Solicitação</a>
-          </li>
+         
         </ul>
       </nav>
       <div class="content-wrapper">
@@ -97,7 +95,7 @@
                               </div>
                             </div>
                             </a>
-                            <a href="#" class="block-anchor panel-footer text-center">Solicitar Cópias &nbsp; <i class="fa fa-arrow-right"></i></a>
+                            <a href="comumSolicita" class="block-anchor panel-footer text-center">Solicitar Cópias &nbsp; <i class="fa fa-arrow-right"></i></a>
                           </div>
                         </div>
                       </div>

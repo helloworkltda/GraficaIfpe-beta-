@@ -58,14 +58,28 @@ public class UsuarioController {
 		return "principal/homeFuncionario";
 	}
 
-	@RequestMapping("solicitarCopias")
+	@RequestMapping("comumSolicita")
 	public String SolicitarCopias() {
-		return "usuario/solicitarCopias";
+		return "usuario/comumSolicitarCopias";
+	}
+	@RequestMapping("homeComum")
+	public String homeComum() {
+		return "principal/homeFuncionario";
 	}
 
 	@RequestMapping("login")
 	public String TelaLogin() {
 		return "index";
+	}
+	
+	@RequestMapping("exibirAlteraUsuario")
+	public String exibirAlteraUsuario(Usuario usuario,Model model) {
+		
+		UsuarioDao dao = new UsuarioDao();
+		Usuario usuarioPreenchido = dao.buscarPorSiape((usuario.getSiape()));
+		model.addAttribute("usuario", usuarioPreenchido);
+		
+		return "usuario/alteraUsuario";
 	}
 
 	@RequestMapping("efetuarLogin")

@@ -43,7 +43,7 @@ public class UsuarioDao {
 
 	public void alterar(Usuario usuario) {
 
-		String sql = "UPDATE usuario SET siape = ? , nome = ? , cargo = ? , email  = ? , senha = ? WHERE id = ?";
+		String sql = "UPDATE usuario SET siape = ? , nome = ? , cargo = ? , email  = ? , senha = ? , tipo_id = ? WHERE siape = ?";
 
 		try {
 
@@ -53,6 +53,7 @@ public class UsuarioDao {
 			stmt.setString(3, usuario.getCargo());
 			stmt.setString(4, usuario.getEmail());
 			stmt.setString(5, usuario.getSenha());
+			stmt.setInt(6, usuario.getTipoUsuario().getId());
 			stmt.execute();
 			stmt.close();
 			
@@ -64,7 +65,7 @@ public class UsuarioDao {
 	public void remover(Usuario usuario) {
 
 		try {
-			PreparedStatement stmt = connection.prepareStatement("DELETE FROM usuaeio WHERE siape = ?");
+			PreparedStatement stmt = connection.prepareStatement("DELETE FROM usuario WHERE siape = ?");
 			stmt.setLong(1, usuario.getSiape());
 			stmt.execute();
 			stmt.close();
@@ -174,8 +175,8 @@ public class UsuarioDao {
 
 		return usuario;
 	}
-  // motar o usuario para logar
-	private Usuario montarObjeto2(ResultSet rs) throws SQLException {
+  // motar o usuario para logar teste sem o ID
+	private Usuario montarObjeto2232(ResultSet rs) throws SQLException {
 
 		Usuario usuario = new Usuario();
 		usuario.setNome(rs.getString("nome"));
