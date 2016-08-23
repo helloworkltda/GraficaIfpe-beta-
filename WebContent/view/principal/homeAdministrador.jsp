@@ -54,7 +54,7 @@
         <ul class="ts-sidebar-menu">
           <li class="ts-label">Menu</li>
           <li class="open">
-            <a href="#"><i class="fa fa-home"></i>Home</a>
+            <a href="homeAdm"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
             <a href="AdmSolitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
@@ -162,6 +162,7 @@
                 <script src="view/assets/js/chartData.js"></script>
                 <script src="view/assets/js/main.js"></script>
                 <script>
+                history.forward();
                   window.onload = function(){
                                                                                             
                                                                                         		// Line chart from swirlData for dashReport

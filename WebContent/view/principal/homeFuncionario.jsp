@@ -1,4 +1,3 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -112,6 +111,7 @@
                   <script src="view/assets/js/chartData.js"></script>
                   <script src="view/assets/js/main.js"></script>
                   <script>
+                  history.forward();
                     window.onload = function(){
                                                                           
                                                                       		// Line chart from swirlData for dashReport

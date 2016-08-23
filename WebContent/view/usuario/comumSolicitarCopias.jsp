@@ -1,3 +1,5 @@
+
+
 <html><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -137,6 +139,7 @@
                   <script src="view/assets/js/chartData.js"></script>
                   <script src="view/assets/js/main.js"></script>
                   <script>
+                  history.forward();
                     window.onload = function(){
                                                                                               
                                                                                           		// Line chart from swirlData for dashReport

@@ -36,7 +36,7 @@
 				<option value="">Selecione</option>
 				<c:forEach items="${tipoUsuario}" var="obj">
 					<option value="${obj.id}"
-						<c:if test="${obj.id eq p.tipoUsuario.id}">selected="selected"</c:if>>
+						<c:if test="${obj.id eq usuario.tipoUsuario.id}">selected="selected"</c:if>>
 						${obj.descricao}</option>
 				</c:forEach>
 			</select>
@@ -57,6 +57,7 @@
 		<p>
 			<input type="reset" value="Limpar"> &nbsp; &nbsp;
 			<input type="submit" value="Inserir">
+			 <a href="homeFuncionario">voltar</a>
 		</p>
 		
 	</form>

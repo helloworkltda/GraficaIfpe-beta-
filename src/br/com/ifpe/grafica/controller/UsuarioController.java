@@ -79,7 +79,9 @@ public class UsuarioController {
 		Usuario usuarioPreenchido = dao.buscarPorSiape(usuario.getSiape());
 		model.addAttribute("usuario", usuarioPreenchido);
 		
-		
+		TipoUsuarioDao dao1 = new TipoUsuarioDao();
+		List<TipoUsuario> usuarioPreenchido2 = dao1.listar();
+		model.addAttribute("tipoUsuario", usuarioPreenchido2);
 
 		return "usuario/alteraUsuario";
 						
@@ -105,8 +107,6 @@ public class UsuarioController {
 			return "principal/homeAdministrador";
 		}
 		return "index";
-		
-		
 	}
 
 	@RequestMapping("logout")
