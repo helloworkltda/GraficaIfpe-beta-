@@ -7,10 +7,7 @@ import java.util.Calendar;
 
 import org.springframework.web.multipart.MultipartFile;
 
-/**
- * @author Roberto Alencar
- *
- */
+
 public class Util {
 
     public static boolean fazerUploadImagem(MultipartFile imagem) {

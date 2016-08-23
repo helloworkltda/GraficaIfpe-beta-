@@ -68,9 +68,11 @@
           <div class="row">
             <div class="col-md-12">
               <h2 class="page-title">
-                <font color="exibirAlterarUsuario?siape=${usuario.siape}">Solicitar Cópias</font>
+                <font color="#666666">Solicitar Cópias</font>
               </h2>
               <center>
+               <div style="text-align: center; color: white;"> ${mensagem} </div>
+              <form action="incluirAnexo">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                   <div class="panel panel-default">
@@ -113,8 +115,12 @@
                        
                           <div class="col-sm-8">
                             <textarea class="form-control" style="resize:none" name="descricao" rows="5" cols="3"></textarea>
-
                           </div>
+                          
+                          <input type="hidden" name="usuariofk" value="${usuarioLogado.siape}"></input>
+                          
+                          
+                             
                   <br><br><br><br><br><br><br>
                           <div class="form-group">
                       
@@ -124,6 +130,10 @@
                             </div>
                           </div>
                         </div>
+                      </form>
+                      </form>
+                      </form>
+                      </form>
                       </form>
                     </div>
                   </div>

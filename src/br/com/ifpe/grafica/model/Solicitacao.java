@@ -8,7 +8,7 @@ public class Solicitacao {
 	private Date data;
 	private String descricao;
 	private String situacao;
-	private int siapeSopicitante;
+	private int siapeSolicitante;
 	private int siapeExecutor;
 	private String anexo1;
 	private String anexo2;
@@ -18,6 +18,18 @@ public class Solicitacao {
 	
 	
 	
+	public int getSiapeSolicitante() {
+		return siapeSolicitante;
+	}
+	public void setSiapeSolicitante(int siapeSolicitante) {
+		this.siapeSolicitante = siapeSolicitante;
+	}
+	public int getSiapeExecutor() {
+		return siapeExecutor;
+	}
+	public void setSiapeExecutor(int siapeExecutor) {
+		this.siapeExecutor = siapeExecutor;
+	}
 	public Usuario getUsuariofk() {
 		return usuariofk;
 	}
@@ -47,18 +59,6 @@ public class Solicitacao {
 	}
 	public void setSituacao(String situacao) {
 		this.situacao = situacao;
-	}
-	public int getSiapeSopicitante() {
-		return siapeSopicitante;
-	}
-	public void setSiapeSopicitante(int siapeSopicitante) {
-		this.siapeSopicitante = siapeSopicitante;
-	}
-	public int getSiapeExecutor() {
-		return siapeExecutor;
-	}
-	public void setSiapeExecutor(int siapeExecutor) {
-		this.siapeExecutor = siapeExecutor;
 	}
 	public String getAnexo1() {
 		return anexo1;

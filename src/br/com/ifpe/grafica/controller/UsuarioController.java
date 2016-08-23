@@ -1,5 +1,6 @@
 package br.com.ifpe.grafica.controller;
 
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -9,7 +10,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import br.com.ifpe.grafica.util.Util;
+import br.com.ifpe.grafica.model.Solicitacao;
+import br.com.ifpe.grafica.model.SolicitacaoDao;
 import br.com.ifpe.grafica.model.TipoUsuario;
 import br.com.ifpe.grafica.model.TipoUsuarioDao;
 import br.com.ifpe.grafica.model.Usuario;
@@ -53,6 +59,8 @@ public class UsuarioController {
 		return "usuario/sucessoCadastro";
 		
 	}
+	
+	
 	@RequestMapping("homeFuncionario")
 	public String Voltar() {
 		return "principal/homeFuncionario";
@@ -114,6 +122,35 @@ public class UsuarioController {
 		session.invalidate();
 		return "index";
 	}
+	
+	@RequestMapping("incluirAnexo")
+	public String incluirAnexo(@Valid Solicitacao solicitacao, BindingResult result, Model model,@RequestParam("file") MultipartFile imagem)throws Exception {
+		
+		if (Util.fazerUploadImagem(imagem)) {
+			solicitacao.setAnexo1(Calendar.getInstance().getTime() + " - " + imagem.getOriginalFilename());
+			solicitacao.setAnexo2(Calendar.getInstance().getTime() + " - " + imagem.getOriginalFilename());
+			solicitacao.setAnexo3(Calendar.getInstance().getTime() + " - " + imagem.getOriginalFilename());
+			solicitacao.setAnexo4(Calendar.getInstance().getTime() + " - " + imagem.getOriginalFilename());
+		}
+	
+		try {
+			if (result.hasErrors()) {
+				model.addAttribute("mensagem"," Cadastrado com sucesso");
+				return "forward:incluirAnexo";
+				
+			}
+
+			SolicitacaoDao dao = new SolicitacaoDao();
+
+			dao.salvar(solicitacao);
+			model.addAttribute("mensagem"," Cadastrado com sucesso");
+			
+		} catch (Exception e) {
+			System.out.println("OK");
+		}
+		return "usuario/comumSolicitarCopias";
+		
 
 
+}
 }

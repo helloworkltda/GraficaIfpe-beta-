@@ -27,7 +27,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 			if(usuario.getTipoUsuario().getId() == 1){
 				if (uri.contains("assets") || uri.contains("css") || uri.contains("images") || uri.contains("js")
 						|| uri.endsWith("testee/") || uri.endsWith("homeFuncionario") || uri.endsWith("comumSolicita")
-						|| uri.endsWith("homeComum") || uri.endsWith("exibirAlterarUsuario")) {
+						|| uri.endsWith("homeComum") || uri.endsWith("exibirAlterarUsuario")|| uri.endsWith("incluirAnexo")) {
 					return true;
 				}
 			}else{
