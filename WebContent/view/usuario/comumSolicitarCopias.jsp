@@ -1,4 +1,4 @@
-
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <html><head>
     <meta charset="UTF-8">
@@ -72,40 +72,41 @@
               </h2>
               <center>
                <div style="text-align: center; color: white;"> ${mensagem} </div>
-              <form action="incluirAnexo">
+             <form:form method="post" action="save" 
+		modelAttribute="uploadForm" enctype="multipart/form-data">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                   <div class="panel panel-default">
                     <div class="panel-body">
-<form method="get" class="form-horizontal">
+
                       <label class="col-sm-2 control-label">Anexo #1</label>
                       
-                        <input id="input-43" type="file" multiple="" name="anexo1">
+                        <input id="input-43" type="file" name="files[0]">
 
                         <div class="help-block" id="errorBlock43"></div>
                       <br><br>
 
 
 <label class="col-sm-2 control-label">Anexo #2</label>
-                      <form method="get" class="form-horizontal">
+                     
 
-                        <input id="input-44" type="file" multiple="" name="anexo2">
+                        <input id="input-44" type="file" name="files[1]">
 
                         <div class="help-block" id="errorBlock44"></div>
                       <br><br>
 
 <label class="col-sm-2 control-label">Anexo #3</label>
-                      <form method="get" class="form-horizontal">
+                      
 
-                        <input id="input-45" type="file" multiple="" name="anexo3">
+                        <input id="input-45" type="file" name="files[2]">
 
                         <div class="help-block" id="errorBlock45"></div>
                       <br><br>
 
 <label class="col-sm-2 control-label">Anexo #4</label>
-                      <form method="get" class="form-horizontal">
+                  
 
-                        <input id="input-46" type="file" multiple="" name="anexo4">
+                        <input id="input-46" type="file"  name="files[3]">
 
                         <div class="help-block" id="errorBlock46"></div>
                       <br><br>
@@ -130,11 +131,8 @@
                             </div>
                           </div>
                         </div>
-                      </form>
-                      </form>
-                      </form>
-                      </form>
-                      </form>
+                      </form:form>
+            
                     </div>
                   </div>
                   

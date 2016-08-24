@@ -51,7 +51,7 @@ public class UsuarioController {
 			UsuarioDao dao = new UsuarioDao();
 
 			dao.salvar(usuario);
-			model.addAttribute("mensagem", usuario.getNome()+" Cadastrado com sucesso");
+			model.addAttribute("mensagem", "Usuário cadastrado com sucesso");
 			
 		} catch (Exception e) {
 			System.out.println("OKOKOKOKOK");

@@ -102,3 +102,83 @@ form[role=login] {
 	font-size: 16px;
 	color: #8A978C;
 }
+
+/*-- Form do Cadastro -- */
+
+
+.cadastro-form {
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 1px;
+	max-width: 420px;
+}
+	.cadastro-form > section {
+		padding: 35px 35px 25px 35px;
+		border-radius: 5px;
+	}
+	.cadastro-form a {
+		color: #fff;
+	}
+	.cadastro-form img {
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+
+form[role=cadastro] {
+	font: 18px/2.2em Arial, serif;
+	color: #fff;
+}	
+	form[role=cadastro] input,
+	form[role=cadastro] > button {
+		font-size: 15px;
+		font-weight: none;
+		padding: 10px 30px;
+	}
+	form[role=cadastro] input {
+		
+		background: rgba(250,250,250,0.9);
+		border: 3px solid #ccc;
+		height: 3em;
+		padding: 10px 10px;
+		border-radius: 7px;
+		
+		-webkit-box-shadow: inset 0 0 1px 1px rgba(150, 150, 150, .1);
+		-moz-box-shadow: inset 0 0 1px 1px rgba(150, 150, 150, .1);
+		box-shadow: inset 0 0 1px 1px rgba(150, 150, 150, .1);
+
+	}
+
+	form[role=cadastro] select,
+	form[role=cadastro] > button {
+		font-size: 15px;
+		font-weight: none;
+		padding: 10px 30px;
+	}
+	form[role=cadastro] select {
+		
+		background: rgba(250,250,250,0.9);
+        color: #636c64;
+		border: 3px solid #ccc;
+		height: 3em;
+		padding: 10px 10px;
+		border-radius: 7px;
+		
+		-webkit-box-shadow: inset 0 0 1px 1px rgba(150, 150, 150, .1);
+		-moz-box-shadow: inset 0 0 1px 1px rgba(150, 150, 150, .1);
+		box-shadow: inset 0 0 1px 1px rgba(150, 150, 150, .1);
+
+	}
+	form[role=cadastro] > div {
+		margin: 30px 0;
+		position: relative; 
+	}
+	form[role=cadastro] > button {
+		margin-top: 1px;
+		margin-bottom: 10px;
+		font-weight: bold;
+		background: #0c56a9;
+		border: 2px solid #0c4584;
+		border-radius: 8px;
+	}

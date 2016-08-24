@@ -7,7 +7,7 @@ public class Solicitacao {
 	private int codigo;
 	private Date data;
 	private String descricao;
-	private String situacao;
+	private int status;
 	private int siapeSolicitante;
 	private int siapeExecutor;
 	private String anexo1;
@@ -54,11 +54,12 @@ public class Solicitacao {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public String getSituacao() {
-		return situacao;
+
+	public int getStatus() {
+		return status;
 	}
-	public void setSituacao(String situacao) {
-		this.situacao = situacao;
+	public void setStatus(int status) {
+		this.status = status;
 	}
 	public String getAnexo1() {
 		return anexo1;

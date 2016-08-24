@@ -10,41 +10,44 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class Util {
 
-    public static boolean fazerUploadImagem(MultipartFile imagem) {
+	public static boolean fazerUploadImagem(MultipartFile imagem) {
+		
+		boolean sucessoUpload = false;
+		if (!imagem.isEmpty()) {
+			String nomeArquivo = imagem.getOriginalFilename(); 
+			try {
+				// Criando o diret�rio para armazenar o arquivo
+				//COLOCAR File.separator PARA CADA / QUE ENCONTRAR
+				// C:\Users\Suporte\git\connectwolrd
+				String workspaceProjeto =  "/home/administrador/git/GraficaIfpe-beta-";
+				//String workspaceProjeto = "C:" + File.separator + "Users" + File.separator +"Suporte" + File.separator+ "git" + File.separator + "connectwolrd";
+				File dir = new File(workspaceProjeto + File.separator+ "WebContent" + File.separator+ "view" + File.separator +"anexos");
+				
+				if (!dir.exists()) {
+					dir.mkdirs();
+				}
 
-	boolean sucessoUpload = false;
+				// Criando o arquivo no diretorio
+				File serverFile = new File(workspaceProjeto + File.separator + "WebContent" + File.separator + "view" + File.separator+"anexos" +File.separator + Calendar.getInstance().getTime() + " - " + nomeArquivo);
+				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
+				stream.write(imagem.getBytes()); stream.close();
 
-	if (!imagem.isEmpty()) {
+				System.out.println("Arquivo armazenado em:" + serverFile.getAbsolutePath()); System.out.println("Voce fez o upload do arquivo " + nomeArquivo + " com sucesso");
+				sucessoUpload = true;
 
-	    String nomeArquivo = imagem.getOriginalFilename();
+			} 
+			catch (Exception e) {
+				System.out.println("Voce falhou em carregar o arquivo " + nomeArquivo + " => " + e.getMessage());
+			}
 
-	    try {
-		// Criando o diretório para armazenar o arquivo
-		String workspaceProjeto = "/home/administrador/workspace/testee";
-		File dir = new File(System.getProperty("user.dir") + workspaceProjeto + "/WebContent/view/img");
-		if (!dir.exists()) {
-		    dir.mkdirs();
+		}
+		else {
+			System.out.println("Voce falhou em carregar o arquivo porque ele esta vazio ");
 		}
 
-		// Criando o arquivo no diretório
-		File serverFile = new File(dir.getAbsolutePath() + File.separator + Calendar.getInstance().getTime() + " - " + nomeArquivo);
-		BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
-		stream.write(imagem.getBytes());
-		stream.close();
-
-		System.out.println("Arquivo armazenado em:" + serverFile.getAbsolutePath());
-		System.out.println("Você fez o upload do arquivo " + nomeArquivo + " com sucesso");
-		sucessoUpload = true;
-
-	    } catch (Exception e) {
-		System.out.println("Você falhou em carregar o arquivo " + nomeArquivo + " => " + e.getMessage());
-	    }
-
-	} else {
-	    System.out.println("Você falhou em carregar o arquivo porque ele está vazio ");
-	}
-
-	return sucessoUpload;
-    }
+		return sucessoUpload;
+		}
+    
+    
 
 }

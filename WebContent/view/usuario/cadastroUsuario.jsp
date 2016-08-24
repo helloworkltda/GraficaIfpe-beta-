@@ -4,7 +4,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html><head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,43 +17,57 @@
     
 
   </head><body>
-  <div class=logoinicio><a href=""><img src="view/assets/images/logo.png" height=24px></a></div>
-    <section class="container login-form">
+  <section class="container cadastro-form">
       <section>
-        <form method="post" action="incluirUsuario" role="login" id="form_contato">
+        <form method="post" action="incluirUsuario" role="cadastro" id="form_contato">
           <img src="view/assets/images/cadastro.png" alt="" class="img-responsive">
-          <div class="form-group">
-          
-            <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome Completo" maxlength="50" >
-            <span class="glyphicon glyphicon-pencil"></span>
+    <table border=0 width=100%>
             
-          </div>
-          <div class="form-group">
-            <input pattern="[0-9]+$" type="text" name="siape" id="siape"  class="form-control" placeholder="Matricula SIAPE" maxlength="7" onkeyup="validar(this,'num');" />
-            <span class="glyphicon glyphicon-user"></span>
-          </div>
-          <div class="form-group">
-            <input type="text" name="cargo" id="cargo"  class="form-control" placeholder="Cargo do Funcionario" maxlength="50">
-            <span class="glyphicon glyphicon-briefcase"></span>
-          </div>
-          <div class="form-group">
-            <input type="email" name="email" id="email"  class="form-control" placeholder="E-mail" maxlength="50">
-            <span class="glyphicon glyphicon-envelope"></span>
-          </div>
-          <div class="form-group">
-            <input type="password" name="senha" id="senha"  class="form-control" placeholder="Senha" maxlength="20">
-            <span class="glyphicon glyphicon-lock"></span>
-          </div>
-          <div class="form-group">
-            <input type="password" name="Csenha" id="Csenha"  class="form-control" placeholder="Confirmar Senha" maxlength="20">
-            <span class="glyphicon glyphicon-lock"></span>
-          </div>
-          
-          <input type="hidden" name="tipoUsuario" value="1"></input>
-          
-          <button type="submit" name="go" class="btn btn-primary btn-block">Cadastrar</button>
+                <tr><td><label>Nome Completo</label></td></tr>
+                <tr><td>
+                  <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome e Sobrenome" maxlength="40">
+                </td></tr>
+
+                <tr><td><label><br>Matrícula SIAPE</label></td></tr>
+                <tr><td>
+                  <input type="text" id="siape" name="siape" class="form-control" placeholder="SIAPE válido" maxlength="7" onkeyup="validar(this,'num');" />
+
+                </td></tr>
+             
+                <tr><td><label><br>Cargo do Funcionário</label></td></tr>
+                <tr><td>
+
+                  <select id="cargo" name="cargo" style="width: 320px;">
+                  <option value=""> Selecionar Cargo </option>
+                 
+                    <option value="Docente"> Docente </option>
+                    <option value="Técnico Administrativo"> Técnico Administrativo </option>
+                  
+                </select>
+                </td></tr>
+
+                <tr><td><label><br>E-mail</label></td></tr>
+                <tr><td>
+                  <input type="text" name="email" id="email" class="form-control" placeholder="E-mail válido" maxlength="50"/>
+
+                </td></tr>
+
+                <tr><td><label><br>Senha</label></td></tr>
+                <tr><td>
+                  <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha (Máx. de 20 caracteres)" maxlength="20"/>
+
+                </td></tr>
+
+                <tr><td><label><br>Confirmar Senha</label></td></tr>
+                <tr><td>
+                  <input type="password" name="Csenha" id="Csenha" class="form-control" placeholder="Confirmar Senha" maxlength="20"/>
+
+                </td></tr>
+
+      </table><br>
+          <button type="submit" name="go" class="btn btn-primary btn-block" style='height:50px'>Cadastrar</button>
           <p>
-          <a href="login">Voltar ao Inicio</a>
+          <a href="index.html">Voltar ao Início</a>
         </form>
       </section>
     </section>
@@ -64,7 +77,7 @@
     
     
   	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
        <script>
        history.forward();
              $(function(){
@@ -93,24 +106,24 @@
             	       },
             	       messages:{
             	             nome:{
-            	                    required:"Por favor, informe seu nome",
-            	                    minlength:"O nome deve ter pelo menos 3 caracteres"
+            	                    required:"<font size='3' color='#ff4c4c'>Por favor, informe seu nome</font>",
+            	                    minlength:"<font size='3' color='#ff4c4c'>O nome deve ter pelo menos 3 caracteres</font>"
             	             },
             	             email:{
-            	                    required:"É necessário informar um email",
-            	                   	remote: "EMAIL Existente"
+            	                    required:"<font size='3' color='#ff4c4c'>É necessário informar um E-mail</font>",
+            	                   	remote: "<font size='3' color='#ff4c4c'>EMAIL Existente</font>"
             	             },
             	             siape:{
-            	                    required:"SIAPE não pode ficar em branco",
-            	                    remote: "SIAPE Existente"
+            	                    required:"<font size='3' color='#ff4c4c'>O campo 'SIAPE' é obrigatório</font>",
+            	                    remote: "<font size='3' color='#ff4c4c'>SIAPE Existente</font>"
             	             },
             	             senha:{
-            	            	 	required:"O campo senha é obrigatorio",
-            	            	 	minlength:"O senha deve ter pelo menos 8 caracteres"
+            	            	 	required:"<font size='3' color='#ff4c4c'>O campo 'Senha' é obrigatorio</font>",
+            	            	 	minlength:"<font size='3' color='#ff4c4c'>O senha deve ter pelo menos 8 caracteres</font>"
             	             },
             	             Csenha:{
-            	            	 required:"O campo senha é obrigatorio",
-            	            	 equalTo:"Senhas diferentes"
+            	            	 required:"<font size='3' color='#ff4c4c'>O campo 'Senha' é obrigatorio</font>",
+            	            	 equalTo:"<font size='3' color='#ff4c4c'>Senhas diferentes</font>"
             	             }
             	       }
             	});
