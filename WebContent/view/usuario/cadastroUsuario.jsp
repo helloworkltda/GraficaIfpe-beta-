@@ -41,7 +41,7 @@
                   <option value=""> Selecionar Cargo </option>
                  
                     <option value="Docente"> Docente </option>
-                    <option value="Técnico Administrativo"> Técnico Administrativo </option>
+                    <option value="Tecnico Administrativo"> Técnico Administrativo </option>
                   
                 </select>
                 </td></tr>
@@ -63,7 +63,7 @@
                   <input type="password" name="Csenha" id="Csenha" class="form-control" placeholder="Confirmar Senha" maxlength="20"/>
 
                 </td></tr>
-
+						<input type="hidden" value="1" name="tipoUsuario">
       </table><br>
           <button type="submit" name="go" class="btn btn-primary btn-block" style='height:50px'>Cadastrar</button>
           <p>
