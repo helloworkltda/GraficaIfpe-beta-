@@ -66,6 +66,7 @@
   	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
        <script>
+       history.forward();
              $(function(){
             	 $("#form_contato").validate({
             	       rules : {

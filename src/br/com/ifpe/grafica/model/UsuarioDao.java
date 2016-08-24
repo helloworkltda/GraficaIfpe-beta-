@@ -43,17 +43,17 @@ public class UsuarioDao {
 
 	public void alterar(Usuario usuario) {
 
-		String sql = "UPDATE usuario SET siape = ? , nome = ? , cargo = ? , email  = ? , senha = ? , tipo_id = ? WHERE siape = ?";
+		String sql = "UPDATE usuario SET  nome = ? , cargo = ? , email  = ? , senha = ? , tipo_id = ? WHERE siape = ?";
 
 		try {
 
 			PreparedStatement stmt = connection.prepareStatement(sql);
-			stmt.setInt(1, usuario.getSiape());
-			stmt.setString(2, usuario.getNome());
-			stmt.setString(3, usuario.getCargo());
-			stmt.setString(4, usuario.getEmail());
-			stmt.setString(5, usuario.getSenha());
-			stmt.setInt(6, usuario.getTipoUsuario().getId());
+			stmt.setString(1, usuario.getNome());
+			stmt.setString(2, usuario.getCargo());
+			stmt.setString(3, usuario.getEmail());
+			stmt.setString(4, usuario.getSenha());
+			stmt.setInt(5, usuario.getTipoUsuario().getId());
+			stmt.setInt(6, usuario.getSiape());
 			stmt.execute();
 			stmt.close();
 			

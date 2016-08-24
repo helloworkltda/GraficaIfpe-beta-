@@ -32,7 +32,7 @@
 		</p>
 		
 		<p>
-			Tipo Usuario: <br /> <select name="categoriaProduto">
+			Tipo Usuario: <br /> <select name="tipoUsuario">
 				<option value="">Selecione</option>
 				<c:forEach items="${tipoUsuario}" var="obj">
 					<option value="${obj.id}"
@@ -56,7 +56,8 @@
 		
 		<p>
 			<input type="reset" value="Limpar"> &nbsp; &nbsp;
-			<input type="submit" value="Inserir">
+			<input type="submit" value="Alterar">
+			<br><br>
 			 <a href="homeFuncionario">voltar</a>
 		</p>
 		

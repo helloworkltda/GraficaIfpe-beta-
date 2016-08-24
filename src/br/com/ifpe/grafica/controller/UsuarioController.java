@@ -94,6 +94,16 @@ public class UsuarioController {
 		return "usuario/alteraUsuario";
 						
 	    }
+	 
+	 @RequestMapping("alterarUsuario")
+	    public String alterarUsuario(Usuario usuario, Model model) {
+
+		UsuarioDao dao = new UsuarioDao();
+		dao.alterar(usuario);
+		model.addAttribute("msg", "Usuário alterado com sucesso !");
+
+		return "forward:exibirAlterarUsuario";
+	    }
 
 	@RequestMapping("efetuarLogin")
 	public String efetuarLogin(Usuario usuario, HttpSession session, Model model) {
