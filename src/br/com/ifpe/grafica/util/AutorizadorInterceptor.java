@@ -33,7 +33,8 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 			}else{
 				if (uri.contains("assets") || uri.contains("css") || uri.contains("images") || uri.contains("js")
 						|| uri.endsWith("testee/") || uri.endsWith("homeAdministrador") || uri.endsWith("AdmSolitar")
-						|| uri.endsWith("homeAdm")) {
+						|| uri.endsWith("homeAdm") || uri.endsWith("exibirAlterarUsuarioAdm") || uri.endsWith("alterarUsuarioAdm")
+						|| uri.endsWith("AdmSolicitar")) {
 					return true;
 				}
 			}

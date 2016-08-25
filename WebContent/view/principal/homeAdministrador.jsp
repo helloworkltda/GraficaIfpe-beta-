@@ -39,7 +39,7 @@
           <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> ${usuarioLogado.nome}<span>&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
           <ul>
             <li>
-              <a href="#">Editar Conta</a>
+              <a href="exibirAlterarUsuarioAdm">Editar Conta</a>
             </li>
             <li>
               <a href="logout">Logout</a>
@@ -57,7 +57,7 @@
             <a href="homeAdm"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
-            <a href="AdmSolitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+            <a href="AdmSolicitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
           <li>
             <a href="#"><i class="fa fa-table"></i>Consultar Solicitações</a>

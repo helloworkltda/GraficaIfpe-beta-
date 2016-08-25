@@ -57,7 +57,7 @@
             <a href="homeAdm"><i class="fa fa-home"></i>Home</a>
           </li>
           <li class="open">
-            <a href="#;"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+            <a href="AdmSolitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
           <li>
             <a href="#"><i class="fa fa-table"></i>Consultar Solicitações</a>
@@ -78,7 +78,7 @@
                 <font color="#999999">&nbsp;Administração /</font>
                 <font color="#666666">Solicitar Cópias</font>
               </h2>
-              <center>
+              
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                   <div class="panel panel-default">
@@ -169,7 +169,7 @@
                                                                                           	}
                   </script>
                 </div>
-              </center>
+             
             </div>
           </div>
         </div>
