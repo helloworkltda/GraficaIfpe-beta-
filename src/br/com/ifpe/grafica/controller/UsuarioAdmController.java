@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+
 import br.com.ifpe.grafica.model.Solicitacao;
 import br.com.ifpe.grafica.model.SolicitacaoDao;
 import br.com.ifpe.grafica.model.TipoUsuario;
@@ -114,5 +115,16 @@ public class UsuarioAdmController {
 
 		return "forward:alterarUsuarioAdm";
 	    }
+	 
+	 @RequestMapping("admListarUsuario")
+		public String admListarUsuario(Model model) {
+		 
 
+			UsuarioDao dao = new UsuarioDao();
+			List<Usuario> listaUsuario = dao.listar();
+			model.addAttribute("listaUsuario", listaUsuario);
+			
+		 
+			return "adm/admListaUsuarios";
+		}
 }

@@ -57,13 +57,13 @@
             <a href="homeAdm"><i class="fa fa-home"></i>Home</a>
           </li>
           <li class="open">
-            <a href="#;"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+            <a href="AdmSolicitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
           <li>
             <a href="#"><i class="fa fa-table"></i>Consultar Solicitações</a>
           </li>
           <li>
-            <a href="#"><i class="fa fa-user"></i>Lista de Usuários</a>
+            <a href="admListarUsuario"><i class="fa fa-user"></i>Lista de Usuários</a>
           </li>
           <li>
             <a href="#"><i class="fa fa-edit"></i>Cadastrar Usuário</a>

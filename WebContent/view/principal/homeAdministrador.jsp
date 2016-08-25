@@ -63,7 +63,7 @@
             <a href="#"><i class="fa fa-table"></i>Consultar Solicitações</a>
           </li>
           <li>
-            <a href="#"><i class="fa fa-user"></i>Lista de Usuário</a>
+            <a href="admListarUsuario"><i class="fa fa-user"></i>Lista de Usuários</a>
           </li>
           <li>
             <a href="#"><i class="fa fa-edit"></i>Cadastrar Usuário</a>

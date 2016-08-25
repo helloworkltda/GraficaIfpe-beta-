@@ -49,7 +49,7 @@ public class UsuarioController {
 			}
 
 			UsuarioDao dao = new UsuarioDao();
-
+			
 			dao.salvar(usuario);
 			model.addAttribute("mensagem", "Usuário cadastrado com sucesso");
 			
