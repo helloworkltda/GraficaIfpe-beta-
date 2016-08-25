@@ -22,7 +22,7 @@
         <form method="post" action="efetuarLogin" role="login">
           <img src="view/assets/images/logo.png" alt="" class="img-responsive">
           <div class="form-group">
-            <input type="text" name="siape" required="" class="form-control" placeholder="Digite seu SIAPE" maxlength="7" onkeypress='return SomenteNumero(event)'/>
+            <input type="text" name="siape" id="siape" required="" class="form-control" placeholder="Digite seu SIAPE" maxlength="7" onkeypress='return SomenteNumero(event)'/>
             <span class="glyphicon glyphicon-user"></span>
           </div>
           <div class="form-group">
@@ -40,5 +40,16 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="view/assets/bootstrap/js/bootstrap.min.js"></script>
   	<script type="text/javascript">history.forward();</script>
-
+	<script type="text/javascript">
+	document.getElementById("siape").onkeypress = function(e) {
+        var chr = String.fromCharCode(e.which);
+        if ("1234567890".indexOf(chr) < 0)
+          return false;
+      };   
+	
+	
+	
+	
+	
+	</script>
 </body></html>

@@ -48,7 +48,7 @@
 
                 <tr><td><label><br>E-mail</label></td></tr>
                 <tr><td>
-                  <input type="text" name="email" id="email" class="form-control" placeholder="E-mail válido" maxlength="50"/>
+                  <input type="email" name="email" id="email" class="form-control" placeholder="E-mail válido" maxlength="50"/>
 
                 </td></tr>
 
@@ -95,6 +95,10 @@
             	                    required:true,
             	                    remote:"view/usuario/verificarSiape.jsp"
             	             },
+            	             cargo:{
+         	                    required:true
+         	                    
+         	             	},
             	             senha:{
             	            	 	required: true,
             						minlength:8
@@ -111,12 +115,17 @@
             	             },
             	             email:{
             	                    required:"<font size='3' color='#ff4c4c'>É necessário informar um E-mail</font>",
-            	                   	remote: "<font size='3' color='#ff4c4c'>EMAIL Existente</font>"
+            	                   	remote: "<font size='3' color='#ff4c4c'>EMAIL Existente</font>",
+            	                   	email: "<font size='3' color='#ff4c4c'>O campo EMAIL deve conter um email válido.</font>"
             	             },
             	             siape:{
             	                    required:"<font size='3' color='#ff4c4c'>O campo 'SIAPE' é obrigatório</font>",
             	                    remote: "<font size='3' color='#ff4c4c'>SIAPE Existente</font>"
             	             },
+            	             cargo:{
+         	                    required:"<font size='3' color='#ff4c4c'>O campo 'Cargo' é obrigatório</font>"
+         	                    
+         	             	},
             	             senha:{
             	            	 	required:"<font size='3' color='#ff4c4c'>O campo 'Senha' é obrigatorio</font>",
             	            	 	minlength:"<font size='3' color='#ff4c4c'>O senha deve ter pelo menos 8 caracteres</font>"
@@ -132,6 +141,7 @@
             	
              });
              
+            
              
              document.getElementById("siape").onkeypress = function(e) {
                  var chr = String.fromCharCode(e.which);

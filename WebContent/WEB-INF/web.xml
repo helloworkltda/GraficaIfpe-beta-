@@ -15,7 +15,7 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-	
+
 	<servlet>
 		<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -23,15 +23,23 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/spring-context.xml</param-value>
 		</init-param>
-		
+
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-	
-	
+
+
 	<servlet-mapping>
 		<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
-	
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/erros/404.html</location>
+	</error-page>
+
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/erros/Erro.html</location>
+	</error-page>
 </web-app>
