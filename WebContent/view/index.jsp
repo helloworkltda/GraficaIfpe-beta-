@@ -30,7 +30,7 @@
             <span class="glyphicon glyphicon-lock"></span>
           </div>
           
-          <div style="text-align: center; color: white;"> ${mensagem} </div>
+          <div style="text-align: center; color: #ff4c4c;"> ${mensagem} </div>
           
           <button type="submit" name="go" class="btn btn-primary btn-block">Entrar</button>
           <a href="exibir">Ainda não é cadastrado?</a>

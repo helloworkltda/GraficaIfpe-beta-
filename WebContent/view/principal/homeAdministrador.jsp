@@ -98,7 +98,7 @@
                               </div>
                             </div>
                             </a>
-                            <a href="AdmSolitar" class="block-anchor panel-footer text-center">Solicitar Cópias &nbsp; <i class="fa fa-arrow-right"></i></a>
+                            <a href="AdmSolicitar" class="block-anchor panel-footer text-center">Solicitar Cópias &nbsp; <i class="fa fa-arrow-right"></i></a>
                           </div>
                         </div>
                         <div class="col-md-3">
@@ -132,7 +132,7 @@
                           </div>
                         </div>
                         </a>
-                        <a href="#" class="block-anchor panel-footer text-center">Acessar Lista de Usuários &nbsp; <i class="fa fa-arrow-right"></i></a>
+                        <a href="admListarUsuario" class="block-anchor panel-footer text-center">Acessar Lista de Usuários &nbsp; <i class="fa fa-arrow-right"></i></a>
                       </div>
                     </div>
                     <div class="col-md-3">
