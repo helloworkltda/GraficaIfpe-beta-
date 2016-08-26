@@ -1,4 +1,5 @@
 
+
     
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -8,8 +9,10 @@
 <html><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="theme-color" content="#3e454c">
     <title>IFPE Cópias - Formulário de Cadastro</title>
     <link href="http://fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="view/assets/bootstrap/css/bootstrap.min.css">

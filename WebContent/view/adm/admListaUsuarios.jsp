@@ -71,7 +71,7 @@
 				
 				<li class="open"><a href="admListarUsuario"><i class="fa fa-user"></i>Lista de Usuário</a></li>
 				
-				<li><a href="#"><i class="fa fa-edit"></i>Cadastrar Usuário</a>
+				<li><a href="admCadastrar"><i class="fa fa-edit"></i>Cadastrar Usuário</a>
 				</li>
 			</ul>
 		</nav>

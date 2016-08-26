@@ -1,6 +1,7 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
 
 <html><head>
     <meta charset="UTF-8">
@@ -38,10 +39,10 @@
       </span>
       <ul class="ts-profile-nav">
         <li class="ts-account">
-          <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> ${usuarioLogado.nome} <span>&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
+          <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt="">${usuarioLogado.nome}<span>&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
           <ul>
             <li>
-              <a href="exibirAlterarUsuarioAdm?siape=${usuarioLogado.siape}">Editar Conta</a>
+              <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}"">Editar Conta</a>
             </li>
             <li>
               <a href="logout">Logout</a>
@@ -55,20 +56,13 @@
         <br>
         <ul class="ts-sidebar-menu">
           <li class="ts-label">Menu</li>
+          
+          
           <li>
-            <a href="homeAdm"><i class="fa fa-home"></i>Home</a>
+            <a href="homeFuncionario"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
-            <a href="AdmSolicitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-table"></i>Consultar Solicitações</a>
-          </li>
-          <li>
-            <a href="admListarUsuario"><i class="fa fa-user"></i>Lista de Usuários</a>
-          </li>
-          <li class="open">
-            <a href="admCadastrar"><i class="fa fa-edit"></i>Cadastrar Usuário</a>
+            <a href="comumSolicita"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
         </ul>
       </nav>
@@ -77,41 +71,33 @@
           <div class="row">
             <div class="col-md-12">
               <h2 class="page-title">
-                <font color="#999999">&nbsp;Administração /</font>
-                <font color="#666666">Cadastrar Usuário</font>
+                <font color="#999999">&nbsp;Funcionário /</font>
+                <font color="#666666">Editar Conta</font>
               </h2>
 
               <center>
 
-              <form method="post" action="incluirUsuarioAdm" role="cadastro" id="form_contato">
+              <form method="post" action="alterarUsuario" role="cadastro" id="form_contato">
     <table border=0 width='350px'>
-
-
-                <tr><td><label><br>Categoria do Usuário</label></td></tr>
+			
+			
+			<input type="hidden" name="tipoUsuario" value="${usuario.tipoUsuario.id}">
+           
+			
+			
+                <tr><td><label><br>Nome Completo</label></td></tr>
                 <tr><td>
-
-                  <select name="tipoUsuario" class="form-control">
-						<option value="">Selecione</option>
-						<c:forEach items="${listaTipoUsuarioDao}" var="obj">
-							<option value="${obj.id}">${obj.descricao}</option>
-						</c:forEach>
-				</select>
-                </td></tr>
-
-
-                <tr><td><label><br><br>Nome Completo</label></td></tr>
-                <tr><td>
-                  <input type="text" id="nome" name="nome" class="form-control" maxlength="40">
+                  <input type="text" id="nome" name="nome" class="form-control" maxlength="40" value="${usuario.nome}">
 
                 </td></tr>
 
 
                 <tr><td><label><br>Matrícula SIAPE</label></td></tr>
                 <tr><td>
-                  <input type="text" id="siape" name="siape" class="form-control" maxlength="7"/>
+                  <input type="text" id="siape" name="siape" class="form-control" maxlength="7" value="${usuario.siape}"/>
 
                 </td></tr>
-             
+           
              
                 <tr><td><label><br>Cargo</label></td></tr>
                 <tr><td>
@@ -120,35 +106,35 @@
                   <option value=""> Selecionar Cargo </option>
                  
                     <option value="Docente"> Docente </option>
-                    <option value="Tecnico Administrativo"> Técnico Administrativo </option>
+                    <option value="Técnico Administrativo"> Técnico Administrativo </option>
                   
                 </select>
                 </td></tr>
 
                 <tr><td><label><br>E-mail</label></td></tr>
                 <tr><td>
-                  <input type="text" name="email" id="email" class="form-control" maxlength="50"/>
+                  <input type="text" name="email" id="email" class="form-control" maxlength="50" value="${usuario.email}"/>
 
                 </td></tr>
 
                 <tr><td><label><br>Senha</label></td></tr>
                 <tr><td>
-                  <input type="password" name="senha" id="senha" class="form-control" maxlength="20"/>
+                  <input type="password" name="senha" id="senha" class="form-control" maxlength="20" value="${usuario.senha}"/>
 
                 </td></tr>
 
                 <tr><td><label><br>Confirmar Senha</label></td></tr>
                 <tr><td>
-                  <input type="password" name="Csenha" id="Csenha" class="form-control" maxlength="20"/>
+                  <input type="password" name="Csenha" id="Csenha" class="form-control" maxlength="20" value="${usuario.senha}"/>
 
                 </td></tr>
 
       </table><br>
 
-      <button type="submit" name="go" class="btn btn-primary btn-block" style='height:50px; width:240px'> Cadastrar Novo Usuário </button>
+      <button type="submit" name="go" class="btn btn-primary btn-block" style='height:50px; width:240px'> Alterar Dados da Conta</button>
         </form>
         <br><br>
-              <div style="text-align: center; color: #ff4c4c;"> ${mensagem} </div>
+            
               </div>
             </div>
           </div>
@@ -165,12 +151,12 @@
     <script src="view/assets/js/fileinput.js"></script>
     <script src="view/assets/js/chartData.js"></script>
     <script src="view/assets/js/main.js"></script>
-  	
-  	
-  		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
        <script>
-       
+       history.forward();
              $(function(){
             	 $("#form_contato").validate({
             	       rules : {
@@ -180,11 +166,7 @@
             	             },
             	             email:{
             	                    required:true,
-            	                    remote:"view/usuario/verificarEmail.jsp"
-            	             },
-            	             siape:{
-            	                    required:true,
-            	                    remote:"view/usuario/verificarSiape.jsp"
+            	                    
             	             },
             	             cargo:{
          	                    required:true
@@ -209,10 +191,7 @@
             	                   	remote: "<font size='3' color='#ff4c4c'>EMAIL Existente</font>",
             	                   	email: "<font size='3' color='#ff4c4c'>O campo EMAIL deve conter um email válido.</font>"
             	             },
-            	             siape:{
-            	                    required:"<font size='3' color='#ff4c4c'>O campo 'SIAPE' é obrigatório</font>",
-            	                    remote: "<font size='3' color='#ff4c4c'>SIAPE Existente</font>"
-            	             },
+            	            
             	             cargo:{
          	                    required:"<font size='3' color='#ff4c4c'>O campo 'Cargo' é obrigatório</font>"
          	                    

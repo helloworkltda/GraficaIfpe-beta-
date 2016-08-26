@@ -66,7 +66,7 @@
             <a href="admListarUsuario"><i class="fa fa-user"></i>Lista de Usuários</a>
           </li>
           <li>
-            <a href="#"><i class="fa fa-edit"></i>Cadastrar Usuário</a>
+            <a href="admCadastrar"><i class="fa fa-edit"></i>Cadastrar Usuário</a>
           </li>
         </ul>
       </nav>
@@ -79,49 +79,56 @@
                 <font color="#666666">Solicitar Cópias</font>
               </h2>
               <center>
+               <div style="text-align: center; color: white;"> ${mensagem} </div>
+             <form:form method="post" action="save" modelAttribute="uploadForm" enctype="multipart/form-data">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                   <div class="panel panel-default">
                     <div class="panel-body">
-<form method="get" class="form-horizontal">
+
                       <label class="col-sm-2 control-label">Anexo #1</label>
                       
-                        <input id="input-43" type="file" multiple="">
+                        <input id="input-43" type="file" name="files[0]">
 
                         <div class="help-block" id="errorBlock43"></div>
                       <br><br>
 
 
 <label class="col-sm-2 control-label">Anexo #2</label>
-                      <form method="get" class="form-horizontal">
+                     
 
-                        <input id="input-44" type="file" multiple="">
+                        <input id="input-44" type="file" name="files[1]">
 
                         <div class="help-block" id="errorBlock44"></div>
                       <br><br>
 
 <label class="col-sm-2 control-label">Anexo #3</label>
-                      <form method="get" class="form-horizontal">
+                      
 
-                        <input id="input-45" type="file" multiple="">
+                        <input id="input-45" type="file" name="files[2]">
 
                         <div class="help-block" id="errorBlock45"></div>
                       <br><br>
 
 <label class="col-sm-2 control-label">Anexo #4</label>
-                      <form method="get" class="form-horizontal">
+                  
 
-                        <input id="input-46" type="file" multiple="">
+                        <input id="input-46" type="file"  name="files[3]">
 
                         <div class="help-block" id="errorBlock46"></div>
                       <br><br>
 
                         <div class="form-group">
                           <label class="col-sm-2 control-label">Descrição</label>
+                       
                           <div class="col-sm-8">
-                            <textarea class="form-control" style="resize:none" name="name" rows="5" cols="3"></textarea>
-
+                            <textarea class="form-control" style="resize:none" name="descricao" rows="5" cols="3"></textarea>
                           </div>
+                          
+                          <input type="hidden" name="usuariofk" value="${usuarioLogado.siape}"></input>
+                          
+                          
+                             
                   <br><br><br><br><br><br><br>
                           <div class="form-group">
                       
@@ -131,7 +138,8 @@
                             </div>
                           </div>
                         </div>
-                      </form>
+                      </form:form>
+            
                     </div>
                   </div>
                   
@@ -178,3 +186,4 @@
   
 
 </body></html>
+

@@ -34,63 +34,6 @@ public class UsuarioAdmController {
 		return "adm/admSolicitarCopias";
 	}
 
-	@RequestMapping("exibirCadastroAdm")
-	public String exibirUsuarioAdm(Model model) {
-
-		// Código para popular o combo de categoria de produto
-		TipoUsuarioDao dao = new TipoUsuarioDao();
-		List<TipoUsuario> listaTipoUsuarioDao = dao.listar();
-		model.addAttribute("listaTipoUsuarioDao", listaTipoUsuarioDao);
-
-		return "adm/cadastrarUsuario";
-	}
-
-	@RequestMapping("incluirUsuarioAdm")
-	public String incluirUsuarioAdm(@Valid Usuario usuario, BindingResult result, Model model) {
-
-		if (result.hasErrors()) {
-			return "forward:exibir";
-		}
-
-		UsuarioDao dao = new UsuarioDao();
-
-		dao.salvar(usuario);
-
-		model.addAttribute("mensagem", "O usuario " + usuario.getNome() + " foi inserida com sucesso !");
-
-		return "adm/cadastrarUsuario";
-	}
-
-	@RequestMapping("incluirAnexoAdm")
-	public String incluirAnexoAdm(@Valid Solicitacao solicitacao, BindingResult result, Model model,
-			@RequestParam("file") MultipartFile imagem) throws Exception {
-
-		if (Util.fazerUploadImagem(imagem)) {
-			solicitacao.setAnexo1(Calendar.getInstance().getTime() + " - " + imagem.getOriginalFilename());
-			solicitacao.setAnexo2(Calendar.getInstance().getTime() + " - " + imagem.getOriginalFilename());
-			solicitacao.setAnexo3(Calendar.getInstance().getTime() + " - " + imagem.getOriginalFilename());
-			solicitacao.setAnexo4(Calendar.getInstance().getTime() + " - " + imagem.getOriginalFilename());
-		}
-
-		try {
-			if (result.hasErrors()) {
-				model.addAttribute("mensagem", " Cadastrado com sucesso");
-				return "forward:incluirAnexo";
-
-			}
-
-			SolicitacaoDao dao = new SolicitacaoDao();
-
-			dao.salvar(solicitacao);
-			model.addAttribute("mensagem", " Cadastrado com sucesso");
-
-		} catch (Exception e) {
-			System.out.println("OK");
-		}
-		return "adm/admSolicitarCopias";
-
-	}
-	
 	@RequestMapping("exibirAlterarUsuarioAdm")
     public String exibirAlterarUsuarioAdm(Usuario usuario, Model model) {
 
@@ -102,7 +45,7 @@ public class UsuarioAdmController {
 	List<TipoUsuario> usuarioPreenchido2 = dao1.listar();
 	model.addAttribute("tipoUsuario", usuarioPreenchido2);
 
-	return "adm/alteraUsuarioAdm";
+	return "adm/admEditarConta";
 					
     }
 	
@@ -113,7 +56,7 @@ public class UsuarioAdmController {
 		dao.alterar(usuario);
 		model.addAttribute("msg", "Usuário alterado com sucesso !");
 
-		return "forward:alterarUsuarioAdm";
+		return "forward:exibirAlterarUsuarioAdm";
 	    }
 	 
 	 @RequestMapping("admListarUsuario")
@@ -129,7 +72,27 @@ public class UsuarioAdmController {
 		}
 	 
 	 @RequestMapping("admCadastrar")
-		public String admCadastrar() {
+		public String admCadastrar(Model model) {
+		 
+		    TipoUsuarioDao dao = new TipoUsuarioDao();
+			List<TipoUsuario> listaTipoUsuarioDao = dao.listar();
+			model.addAttribute("listaTipoUsuarioDao", listaTipoUsuarioDao);
+			return "adm/admCadastrar";
+		}
+	 
+	 @RequestMapping("incluirUsuarioAdm")
+		public String incluirUsuarioAdm(@Valid Usuario usuario, BindingResult result, Model model) {
+
+			if (result.hasErrors()) {
+				return "forward:admCadastrar";
+			}
+
+			UsuarioDao dao = new UsuarioDao();
+
+			dao.salvar(usuario);
+
+			model.addAttribute("mensagem", "O usuario " + usuario.getNome() + " foi inserida com sucesso !");
+
 			return "adm/admCadastrar";
 		}
 }
