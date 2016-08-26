@@ -79,12 +79,8 @@ public class UsuarioController {
 	}
 
 	@RequestMapping("exibirAlterarUsuario")
-	public String exibirAlterarUsuario(@Valid Usuario usuario,BindingResult result, Model model) {
+	public String exibirAlterarUsuario (Usuario usuario, Model model) {
 		
-		try {
-			if (result.hasErrors()) {
-				return "forward:exibirAlterarUsuario";
-			}
 		
 		UsuarioDao dao = new UsuarioDao();
 		Usuario usuarioPreenchido = dao.buscarPorSiape(usuario.getSiape());
@@ -94,9 +90,6 @@ public class UsuarioController {
 		List<TipoUsuario> usuarioPreenchido2 = dao1.listar();
 		model.addAttribute("tipoUsuario", usuarioPreenchido2);
 		
-		} catch (Exception e) {
-			System.out.println("OKOKOKOKOK");
-		}
 		return "usuario/funcionarioEditarConta";
 
 	}

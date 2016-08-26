@@ -1,13 +1,12 @@
 
 
-    
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 
 <html><head>
-    <meta charset="UTF-8">
+	 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <meta name="description" content="">
@@ -155,7 +154,7 @@
          
             document.getElementById("nome").onkeypress = function(e) {
                 var chr = String.fromCharCode(e.which);
-                if ("qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM".indexOf(chr) < 0  && " ".indexOf(chr) < 0)
+                if ("qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNMáéíóãõ".indexOf(chr) < 0  && " ".indexOf(chr) < 0)
                   return false;
               };   
             
