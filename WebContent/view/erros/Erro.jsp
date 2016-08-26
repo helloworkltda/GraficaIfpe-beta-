@@ -30,7 +30,7 @@
     
     <div class="proibido">
 
-    <img src="img/erro2.png">
+    <img src="view/assets/img/erro2.png">
 
     </div>
 

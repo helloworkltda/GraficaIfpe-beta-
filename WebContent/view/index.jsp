@@ -39,7 +39,7 @@
     </section>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="view/assets/bootstrap/js/bootstrap.min.js"></script>
-  	<script type="text/javascript">history.forward();</script>
+  	
 	<script type="text/javascript">
 	document.getElementById("siape").onkeypress = function(e) {
         var chr = String.fromCharCode(e.which);

@@ -66,7 +66,7 @@
             <a href="admListarUsuario"><i class="fa fa-user"></i>Lista de Usuários</a>
           </li>
           <li>
-            <a href="#"><i class="fa fa-edit"></i>Cadastrar Usuário</a>
+            <a href="admCadastrar"><i class="fa fa-edit"></i>Cadastrar Usuário</a>
           </li>
         </ul>
       </nav>
@@ -146,7 +146,7 @@
                           </div>
                         </div>
                         </a>
-                        <a href="#" class="block-anchor panel-footer text-center">Cadastrar Usuário &nbsp; <i class="fa fa-arrow-right"></i></a>
+                        <a href="admCadastrar" class="block-anchor panel-footer text-center">Cadastrar Usuário &nbsp; <i class="fa fa-arrow-right"></i></a>
                       </div>
                     </div>
                   </div>

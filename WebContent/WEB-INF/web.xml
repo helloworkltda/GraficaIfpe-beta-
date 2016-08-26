@@ -35,11 +35,11 @@
 
 	<error-page>
 		<error-code>404</error-code>
-		<location>/erros/404.html</location>
+		<location>/erros/404.jsp</location>
 	</error-page>
 
 	<error-page>
 		<exception-type>java.lang.Exception</exception-type>
-		<location>/erros/Erro.html</location>
+		<location>/erros/Erro.jsp</location>
 	</error-page>
 </web-app>

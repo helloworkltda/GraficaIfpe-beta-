@@ -127,4 +127,9 @@ public class UsuarioAdmController {
 		 
 			return "adm/admListaUsuarios";
 		}
+	 
+	 @RequestMapping("admCadastrar")
+		public String admCadastrar() {
+			return "adm/admCadastrar";
+		}
 }

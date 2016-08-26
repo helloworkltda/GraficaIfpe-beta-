@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
     
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -6,8 +6,9 @@
 
 
 <html><head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
     
     <title>IFPE Cópias - Formulário de Cadastro</title>
     <link href="http://fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" rel="stylesheet" type="text/css">
@@ -41,7 +42,7 @@
                   <option value=""> Selecionar Cargo </option>
                  
                     <option value="Docente"> Docente </option>
-                    <option value="Tecnico Administrativo"> Técnico Administrativo </option>
+                    <option value="Técnico Administrativo"> Técnico Administrativo </option>
                   
                 </select>
                 </td></tr>

@@ -15,9 +15,9 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 		String uri = request.getRequestURI();
 		
 																	
-		if (uri.contains("assets") || uri.contains("css") || uri.contains("images") || uri.contains("js")
+		if (uri.contains("assets") || uri.contains("css") || uri.contains("images") || uri.contains("img") || uri.contains("js")
 				|| uri.endsWith("testee/") || uri.endsWith("efetuarLogin") || uri.endsWith("login") || uri.endsWith("exibir")
-				|| uri.endsWith("incluirUsuario")) {
+				|| uri.endsWith("incluirUsuario") || uri.endsWith("Erro.jsp") || uri.endsWith("404.jsp")) {
 			return true;
 		}
 		
@@ -34,7 +34,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 				if (uri.contains("assets") || uri.contains("css") || uri.contains("images") || uri.contains("js")
 						|| uri.endsWith("testee/") || uri.endsWith("homeAdministrador") || uri.endsWith("AdmSolitar")
 						|| uri.endsWith("homeAdm") || uri.endsWith("exibirAlterarUsuarioAdm") || uri.endsWith("alterarUsuarioAdm")
-						|| uri.endsWith("AdmSolicitar") || uri.endsWith("admListarUsuario")) {
+						|| uri.endsWith("AdmSolicitar") || uri.endsWith("admListarUsuario") || uri.endsWith("admCadastrar")) {
 					return true;
 				}
 			}
