@@ -99,7 +99,7 @@ public class UsuarioController {
 
 		UsuarioDao dao = new UsuarioDao();
 		dao.alterar(usuario);
-		model.addAttribute("msg", "Usuário alterado com sucesso !");
+		model.addAttribute("msg", "Usuário alterado com sucesso!");
 
 		return "forward:exibirAlterarUsuario";
 	}
@@ -112,7 +112,7 @@ public class UsuarioController {
 
 		if (usuarioLogado == null) {
 
-			model.addAttribute("mensagem", " Usuário não é cadastrado");
+			model.addAttribute("mensagem", " Usuário não cadastrado.");
 			return "index";
 		} else if (usuarioLogado.getTipoUsuario().getId() == USUARIOCOMUM) {
 			session.setAttribute("usuarioLogado", usuarioLogado);

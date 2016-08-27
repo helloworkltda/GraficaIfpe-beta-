@@ -34,7 +34,7 @@
 		<p>
 			Tipo Usuario: <br /> <select name="tipoUsuario">
 				<option value="">Selecione</option>
-				<c:forEach items="${tipoUsuario}" var="obj">
+				<c:forEach items="${cargo}" var="obj">
 					<option value="${obj.id}"
 						<c:if test="${obj.id eq usuario.tipoUsuario.id}">selected="selected"</c:if>>
 						${obj.descricao}</option>

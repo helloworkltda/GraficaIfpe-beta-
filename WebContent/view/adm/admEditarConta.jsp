@@ -34,7 +34,7 @@
       </span>
       <ul class="ts-profile-nav">
         <li class="ts-account">
-          <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> ${usuarioLogado.nome}<span>&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
+          <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> ${usuarioLogado.nome}<span>&nbsp;&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
           <ul>
             <li>
               <a href="exibirAlterarUsuarioAdm?siape=${usuarioLogado.siape}">Editar Conta</a>
@@ -80,7 +80,7 @@
               <center>
 
               <form method="post" action="alterarUsuarioAdm" role="cadastro" id="form_contato">
-    <table border=0 width='350px'>
+    			<table border=0 width='350px'>
 
 			
 			<input type="hidden" name="tipoUsuario" value="${usuario.tipoUsuario.id}">
@@ -190,7 +190,7 @@
             	             },
             	             email:{
             	                    required:"<font size='3' color='#ff4c4c'>É necessário informar um E-mail</font>",
-            	                   	remote: "<font size='3' color='#ff4c4c'>EMAIL Existente</font>",
+            	                   	
             	                   	email: "<font size='3' color='#ff4c4c'>O campo EMAIL deve conter um email válido.</font>"
             	             },
             	            

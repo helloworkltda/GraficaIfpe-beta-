@@ -11,7 +11,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-	 <meta http-equiv="refresh" content="3;url=http://localhost:8080/testee/login" />
+	 <meta http-equiv="refresh" content="2;url=http://localhost:8080/testee/login" />
 
   </head><body>
   <center>
@@ -21,7 +21,6 @@
           <h2>${mensagem}</h2>
           <br>
           Redirecionando à página inicial. Por favor, aguarde...
-
-
+          
 </center>
 </body></html>

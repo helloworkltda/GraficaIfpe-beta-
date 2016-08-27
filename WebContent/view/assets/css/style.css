@@ -667,7 +667,7 @@ li {
 .brand .ts-profile-nav .ts-account > a {
   width: 280px;
   background: #146755;
-text-align: right;
+  text-align: right;
 }
 .brand .ts-profile-nav .ts-account > a:hover {
   width: 280px;

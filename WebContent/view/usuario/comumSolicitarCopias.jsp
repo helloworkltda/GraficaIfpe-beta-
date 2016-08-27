@@ -38,7 +38,7 @@
       </span>
       <ul class="ts-profile-nav">
         <li class="ts-account">
-          <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> ${usuarioLogado.nome} <span>&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
+          <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> ${usuarioLogado.nome}<span>&nbsp;&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
           <ul>
             <li>
               <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}">Editar Conta</a>
@@ -68,6 +68,7 @@
           <div class="row">
             <div class="col-md-12">
               <h2 class="page-title">
+              <font color="#999999">&nbsp;Funcionário /</font>
                 <font color="#666666">Solicitar Cópias</font>
               </h2>
               <center>

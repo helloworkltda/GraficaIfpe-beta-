@@ -48,7 +48,7 @@
 		<ul class="ts-profile-nav">
 			<li class="ts-account"><a href="#"><img
 					src="view/assets/img/usuario.png" class="ts-avatar hidden-side"
-					alt=""> ${usuarioLogado.nome}<span>&nbsp;&nbsp;</span><i
+					alt=""> ${usuarioLogado.nome}<span>&nbsp;&nbsp;&nbsp;</span><i
 					class="fa fa-angle-down hidden-side"></i></a>
 				<ul>
 					<li><a
@@ -119,29 +119,28 @@
 												<td>${usuario.siape}</td>
 												<td>${usuario.email}</td>
 												<td>${usuario.cargo}</td>
-												<td>${usuario.tipoUsuario.descricao}</td>
+												<td>
+												<c:choose>
+												<c:when test="${usuario.tipoUsuario.id == 1}">
+												<font color="#2075c2"><b>${usuario.tipoUsuario.descricao}</b></font>
+												
+												</c:when>
+												<c:otherwise>
+												<font color="#cf0053"><b>${usuario.tipoUsuario.descricao}</b></font>
+												</c:otherwise>
+												</c:choose>
+												</td>
 											</tr>	
 										</c:forEach>
 										<tr>
-											<td>Tiger Nixon</td>
+											<td>Usu·rio Teste</td>
 
 											<td>1234567</td>
 
-											<td><a href="javascript:;">emailteste@gmail.com</a></td>
+											<td><a href="javascript:;">emailteste@teste.com</a></td>
 											<td>Docente</td>
 											<td><span style="color: #cf0053"><b>ADMINISTRADOR</b></span></td>
 										</tr>
-
-										<tr>
-											<td>Garrett Winters</td>
-
-											<td>1937485</td>
-
-											<td><a href="javascript:;">emailteste@gmail.com</a></td>
-											<td>Secretaria</td>
-											<td><span style="color: #2075c2"><b>FUNCION√ÅRIO</b></span></td>
-										</tr>
-
 
 									</tbody>
 								</table>
