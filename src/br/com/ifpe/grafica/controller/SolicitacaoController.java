@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 import br.com.ifpe.grafica.model.Solicitacao;
 import br.com.ifpe.grafica.model.SolicitacaoDao;
 import br.com.ifpe.grafica.model.Usuario;
+import br.com.ifpe.grafica.model.UsuarioDao;
 import br.com.ifpe.grafica.util.FileUploadForm;
 import br.com.ifpe.grafica.util.Util;
 
@@ -70,7 +71,20 @@ public class SolicitacaoController {
 	}
 
 
-
+	@RequestMapping("admListarSolicitacao")
+	public String admListarSolicitacao(Model model) {
+	 
+		UsuarioDao dao2 = new UsuarioDao();
+		List<Usuario> listaUsuario = dao2.listar();
+		model.addAttribute("listaUsuario", listaUsuario);
+		
+		SolicitacaoDao dao = new SolicitacaoDao();
+		List<Solicitacao> listaSolicitacao = dao.listar();
+		model.addAttribute("listaSolicitacao", listaSolicitacao);
+		
+	 
+		return "adm/admPedidosSolicitados";
+	}
 
 
 

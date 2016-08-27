@@ -67,7 +67,7 @@
 				
 				<li><a href="AdmSolicitar"><i class="fa fa-copy"></i>Solicitar Cópias</a></li>
 				
-				<li><a href="#"><i class="fa fa-table"></i>Consultar Solicitações</a></li>
+				<li><a href="admListarSolicitacao"><i class="fa fa-table"></i>Consultar Solicitações</a></li>
 				
 				<li class="open"><a href="admListarUsuario"><i class="fa fa-user"></i>Lista de Usuário</a></li>
 				

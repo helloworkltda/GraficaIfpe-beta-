@@ -60,7 +60,7 @@
             <a href="AdmSolicitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
           <li>
-            <a href="#"><i class="fa fa-table"></i>Consultar Solicitações</a>
+            <a href="admListarSolicitacao"><i class="fa fa-table"></i>Consultar Solicitações</a>
           </li>
           <li>
             <a href="admListarUsuario"><i class="fa fa-user"></i>Lista de Usuários</a>
@@ -112,7 +112,7 @@
                               </div>
                             </div>
                             </a>
-                            <a href="#" class="block-anchor panel-footer text-center">Consultar Solicitações &nbsp; <i class="fa fa-arrow-right"></i></a>
+                            <a href="admListarSolicitacao" class="block-anchor panel-footer text-center">Consultar Solicitações &nbsp; <i class="fa fa-arrow-right"></i></a>
                           </div>
                         </div>
                       </div>
