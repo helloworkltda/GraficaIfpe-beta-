@@ -26,7 +26,7 @@ public class SolicitacaoDao {
 	public void salvar(Solicitacao solicitacao) {
 
 		try {
-			String sql = "INSERT INTO solicitacao (anexo1,anexo2,anexo3,anexo4,descricao,siape_solicitante,id_status) VALUES (?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO solicitacao (anexo1,anexo2,anexo3,anexo4,descricao,siape_solicitante,id_status,data_solicitacao) VALUES (?,?,?,?,?,?,?,?)";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, solicitacao.getAnexo1());
 			stmt.setString(2, solicitacao.getAnexo2());
@@ -35,6 +35,7 @@ public class SolicitacaoDao {
 			stmt.setString(5, solicitacao.getDescricao());
 			stmt.setInt(6, solicitacao.getSiapeSolicitante());
 			stmt.setInt(7, solicitacao.getStatus());
+			stmt.setDate(8, new java.sql.Date(solicitacao.getData().getTime()));
 			stmt.execute();
 			stmt.close();
 			connection.close();

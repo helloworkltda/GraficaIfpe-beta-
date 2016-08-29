@@ -121,7 +121,7 @@
                   <option value=""> Selecionar Cargo </option>
                  
                     <option value="Docente"> Docente </option>
-                    <option value="Tecnico_Administrativo"> Técnico Administrativo </option>
+                    <option value="Técnico Administrativo"> Técnico Administrativo </option>
                   
                 </select>
                 </td></tr>

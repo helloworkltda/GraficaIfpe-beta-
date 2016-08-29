@@ -1,3 +1,5 @@
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
 <html><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -80,7 +82,7 @@
               </h2>
               <center>
                <div style="text-align: center; color: white;"> ${mensagem} </div>
-             <form:form method="post" action="save" modelAttribute="uploadForm" enctype="multipart/form-data">
+              <form:form method="post" action="saveAdm" modelAttribute="uploadForm" enctype="multipart/form-data">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                   <div class="panel panel-default">

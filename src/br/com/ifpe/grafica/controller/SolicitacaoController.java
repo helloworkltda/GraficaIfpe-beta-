@@ -69,6 +69,47 @@ public class SolicitacaoController {
 		map.addAttribute("files", fileNames);
 		return "file_upload_success";  // cria uma página de sucesso solicitação
 	}
+	
+	@RequestMapping("saveAdm")
+	public String saveAdm(
+			@ModelAttribute("uploadForm") FileUploadForm uploadForm, HttpSession session,@ModelAttribute("descricao") String descricao,
+			Model map) {
+
+		List<MultipartFile> files = uploadForm.getFiles();
+		SolicitacaoDao dao = new SolicitacaoDao();
+		Solicitacao solicitacao =new Solicitacao();
+		List<String> fileNames = new ArrayList<String>();
+		int x=1;
+		if(null != files && files.size() > 0) {
+			for (MultipartFile multipartFile : files) {
+
+				if (Util.fazerUploadImagem(multipartFile)) {
+					if(x==1)
+						solicitacao.setAnexo1(Calendar.getInstance().getTime() + " - " + multipartFile.getOriginalFilename());
+					if(x==2)
+						solicitacao.setAnexo2(Calendar.getInstance().getTime() + " - " + multipartFile.getOriginalFilename());
+					if(x==3)
+						solicitacao.setAnexo3(Calendar.getInstance().getTime() + " - " + multipartFile.getOriginalFilename());
+					if(x==4)
+						solicitacao.setAnexo4(Calendar.getInstance().getTime() + " - " + multipartFile.getOriginalFilename());
+					
+					x++;
+				}
+				
+				
+
+			}
+			Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
+			solicitacao.setData(Calendar.getInstance().getTime());
+			solicitacao.setSiapeSolicitante(usuario.getSiape());
+			solicitacao.setStatus(1);
+			solicitacao.setDescricao(descricao);
+			dao.salvar(solicitacao);
+		}
+
+		map.addAttribute("files", fileNames);
+		return "file_upload_success";  // cria uma página de sucesso solicitação
+	}
 
 
 	@RequestMapping("admListarSolicitacao")

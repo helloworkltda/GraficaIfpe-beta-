@@ -47,8 +47,15 @@ public class UsuarioController {
 		} catch (Exception e) {
 			System.out.println("OKOKOKOKOK");
 		}
-		return "usuario/sucessoCadastro";
+		return "forward:exibirSucessoAdmCadastro";
 
+	}
+	
+	@RequestMapping("exibirSucesso")
+	public String exibirSucessoAdm(Model model,Usuario usuario) {
+	 
+		model.addAttribute("mensagem", "Usuário cadastrado com sucesso");
+		return "usuario/sucessoCadastro";
 	}
 
 	@RequestMapping("homeFuncionario")

@@ -27,7 +27,8 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 			if(usuario.getTipoUsuario().getId() == 1){
 				if (uri.contains("assets") || uri.contains("css") || uri.contains("images") || uri.contains("js")
 						|| uri.endsWith("testee/") || uri.endsWith("homeFuncionario") || uri.endsWith("comumSolicita")
-						|| uri.endsWith("homeComum") || uri.endsWith("exibirAlterarUsuario") || uri.endsWith("alterarUsuario")|| uri.endsWith("save")) {
+						|| uri.endsWith("homeComum") || uri.endsWith("exibirAlterarUsuario") || uri.endsWith("alterarUsuario")
+						|| uri.endsWith("save") || uri.endsWith("exibirSucesso")) {
 					return true;
 				}
 			}else{
@@ -36,7 +37,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 						|| uri.endsWith("homeAdm") || uri.endsWith("exibirAlterarUsuarioAdm") || uri.endsWith("alterarUsuarioAdm")
 						|| uri.endsWith("admSolicitar") || uri.endsWith("admListarUsuario") || uri.endsWith("admCadastrar")
 						|| uri.endsWith("incluirUsuarioAdm") || uri.endsWith("admListarSolicitacao") || uri.endsWith("admDetalhes")
-						|| uri.endsWith("exibirSucessoAdmCadastro")) {
+						|| uri.endsWith("exibirSucessoAdmCadastro") || uri.endsWith("saveAdm")) {
 					return true;
 				}
 			}

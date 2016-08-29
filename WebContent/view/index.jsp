@@ -30,9 +30,10 @@
             <span class="glyphicon glyphicon-lock"></span>
           </div>
           
-          <div style="text-align: center; color: #ff4c4c;"> ${mensagem} </div>
-          
           <button type="submit" name="go" class="btn btn-primary btn-block">Entrar</button>
+          
+           <div style="text-align: center; color: #fff;"> ${mensagem} </div>
+           
           <a href="exibir">Ainda não é cadastrado?</a>
         </form>
       </section>
