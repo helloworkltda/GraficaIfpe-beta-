@@ -57,7 +57,7 @@
             <a href="homeAdm"><i class="fa fa-home"></i>Home</a>
           </li>
           <li class="open">
-            <a href="AdmSolicitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+            <a href="admSolicitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
           <li>
             <a href="admListarSolicitacao"><i class="fa fa-table"></i>Consultar Solicitações</a>

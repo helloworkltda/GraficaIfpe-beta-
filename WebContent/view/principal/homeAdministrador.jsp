@@ -57,7 +57,7 @@
             <a href="homeAdm"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
-            <a href="AdmSolicitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+            <a href="admSolicitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
           <li>
             <a href="admListarSolicitacao"><i class="fa fa-table"></i>Consultar Solicitações</a>
@@ -98,7 +98,7 @@
                               </div>
                             </div>
                             </a>
-                            <a href="AdmSolicitar" class="block-anchor panel-footer text-center">Solicitar Cópias &nbsp; <i class="fa fa-arrow-right"></i></a>
+                            <a href="admSolicitar" class="block-anchor panel-footer text-center">Solicitar Cópias &nbsp; <i class="fa fa-arrow-right"></i></a>
                           </div>
                         </div>
                         <div class="col-md-3">

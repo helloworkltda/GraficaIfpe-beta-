@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
+
 <html><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,7 +60,7 @@
             <a href="homeAdm"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
-            <a href="AdmSolicitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+            <a href="admSolicitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
           <li>
             <a href="admListarSolicitacao"><i class="fa fa-table"></i>Consultar Solicitações</a>
@@ -81,11 +82,11 @@
                 <font color="#666666">Cadastrar Usuário</font>
               </h2>
 
-              <center>
-
+              
+<center>
               <form method="post" action="incluirUsuarioAdm" role="cadastro" id="form_contato">
-    <table border=0 width='350px'>
-
+    			<table border=0 width='350px'>
+			
 
                 <tr><td><label><br>Categoria do Usuário</label></td></tr>
                 <tr><td>
@@ -120,7 +121,7 @@
                   <option value=""> Selecionar Cargo </option>
                  
                     <option value="Docente"> Docente </option>
-                    <option value="Tecnico Administrativo"> Técnico Administrativo </option>
+                    <option value="Tecnico_Administrativo"> Técnico Administrativo </option>
                   
                 </select>
                 </td></tr>
@@ -144,9 +145,10 @@
                 </td></tr>
 
       </table><br>
-
+	
       <button type="submit" name="go" class="btn btn-primary btn-block" style='height:50px; width:240px'> Cadastrar Novo Usuário </button>
         </form>
+        </center>
         <br><br>
               <div style="text-align: center; color: #ff4c4c;"> ${mensagem} </div>
               </div>
@@ -242,7 +244,7 @@
          
             document.getElementById("nome").onkeypress = function(e) {
                 var chr = String.fromCharCode(e.which);
-                if ("qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM".indexOf(chr) < 0  && " ".indexOf(chr) < 0)
+                if ("qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNMáéíóãõâ".indexOf(chr) < 0  && " ".indexOf(chr) < 0)
                   return false;
               };   
             

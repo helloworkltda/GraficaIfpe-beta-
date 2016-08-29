@@ -27,7 +27,7 @@ public class UsuarioAdmController {
 		return "principal/homeAdministrador";
 	}
 
-	@RequestMapping("AdmSolicitar")
+	@RequestMapping("admSolicitar")
 	public String AdmSolitar() {
 		return "adm/admSolicitarCopias";
 	}
@@ -82,6 +82,7 @@ public class UsuarioAdmController {
 		public String incluirUsuarioAdm(@Valid Usuario usuario, BindingResult result, Model model) {
 
 			if (result.hasErrors()) {
+				
 				return "forward:admCadastrar";
 			}
 
@@ -91,6 +92,19 @@ public class UsuarioAdmController {
 
 			model.addAttribute("mensagem", "O usuario " + usuario.getNome() + " foi inserida com sucesso !");
 
-			return "adm/admCadastrar";
+			return "forward:exibirSucessoAdmCadastro";
+		}
+	 @RequestMapping("admDetalhes")
+		public String admDetalhes() {
+			return "adm/admDetalhes";
+		}
+	 
+	  
+	 
+	 @RequestMapping("exibirSucessoAdmCadastro")
+		public String exibirSucessoAdm(Model model,Usuario usuario) {
+		 
+		 model.addAttribute("mensagem", "O usuario " + usuario.getNome() + " foi inserida com sucesso !");
+			return "adm/sucessoCadastroAdm";
 		}
 }

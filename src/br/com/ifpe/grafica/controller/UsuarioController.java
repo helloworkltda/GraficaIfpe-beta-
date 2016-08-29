@@ -1,6 +1,6 @@
 package br.com.ifpe.grafica.controller;
 
-import java.util.Calendar;
+
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -9,14 +9,7 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
-
-import br.com.ifpe.grafica.util.Util;
-import br.com.ifpe.grafica.model.Solicitacao;
-import br.com.ifpe.grafica.model.SolicitacaoDao;
-import br.com.ifpe.grafica.model.TipoUsuario;
+import org.springframework.web.bind.annotation.RequestMapping;import br.com.ifpe.grafica.model.TipoUsuario;
 import br.com.ifpe.grafica.model.TipoUsuarioDao;
 import br.com.ifpe.grafica.model.Usuario;
 import br.com.ifpe.grafica.model.UsuarioDao;
@@ -30,12 +23,12 @@ public class UsuarioController {
 	@RequestMapping("exibir")
 	public String exibirUsuario(Model model) {
 
-		// Código para lista o combo tipo usuario
-		TipoUsuarioDao dao = new TipoUsuarioDao();
-		List<TipoUsuario> listaTipoUsuarioDao = dao.listar();
-		model.addAttribute("listaTipoUsuarioDao", listaTipoUsuarioDao);
 
 		return "usuario/cadastroUsuario";
+	}
+	@RequestMapping("index")
+	public String index() {
+		return "index";
 	}
 
 	@RequestMapping("incluirUsuario")

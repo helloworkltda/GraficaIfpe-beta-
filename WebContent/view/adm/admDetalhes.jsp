@@ -1,9 +1,3 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-
-
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
 <html><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,7 +34,7 @@
       </span>
       <ul class="ts-profile-nav">
         <li class="ts-account">
-          <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> ${usuarioLogado.nome}<span>&nbsp;&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
+          <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> ${usuarioLogado.nome}<span>&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
           <ul>
             <li>
               <a href="exibirAlterarUsuarioAdm?siape=${usuarioLogado.siape}">Editar Conta</a>
@@ -80,80 +74,59 @@
             <div class="col-md-12">
               <h2 class="page-title">
                 <font color="#999999">&nbsp;Administração /</font>
-                <font color="#666666">Consultar Solicitações</font>
+                <font color="#666666">Detalhes da Solicitação</font>
               </h2>
               <div class="panel panel-default">
                 
-                <div class="panel-body">
-                  <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
-                    <thead>
-                      <tr>
-                        <th>Funcionário</th>
-                        <th>Detalhes</th>
-          
-                        <th>Data</th>
-                        <th>Hora</th>
-                        <th width=9%>Situação</th>
-                      </tr>
-                    </thead>
-                    <tfoot>
-                      <tr>
-                        <th>Funcionário</th>
-                        <th>Detalhes</th>
-          
-                        <th>Data</th>
-                        <th>Hora</th>
-                        <th>Situação</th>
-                      </tr>
-                    </tfoot>
-
-
+                
+                  <table class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
                     <tbody>
                       <tr>
-                        <td>Tiger Nixon</td>
+                        <th width=11% style="background-color: #fff; color: #666; text-align: center"> Solicitante </th>
+                        <td style="background-color: #fff; color: #4482b1"> ${usuarioLogado.nome} </td>
+                      </tr>
+                    
               
-                        <td><a href="javascript:;">Abrir Solicitação</a></td>
-                        
-                        <td>2011/04/25</td>
-                        <td>00:00</td>
-                        <td><span style="background-color: #cf0053; color: white">&nbsp;&nbsp;CANCELADO&nbsp;&nbsp;</span></td>
-                      </tr>
                       <tr>
-                        <td>Garrett Winters</td>
-            
-                        <td><a href="javascript:;">Abrir Solicitação</a></td>
-                       
-                        <td>2011/07/25</td>
-                        <td>00:00</td>
-                        <td><span style="background-color: #e78c00; color: white">&nbsp;&nbsp;&nbsp;PENDENTE&nbsp;&nbsp;&nbsp;</span></td>
+                        <th style="background-color: #fff; color: #666; text-align: center"> Anexo #1 </th>
+                        <td style="background-color: #fff"> -------- </td>
                       </tr>
-                      <tr>
-                        <td>Ashton Cox</td>
-            
-                        <td><a href="javascript:;">Abrir Solicitação</a></td>
-                        
-                        <td>2009/01/12</td>
-                        <td>00:00</td>
-                        <td><span style="background-color: #00a174; color: white">&nbsp;&nbsp;&nbsp;IMPRESSO&nbsp;&nbsp;&nbsp;</span></td>
+
+ <tr>
+                        <th style="background-color: #fff; color: #666; text-align: center"> Anexo #2 </th>
+                        <td style="background-color: #fff"> -------- </td>
                       </tr>
-                      <tr>
-                      <c:forEach var="usuario" items="${listaUsuario}">
-											<tr>
-												<td>${usuario.nome}</td>
-												<td><a href="admDetalhes">Abrir Solicitação</a></td>
-												<td></td>
-												<td></td>
-												<td><span style="background-color: #e78c00; color: white">&nbsp;&nbsp;&nbsp;PENDENTE&nbsp;&nbsp;&nbsp;</span></td>
-											</tr>	
-										</c:forEach>
-                      
+<tr>
+                        <th style="background-color: #fff; color: #666; text-align: center"> Anexo #3 </th>
+                        <td style="background-color: #fff"> -------- </td>
                       </tr>
-                      
-                      
-                     </tbody>
+
+<tr>
+                        <th style="background-color: #fff; color: #666; text-align: center"> Anexo #4 </th>
+                        <td style="background-color: #fff"> -------- </td>
+                      </tr>
+
+<tr>
+                        <th style="background-color: #fff; color: #666; text-align: center"> Data </th>
+                        <td style="background-color: #fff"> -------- </td>
+                      </tr>
+
+<tr>
+                        <th style="background-color: #fff; color: #666; text-align: center"> Hora </th>
+                        <td style="background-color: #fff"> -------- </td>
+                      </tr>
+
+<tr>
+                        <th height="150px" style="background-color: #fff; color: #666; text-align: center"> Descrição </th>
+                        <td style="background-color: #fff"> -------- </td>
+                      </tr>
+                    
+                    </tbody>
                   </table>
                   
                 </div>
+                <center><button class="btn btn-danger" type="submit">Cancelar Solicitação</button> &nbsp; &nbsp; &nbsp;
+                              <button class="btn btn-primary" type="submit" width="200px">Confirmar Impressão</button></center>
               </div>
             </div>
           </div>
