@@ -98,7 +98,7 @@
                               </div>
                             </div>
                             </a>
-                            <a href="admSolicitar" class="block-anchor panel-footer text-center">Solicitar Cópias &nbsp; <i class="fa fa-arrow-right"></i></a>
+                            <a href="solicitacaoAdm" class="block-anchor panel-footer text-center">Solicitar Cópias &nbsp; <i class="fa fa-arrow-right"></i></a>
                           </div>
                         </div>
                         <div class="col-md-3">

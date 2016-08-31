@@ -82,7 +82,7 @@
 
                       <label class="col-sm-2 control-label">Anexo #1</label>
                       
-                        <input id="anexo1" type="file" name="files[0]">
+                        <input id="input-43" type="file" name="files[0]">
 
                         <div class="help-block" id="errorBlock43"></div>
                       <br><br>
