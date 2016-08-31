@@ -9,7 +9,7 @@ public class Solicitacao {
 	private String descricao;
 	private int status;
 	private int siapeSolicitante;
-	private int siapeExecutor;
+	private Usuario siapeExecutor;
 	private String anexo1;
 	private String anexo2;
 	private String anexo3;
@@ -24,10 +24,10 @@ public class Solicitacao {
 	public void setSiapeSolicitante(int siapeSolicitante) {
 		this.siapeSolicitante = siapeSolicitante;
 	}
-	public int getSiapeExecutor() {
+	public Usuario getSiapeExecutor() {
 		return siapeExecutor;
 	}
-	public void setSiapeExecutor(int siapeExecutor) {
+	public void setSiapeExecutor(Usuario siapeExecutor) {
 		this.siapeExecutor = siapeExecutor;
 	}
 	public Usuario getUsuariofk() {

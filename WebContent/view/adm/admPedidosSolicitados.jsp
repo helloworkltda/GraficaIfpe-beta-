@@ -137,12 +137,12 @@
                         <td><span style="background-color: #00a174; color: white">&nbsp;&nbsp;&nbsp;IMPRESSO&nbsp;&nbsp;&nbsp;</span></td>
                       </tr>
                       <tr>
-                      <c:forEach var="usuario" items="${listaUsuario}">
+                      <c:forEach var="listaSolicitacao" items="${listaSolicitacao}">
 											<tr>
-												<td>${usuario.nome}</td>
+												<td>${listaSolicitacao.siapeExecutor.nome}</td>
 												<td><a href="admDetalhes">Abrir Solicitação</a></td>
-												<td></td>
-												<td></td>
+												<td>${listaSolicitacao.data}</td>
+												<td>${date.time}</td>
 												<td><span style="background-color: #e78c00; color: white">&nbsp;&nbsp;&nbsp;PENDENTE&nbsp;&nbsp;&nbsp;</span></td>
 											</tr>	
 										</c:forEach>

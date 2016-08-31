@@ -175,18 +175,7 @@ public class UsuarioDao {
 
 		return usuario;
 	}
-  // motar o usuario para logar teste sem o ID
-	private Usuario montarObjeto2232(ResultSet rs) throws SQLException {
 
-		Usuario usuario = new Usuario();
-		usuario.setNome(rs.getString("nome"));
-		usuario.setCargo(rs.getString("cargo"));
-		usuario.setEmail(rs.getString("email"));
-		usuario.setSenha(rs.getString("senha"));
-		usuario.setSiape(rs.getInt("siape"));
-
-		return usuario;
-	}
 	public void fecharConexao() throws SQLException{
 		connection.close();
 	}

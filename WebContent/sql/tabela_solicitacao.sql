@@ -9,6 +9,7 @@ anexo3	varchar(100)  null,
 anexo4	varchar(100)  null,
 descricao	varchar(30)  null,
 id_status	int,
+data_solicitacao date,
 foreign key(siape_solicitante) references usuario(siape),
 foreign key(siape_executor) references usuario(siape),
 foreign key(id_status) references status(id)

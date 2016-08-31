@@ -75,9 +75,14 @@ public class SolicitacaoDao {
 		solicitacao.setCodigo(rs.getInt("codigo"));
 		solicitacao.setData(rs.getDate("data_solicitacao"));
 		solicitacao.setStatus(rs.getInt("id_status"));
-
 		solicitacao.setSiapeSolicitante(rs.getInt("siape_solicitante"));
-		solicitacao.setSiapeExecutor(rs.getInt("siape_solicitante"));
+		
+		UsuarioDao dao = new UsuarioDao();
+		Usuario usuarioNome = dao.buscarPorSiape(rs.getInt("siape_executor"));
+		solicitacao.setSiapeExecutor(usuarioNome);
+
+		//solicitacao.setSiapeExecutor(rs.getInt("siape_executor"));
+		
 		solicitacao.setAnexo1(rs.getString("anexo1"));
 		solicitacao.setAnexo2(rs.getString("anexo2"));
 		solicitacao.setAnexo3(rs.getString("anexo3"));
