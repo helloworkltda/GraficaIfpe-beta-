@@ -140,7 +140,7 @@
                       <c:forEach var="listaSolicitacao" items="${listaSolicitacao}">
 											<tr>
 												<td>${listaSolicitacao.siapeExecutor.nome}</td>
-												<td><a href="admDetalhes">Abrir Solicitação</a></td>
+												<td><a href="admDetalhes?codigo=${listaSolicitacao.codigo}">Abrir Solicitação</a></td>
 												<td>${listaSolicitacao.data}</td>
 												<td>${date.time}</td>
 												<td><span style="background-color: #e78c00; color: white">&nbsp;&nbsp;&nbsp;PENDENTE&nbsp;&nbsp;&nbsp;</span></td>

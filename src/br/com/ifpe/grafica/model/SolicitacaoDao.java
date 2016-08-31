@@ -68,6 +68,27 @@ public class SolicitacaoDao {
 		}
 	}
 	
+	public Solicitacao buscarPorCodigo(int codigo) {
+
+		try {
+			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM solicitacao WHERE codigo = ?");
+			stmt.setInt(1, codigo);
+			ResultSet rs = stmt.executeQuery();
+
+			Solicitacao solicitacao = null;
+			if (rs.next()) {
+				solicitacao = montarObjeto(rs);
+			}
+
+			rs.close();
+			stmt.close();
+			
+			return solicitacao;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
 	private Solicitacao montarObjeto(ResultSet rs) throws SQLException {
 
 		Solicitacao solicitacao = new Solicitacao();
@@ -76,7 +97,7 @@ public class SolicitacaoDao {
 		solicitacao.setData(rs.getDate("data_solicitacao"));
 		solicitacao.setStatus(rs.getInt("id_status"));
 		solicitacao.setSiapeSolicitante(rs.getInt("siape_solicitante"));
-		
+		solicitacao.setDescricao(rs.getString("descricao"));
 		UsuarioDao dao = new UsuarioDao();
 		Usuario usuarioNome = dao.buscarPorSiape(rs.getInt("siape_executor"));
 		solicitacao.setSiapeExecutor(usuarioNome);

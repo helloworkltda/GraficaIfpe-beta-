@@ -83,7 +83,7 @@
     			<table border=0 width='350px'>
 
 			
-			<input type="hidden" name="tipoUsuario" value="${usuario.tipoUsuario.id}">
+				<input type="hidden" name="tipoUsuario" value="${usuario.tipoUsuario.id}">
 				
                 <tr><td><label><br>Nome Completo</label></td></tr>
                 <tr><td>

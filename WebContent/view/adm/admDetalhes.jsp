@@ -83,32 +83,32 @@
                     <tbody>
                       <tr>
                         <th width=11% style="background-color: #fff; color: #666; text-align: center"> Solicitante </th>
-                        <td style="background-color: #fff; color: #4482b1"> ${usuarioLogado.nome} </td>
+                        <td style="background-color: #fff; color: #4482b1"> ${solicitacao.siapeExecutor.nome} </td>
                       </tr>
                     
               
                       <tr>
                         <th style="background-color: #fff; color: #666; text-align: center"> Anexo #1 </th>
-                        <td style="background-color: #fff"> -------- </td>
+                        <td style="background-color: #fff"> ${solicitacao.anexo1} </td>
                       </tr>
 
  <tr>
                         <th style="background-color: #fff; color: #666; text-align: center"> Anexo #2 </th>
-                        <td style="background-color: #fff"> -------- </td>
+                        <td style="background-color: #fff"> ${solicitacao.anexo2} </td>
                       </tr>
 <tr>
                         <th style="background-color: #fff; color: #666; text-align: center"> Anexo #3 </th>
-                        <td style="background-color: #fff"> -------- </td>
+                        <td style="background-color: #fff"> ${solicitacao.anexo3} </td>
                       </tr>
 
 <tr>
                         <th style="background-color: #fff; color: #666; text-align: center"> Anexo #4 </th>
-                        <td style="background-color: #fff"> -------- </td>
+                        <td style="background-color: #fff"> ${solicitacao.anexo4} </td>
                       </tr>
 
 <tr>
                         <th style="background-color: #fff; color: #666; text-align: center"> Data </th>
-                        <td style="background-color: #fff"> -------- </td>
+                        <td style="background-color: #fff"> ${solicitacao.data} </td>
                       </tr>
 
 <tr>
@@ -118,7 +118,7 @@
 
 <tr>
                         <th height="150px" style="background-color: #fff; color: #666; text-align: center"> Descrição </th>
-                        <td style="background-color: #fff"> -------- </td>
+                        <td style="background-color: #fff"> ${solicitacao.descricao} </td>
                       </tr>
                     
                     </tbody>

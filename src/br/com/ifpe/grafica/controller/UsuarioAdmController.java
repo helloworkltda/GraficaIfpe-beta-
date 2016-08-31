@@ -10,9 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
-
-
+import br.com.ifpe.grafica.model.Solicitacao;
+import br.com.ifpe.grafica.model.SolicitacaoDao;
 import br.com.ifpe.grafica.model.TipoUsuario;
 import br.com.ifpe.grafica.model.TipoUsuarioDao;
 import br.com.ifpe.grafica.model.Usuario;
@@ -100,7 +99,13 @@ public class UsuarioAdmController {
 		}
 	 
 	 @RequestMapping("admDetalhes")
-		public String admDetalhes() {
+		public String admDetalhes(Model model,Solicitacao solicitacao){
+		 
+		 	SolicitacaoDao dao = new SolicitacaoDao();
+			Solicitacao usuarioPreenchido = dao.buscarPorCodigo(solicitacao.getCodigo());
+			model.addAttribute("solicitacao", usuarioPreenchido);
+		 
+			
 			return "adm/admDetalhes";
 		}
 }

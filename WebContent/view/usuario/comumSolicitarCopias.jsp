@@ -59,7 +59,7 @@
             <a href="homeComum"><i class="fa fa-home"></i>Home</a>
           </li>
           <li class="open">
-            <a href="comumSolicita"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+            <a href="solicitacao"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
         </ul>
       </nav>
@@ -71,9 +71,10 @@
               <font color="#999999">&nbsp;Funcionário /</font>
                 <font color="#666666">Solicitar Cópias</font>
               </h2>
+              
               <center>
                <div style="text-align: center; color: white;"> ${mensagem} </div>
-             <form:form method="post" action="save" modelAttribute="uploadForm" enctype="multipart/form-data">
+             <form:form method="post" action="save" modelAttribute="uploadForm" enctype="multipart/form-data" id="form_contato">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                   <div class="panel panel-default">
@@ -81,7 +82,7 @@
 
                       <label class="col-sm-2 control-label">Anexo #1</label>
                       
-                        <input id="input-43" type="file" name="files[0]">
+                        <input id="anexo1" type="file" name="files[0]">
 
                         <div class="help-block" id="errorBlock43"></div>
                       <br><br>
@@ -131,6 +132,10 @@
                             </div>
                           </div>
                         </div>
+                        </div>
+                        </div>
+                        </div>
+                        
                       </form:form>
             
                     </div>
@@ -146,29 +151,46 @@
                   <script src="view/assets/js/fileinput.js"></script>
                   <script src="view/assets/js/chartData.js"></script>
                   <script src="view/assets/js/main.js"></script>
-                  <script>
-                  history.forward();
-                    window.onload = function(){
-                                                                                              
-                                                                                          		// Line chart from swirlData for dashReport
-                                                                                          		var ctx = document.getElementById("dashReport").getContext("2d");
-                                                                                          		window.myLine = new Chart(ctx).Line(swirlData, {
-                                                                                          			responsive: true,
-                                                                                          			scaleShowVerticalLines: false,
-                                                                                          			scaleBeginAtZero : true,
-                                                                                          			
-                                                                                          		}); 
-                                                                                          		
-                                                                                          		// Pie Chart from doughutData
-                                                                                          		var doctx = document.getElementById("chart-area3").getContext("2d");
-                                                                                          		window.myDoughnut = new Chart(doctx).Pie(doughnutData, {responsive : true});
-                                                                                          
-                                                                                          		// Dougnut Chart from doughnutData
-                                                                                          		var doctx = document.getElementById("chart-area4").getContext("2d");
-                                                                                          		window.myDoughnut = new Chart(doctx).Doughnut(doughnutData, {responsive : true});
-                                                                                          
-                                                                                          	}
-                  </script>
+                  
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
+       <script>
+             $(function(){
+            	 $("#form_contato").validate({
+            	       rules : {
+            	             anexo1:{
+            	                    required:true
+            	                    
+            	             },
+            	             email:{
+            	                    required:true
+            	                    
+            	             },
+            	             mensagem:{
+            	                    required:true
+            	                    
+            	             }                                
+            	       },
+            	       messages:{
+            	             anexo1:{
+            	                    required:"Por favor, informe seu nome",
+            	                    minlength:"O nome deve ter pelo menos 3 caracteres"
+            	             },
+            	             email:{
+            	                    required:"É necessário informar um email"
+            	                    
+            	             },
+            	             mensagem:{
+            	                    required:"A mensagem não pode ficar em branco"
+            	                   
+            	             }     
+            	       }
+            	});
+
+
+            	
+             });
+       </script>
                 </div>
               </center>
             </div>
@@ -176,6 +198,7 @@
         </div>
       </div>
     </div>
+  
   
 
 </body></html>
