@@ -25,7 +25,7 @@ public class SolicitacaoController {
 
 	@RequestMapping("solicitacao")
 	public String solicitacao() {
-		return "usuario/usuarioSolicita";
+		return "usuario/comumSolicitarCopias";
 	}
 	
 	@RequestMapping("solicitacaoAdm")
@@ -75,6 +75,14 @@ public class SolicitacaoController {
 		return "usuario/sucessoSolicitacao";  // cria uma página de sucesso solicitação
 	}
 	
+	 @RequestMapping("SucessoSolicitacao")
+		public String exibirSucesso(Model model,Usuario usuario) {
+		 
+		 model.addAttribute("mensagem", "Usuário cadastrado com sucesso!");
+			return "usuario/sucessoSolicitacao";
+		}
+
+	
 	@RequestMapping("saveAdm")
 	public String saveAdm(
 			@ModelAttribute("uploadForm") FileUploadForm uploadForm, HttpSession session,@ModelAttribute("descricao") String descricao,
@@ -115,6 +123,8 @@ public class SolicitacaoController {
 		map.addAttribute("files", fileNames);
 		return "forward:admSucessoSolicitacao";  // cria uma página de sucesso solicitação
 	}
+	
+	
 	 @RequestMapping("admSucessoSolicitacao")
 		public String exibirSucessoAdm(Model model,Usuario usuario) {
 		 

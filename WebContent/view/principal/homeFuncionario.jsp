@@ -94,7 +94,7 @@
                               </div>
                             </div>
                             </a>
-                            <a href="comumSolicita" class="block-anchor panel-footer text-center">Solicitar Cópias &nbsp; <i class="fa fa-arrow-right"></i></a>
+                            <a href="solicitacao" class="block-anchor panel-footer text-center">Solicitar Cópias &nbsp; <i class="fa fa-arrow-right"></i></a>
                           </div>
                         </div>
                       </div>
@@ -116,7 +116,7 @@
                               </div>
                             </div>
                             </a>
-                            <a href="comumSolicita" class="block-anchor panel-footer text-center">Editar Perfil &nbsp; <i class="fa fa-arrow-right"></i></a>
+                            <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}" class="block-anchor panel-footer text-center">Editar Perfil &nbsp; <i class="fa fa-arrow-right"></i></a>
                           </div>
                         </div>
                       </div>

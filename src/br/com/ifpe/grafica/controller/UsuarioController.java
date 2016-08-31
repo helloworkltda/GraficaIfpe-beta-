@@ -26,6 +26,7 @@ public class UsuarioController {
 
 		return "usuario/cadastroUsuario";
 	}
+	
 	@RequestMapping("index")
 	public String index() {
 		return "index";
