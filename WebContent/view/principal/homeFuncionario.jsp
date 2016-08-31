@@ -61,7 +61,7 @@
             <a href="homeFuncionario"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
-            <a href="comumSolicita"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+            <a href="solicitacao"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
          
         </ul>
@@ -99,6 +99,29 @@
                         </div>
                       </div>
                     </div>
+                    
+                    
+                    <div class="col-md-12">
+                      <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                        <br>
+                          <div class="panel panel-default">
+                            <a href="#">
+                            <div class="panel-body bk-warning text-light">
+                              <div class="stat-panel text-center">
+                                <div class="stat-panel-number h1 ">
+                                  <i class="fa fa-user"></i>
+                                </div>
+                              </div>
+                            </div>
+                            </a>
+                            <a href="comumSolicita" class="block-anchor panel-footer text-center">Editar Perfil &nbsp; <i class="fa fa-arrow-right"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
                   </div>
                   <!-- Loading Scripts -->
                   <script src="view/assets/js/jquery.min.js"></script>

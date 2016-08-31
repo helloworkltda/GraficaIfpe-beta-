@@ -32,7 +32,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <meta http-equiv="refresh" content="2;url=http://localhost:8080/testee/admCadastrar" />
+    <meta http-equiv="refresh" content="2;url=http://localhost:8080/testee/solicitacaoAdm" />
     
   </head><body>
     <div class="brand clearfix">
@@ -62,7 +62,7 @@
           <li>
             <a href="homeAdm"><i class="fa fa-home"></i>Home</a>
           </li>
-          <li>
+          <li class="open">
             <a href="admSolicitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
           <li>
@@ -71,7 +71,7 @@
           <li>
             <a href="admListarUsuario"><i class="fa fa-user"></i>Lista de Usuários</a>
           </li>
-          <li class="open">
+          <li>
             <a href="admCadastrar"><i class="fa fa-edit"></i>Cadastrar Usuário</a>
           </li>
         </ul>
@@ -82,13 +82,13 @@
             <div class="col-md-12">
               <h2 class="page-title">
                 <font color="#999999">&nbsp;Administração /</font>
-                <font color="#666666">Cadastrar Usuário</font>
+                <font color="#666666">Solicitar Cópias</font>
               </h2>
   <center>
 <br><br><br>
           <img src="view/assets/images/sucessoverde.png" height="130px">
           <br>
-          <font color="#125c4c"><h2>${mensagem}</h2>
+          <font color="#125c4c"><h2>Solicitação realizada com sucesso!</h2>
           <br>
           Aguarde, redirecionando ao sistema...</font>
           

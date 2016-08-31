@@ -1,6 +1,6 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 
 <html><head>
@@ -31,9 +31,6 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-    <meta http-equiv="refresh" content="2;url=http://localhost:8080/testee/admCadastrar" />
-    
   </head><body>
     <div class="brand clearfix">
       <span class="logo"><img src="view/assets/img/logo.png" class="img-responsive" alt=""></span>
@@ -42,10 +39,10 @@
       </span>
       <ul class="ts-profile-nav">
         <li class="ts-account">
-          <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> ${usuarioLogado.nome} <span>&nbsp;&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
+          <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt="">${usuarioLogado.nome}<span>&nbsp;&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
           <ul>
             <li>
-              <a href="exibirAlterarUsuarioAdm?siape=${usuarioLogado.siape}">Editar Conta</a>
+              <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}"">Editar Conta</a>
             </li>
             <li>
               <a href="logout">Logout</a>
@@ -59,20 +56,13 @@
         <br>
         <ul class="ts-sidebar-menu">
           <li class="ts-label">Menu</li>
+          
+          
           <li>
-            <a href="homeAdm"><i class="fa fa-home"></i>Home</a>
+            <a href="homeFuncionario"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
-            <a href="admSolicitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
-          </li>
-          <li>
-            <a href="admListarSolicitacao"><i class="fa fa-table"></i>Consultar Solicitações</a>
-          </li>
-          <li>
-            <a href="admListarUsuario"><i class="fa fa-user"></i>Lista de Usuários</a>
-          </li>
-          <li class="open">
-            <a href="admCadastrar"><i class="fa fa-edit"></i>Cadastrar Usuário</a>
+            <a href="comumSolicita"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
         </ul>
       </nav>
@@ -81,33 +71,25 @@
           <div class="row">
             <div class="col-md-12">
               <h2 class="page-title">
-                <font color="#999999">&nbsp;Administração /</font>
-                <font color="#666666">Cadastrar Usuário</font>
+                <font color="#999999">&nbsp;Funcionário /</font>
+                <font color="#666666">Editar Conta</font>
               </h2>
-  <center>
+
+<center>
 <br><br><br>
           <img src="view/assets/images/sucessoverde.png" height="130px">
           <br>
-          <font color="#125c4c"><h2>${mensagem}</h2>
+          <font color="#125c4c"><h2>Perfil alterado com sucesso!</h2>
           <br>
           Aguarde, redirecionando ao sistema...</font>
           
 </center>
+            
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Loading Scripts -->
-    <script src="view/assets/js/jquery.min.js"></script>
-    <script src="view/assets/js/bootstrap-select.min.js"></script>
-    <script src="view/assets/js/bootstrap.min.js"></script>
-    <script src="view/assets/js/jquery.dataTables.min.js"></script>
-    <script src="view/assets/js/dataTables.bootstrap.min.js"></script>
-    <script src="view/assets/js/Chart.min.js"></script>
-    <script src="view/assets/js/fileinput.js"></script>
-    <script src="view/assets/js/chartData.js"></script>
-    <script src="view/assets/js/main.js"></script>
 
 </body></html>

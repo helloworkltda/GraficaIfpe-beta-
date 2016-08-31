@@ -2257,7 +2257,7 @@
         msgFilePreviewAborted: 'File preview aborted for "{name}".',
         msgFilePreviewError: 'An error occurred while reading the file "{name}".',
         msgInvalidFileType: 'Invalid type for file "{name}". Only "{types}" files are supported.',
-        msgInvalidFileExtension: 'Arquivo "{name}" não suportado. Apenas arquivos "{extensions}" são suportados.',
+        msgInvalidFileExtension: 'Sem suporte ao arquivo "{name}". Tipos suportados: "{extensions}".',
         msgValidationError: 'Erro ao fazer Upload',
         msgLoading: 'Loading file {index} of {files} &hellip;',
         msgProgress: 'Loading file {index} of {files} - {name} - {percent}% completed.',

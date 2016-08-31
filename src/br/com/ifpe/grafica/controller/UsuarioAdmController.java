@@ -27,10 +27,6 @@ public class UsuarioAdmController {
 		return "principal/homeAdministrador";
 	}
 
-	@RequestMapping("admSolicitar")
-	public String AdmSolitar() {
-		return "adm/admSolicitarCopias";
-	}
 
 	@RequestMapping("exibirAlterarUsuarioAdm")
     public String exibirAlterarUsuarioAdm(Usuario usuario, Model model) {
@@ -52,7 +48,7 @@ public class UsuarioAdmController {
 
 		UsuarioDao dao = new UsuarioDao();
 		dao.alterar(usuario);
-		model.addAttribute("msg", "Usuário alterado com sucesso !");
+		model.addAttribute("msg", "Usuário alterado com sucesso!");
 
 		return "forward:exibirAlterarUsuarioAdm";
 	    }
@@ -90,21 +86,21 @@ public class UsuarioAdmController {
 
 			dao.salvar(usuario);
 
-			model.addAttribute("mensagem", "O usuario " + usuario.getNome() + " foi inserida com sucesso !");
+			model.addAttribute("mensagem", "Usuário cadastrado com sucesso!");
 
 			return "forward:exibirSucessoAdmCadastro";
 		}
-	 @RequestMapping("admDetalhes")
-		public String admDetalhes() {
-			return "adm/admDetalhes";
-		}
-	 
-	  
+
 	 
 	 @RequestMapping("exibirSucessoAdmCadastro")
 		public String exibirSucessoAdm(Model model,Usuario usuario) {
 		 
-		 model.addAttribute("mensagem", "O usuario " + usuario.getNome() + " foi inserida com sucesso !");
+		 model.addAttribute("mensagem", "Usuário cadastrado com sucesso!");
 			return "adm/sucessoCadastroAdm";
+		}
+	 
+	 @RequestMapping("admDetalhes")
+		public String admDetalhes() {
+			return "adm/admDetalhes";
 		}
 }

@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="theme-color" content="#3e454c">
-    <title>Administração - IFPE Cópias</title>
+    <title>IFPE Cópias</title>
     <!-- Font awesome -->
     <link rel="stylesheet" href="view/assets/css/font-awesome.min.css">
     <!-- Sandstone Bootstrap CSS -->
@@ -28,6 +28,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+     <meta http-equiv="refresh" content="2;url=http://localhost:8080/testee/solicitacao" />
   </head><body>
     <div class="brand clearfix">
       <span class="logo">
@@ -41,7 +43,7 @@
           <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> ${usuarioLogado.nome}<span>&nbsp;&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
           <ul>
             <li>
-              <a href="exibirAlterarUsuarioAdm?siape=${usuarioLogado.siape}">Editar Conta</a>
+              <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}">Editar Conta</a>
             </li>
             <li>
               <a href="logout">Logout</a>
@@ -56,19 +58,10 @@
         <ul class="ts-sidebar-menu">
           <li class="ts-label">Menu</li>
           <li>
-            <a href="homeAdm"><i class="fa fa-home"></i>Home</a>
+            <a href="homeComum"><i class="fa fa-home"></i>Home</a>
           </li>
           <li class="open">
-            <a href="solicitacaoAdm"><i class="fa fa-copy"></i>Solicitar Cópias</a>
-          </li>
-          <li>
-            <a href="admListarSolicitacao"><i class="fa fa-table"></i>Consultar Solicitações</a>
-          </li>
-          <li>
-            <a href="admListarUsuario"><i class="fa fa-user"></i>Lista de Usuários</a>
-          </li>
-          <li>
-            <a href="admCadastrar"><i class="fa fa-edit"></i>Cadastrar Usuário</a>
+            <a href="comumSolicita"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
         </ul>
       </nav>
@@ -77,73 +70,24 @@
           <div class="row">
             <div class="col-md-12">
               <h2 class="page-title">
-                <font color="#999999">&nbsp;Administração /</font>
+              <font color="#999999">&nbsp;Funcionário /</font>
                 <font color="#666666">Solicitar Cópias</font>
               </h2>
               <center>
-               <div style="text-align: center; color: white;"> ${mensagem} </div>
-              <form:form method="post" action="saveAdm" modelAttribute="uploadForm" enctype="multipart/form-data">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                  <div class="panel panel-default">
-                    <div class="panel-body">
-
-                      <label class="col-sm-2 control-label">Anexo #1</label>
-                      
-                        <input id="input-43" type="file" name="files[0]">
-
-                        <div class="help-block" id="errorBlock43"></div>
-                      <br><br>
-
-
-<label class="col-sm-2 control-label">Anexo #2</label>
-                     
-
-                        <input id="input-44" type="file" name="files[1]">
-
-                        <div class="help-block" id="errorBlock44"></div>
-                      <br><br>
-
-<label class="col-sm-2 control-label">Anexo #3</label>
-                      
-
-                        <input id="input-45" type="file" name="files[2]">
-
-                        <div class="help-block" id="errorBlock45"></div>
-                      <br><br>
-
-<label class="col-sm-2 control-label">Anexo #4</label>
-                  
-
-                        <input id="input-46" type="file"  name="files[3]">
-
-                        <div class="help-block" id="errorBlock46"></div>
-                      <br><br>
-
-                        <div class="form-group">
-                          <label class="col-sm-2 control-label">Descrição</label>
-                       
-                          <div class="col-sm-8">
-                            <textarea class="form-control" style="resize:none" name="descricao" rows="5" cols="3"></textarea>
-                          </div>
-                          
-                          <input type="hidden" name="usuariofk" value="${usuarioLogado.siape}"></input>
-                          
-                          
-                             
-                  <br><br><br><br><br><br><br>
-                          <div class="form-group">
-                      
-                            <div class="col-sm-8 col-sm-offset-2">
-                              <button class="btn btn-danger" type="submit">Cancelar Solicitação</button>
-                              <button class="btn btn-primary" type="submit">Fazer Solicitação</button>
-                            </div>
-                          </div>
-                        </div>
-                      </form:form>
-            
-                    </div>
-                  </div>
+<br><br><br>
+          <img src="view/assets/images/sucessoverde.png" height="130px">
+          <br>
+          <font color="#125c4c"><h2>Solicitação realizada com sucesso!</h2>
+          <br>
+          Aguarde, redirecionando ao sistema...</font>
+          
+</center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
                   
                   <!-- Loading Scripts -->
                   <script src="view/assets/js/jquery.min.js"></script>
@@ -188,4 +132,3 @@
   
 
 </body></html>
-

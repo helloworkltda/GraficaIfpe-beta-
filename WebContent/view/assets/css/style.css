@@ -650,7 +650,7 @@ li {
 }
 .brand .ts-profile-nav li ul li {
   float: none;
-  width: 180px;
+  width: 210px;
 }
 .brand .ts-profile-nav li ul li a {
   padding: 10px 20px;
@@ -665,14 +665,14 @@ li {
   float: right;
 }
 .brand .ts-profile-nav .ts-account > a {
-  width: 280px;
+  width: 320px;
   background: #146755;
   text-align: right;
 }
 .brand .ts-profile-nav .ts-account > a:hover {
-  width: 280px;
-  background: #125c4c;
-  box-shadow: 0px 0px 1px 0px #000000;
+  width: 320px;
+  background: #146755;
+  box-shadow: 0px 0px 0px 0px #000000;
 }
 .brand .ts-profile-nav .ts-account .ts-avatar {
   border-radius: 10%;

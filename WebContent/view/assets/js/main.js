@@ -24,7 +24,6 @@
 	 
 	 $("#input-43").fileinput({
 		showPreview: false,
-		allowedFileExtensions: ["pdf", "odt", "doc", "docx"],
 		elErrorContainer: "#errorBlock43"
 			// you can configure `msgErrorClass` and `msgInvalidFileExtension` as well
 	});
@@ -34,7 +33,6 @@ $('#zctb').DataTable();
 	 
 	 $("#input-44").fileinput({
 		showPreview: false,
-		allowedFileExtensions: ["pdf", "odt", "doc", "docx"],
 		elErrorContainer: "#errorBlock44"
 			// you can configure `msgErrorClass` and `msgInvalidFileExtension` as well
 	});
@@ -44,7 +42,6 @@ $('#zctb').DataTable();
 	 
 	 $("#input-45").fileinput({
 		showPreview: false,
-		allowedFileExtensions: ["pdf", "odt", "doc", "docx"],
 		elErrorContainer: "#errorBlock45"
 			// you can configure `msgErrorClass` and `msgInvalidFileExtension` as well
 	});
@@ -54,7 +51,6 @@ $('#zctb').DataTable();
 	 
 	 $("#input-46").fileinput({
 		showPreview: false,
-		allowedFileExtensions: ["pdf", "odt", "doc", "docx"],
 		elErrorContainer: "#errorBlock46"
 			// you can configure `msgErrorClass` and `msgInvalidFileExtension` as well
 	});

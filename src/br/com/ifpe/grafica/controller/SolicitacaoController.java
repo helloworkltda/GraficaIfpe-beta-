@@ -27,6 +27,11 @@ public class SolicitacaoController {
 	public String solicitacao() {
 		return "usuario/usuarioSolicita";
 	}
+	
+	@RequestMapping("solicitacaoAdm")
+	public String solicitacaoAdm() {
+		return "adm/admSolicitarCopias";
+	}
 
 	
 	@RequestMapping("save")
@@ -67,7 +72,7 @@ public class SolicitacaoController {
 		}
 
 		map.addAttribute("files", fileNames);
-		return "file_upload_success";  // cria uma página de sucesso solicitação
+		return "usuario/sucessoSolicitacao";  // cria uma página de sucesso solicitação
 	}
 	
 	@RequestMapping("saveAdm")
@@ -108,9 +113,14 @@ public class SolicitacaoController {
 		}
 
 		map.addAttribute("files", fileNames);
-		return "file_upload_success";  // cria uma página de sucesso solicitação
+		return "forward:admSucessoSolicitacao";  // cria uma página de sucesso solicitação
 	}
-
+	 @RequestMapping("admSucessoSolicitacao")
+		public String exibirSucessoAdm(Model model,Usuario usuario) {
+		 
+		 model.addAttribute("mensagem", "Usuário cadastrado com sucesso!");
+			return "adm/admSucessoSolicitacao";
+		}
 
 	@RequestMapping("admListarSolicitacao")
 	public String admListarSolicitacao(Model model) {
@@ -126,9 +136,5 @@ public class SolicitacaoController {
 	 
 		return "adm/admPedidosSolicitados";
 	}
-
-
-
-
 
 }

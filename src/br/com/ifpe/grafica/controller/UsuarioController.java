@@ -101,7 +101,7 @@ public class UsuarioController {
 		dao.alterar(usuario);
 		model.addAttribute("msg", "Usuário alterado com sucesso!");
 
-		return "forward:exibirAlterarUsuario";
+		return "usuario/usuarioAlteradoSucesso";
 	}
 
 	@RequestMapping("efetuarLogin")

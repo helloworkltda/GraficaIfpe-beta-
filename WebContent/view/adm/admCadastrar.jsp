@@ -31,6 +31,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
   </head><body>
     <div class="brand clearfix">
       <span class="logo"><img src="view/assets/img/logo.png" class="img-responsive" alt=""></span>
@@ -60,7 +61,7 @@
             <a href="homeAdm"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
-            <a href="admSolicitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+            <a href="solicitacaoAdm"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
           <li>
             <a href="admListarSolicitacao"><i class="fa fa-table"></i>Consultar Solicitações</a>
@@ -91,11 +92,12 @@
                 <tr><td><label><br>Categoria do Usuário</label></td></tr>
                 <tr><td>
 
-                  <select name="tipoUsuario" class="form-control">
+                  <select name="tipoUsuario" class="form-control" style="font-weight: bold">
 						<option value="">Selecione</option>
 						<c:forEach items="${listaTipoUsuarioDao}" var="obj">
 							<option value="${obj.id}">${obj.descricao}</option>
-						</c:forEach>
+						</c:forEach>						
+						
 				</select>
                 </td></tr>
 

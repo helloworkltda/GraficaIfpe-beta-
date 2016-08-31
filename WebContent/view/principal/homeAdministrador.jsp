@@ -57,7 +57,7 @@
             <a href="homeAdm"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
-            <a href="admSolicitar"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+            <a href="solicitacaoAdm"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
           <li>
             <a href="admListarSolicitacao"><i class="fa fa-table"></i>Consultar Solicitações</a>
@@ -79,7 +79,7 @@
                 <font color="#666666">Home</font>
               </h2>
              
-                <font size="5">Selecione a opção desejada:</font>
+                <center><font size="5">Selecione a opção desejada:</font></center>
                 <br>
                 <br>
                 <div>
