@@ -63,6 +63,10 @@
           <li>
             <a href="solicitacao"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
+          
+           <li>
+            <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}"><i class="fa fa-user"></i>Editar Conta</a>
+          </li>
          
         </ul>
       </nav>
@@ -85,7 +89,7 @@
                         <div class="col-md-4"></div>
                         <div class="col-md-4">
                           <div class="panel panel-default">
-                            <a href="#">
+                            <a href="solicitacao">
                             <div class="panel-body bk-primary text-light">
                               <div class="stat-panel text-center">
                                 <div class="stat-panel-number h1 ">
@@ -107,7 +111,7 @@
                         <div class="col-md-4">
                         <br>
                           <div class="panel panel-default">
-                            <a href="#">
+                            <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}">
                             <div class="panel-body bk-warning text-light">
                               <div class="stat-panel text-center">
                                 <div class="stat-panel-number h1 ">
@@ -116,7 +120,7 @@
                               </div>
                             </div>
                             </a>
-                            <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}" class="block-anchor panel-footer text-center">Editar Perfil &nbsp; <i class="fa fa-arrow-right"></i></a>
+                            <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}" class="block-anchor panel-footer text-center">Editar Conta &nbsp; <i class="fa fa-arrow-right"></i></a>
                           </div>
                         </div>
                       </div>

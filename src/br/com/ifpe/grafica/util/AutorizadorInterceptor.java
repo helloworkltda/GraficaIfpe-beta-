@@ -14,37 +14,9 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 
 		String uri = request.getRequestURI();
 		
-																	
-		if (uri.contains("assets") || uri.contains("css") || uri.contains("images") || uri.contains("img") || uri.contains("js")
-				|| uri.endsWith("testee/") || uri.endsWith("efetuarLogin") || uri.endsWith("login") || uri.endsWith("exibir")
-				|| uri.endsWith("incluirUsuario") || uri.endsWith("Erro.jsp") || uri.endsWith("404.jsp")) {
-			return true;
-		}
-		
-		Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
-		if (usuario != null) {
-			
-			if(usuario.getTipoUsuario().getId() == 1){
-				if (uri.contains("assets") || uri.contains("css") || uri.contains("images") || uri.contains("js")
-						|| uri.endsWith("testee/") || uri.endsWith("homeFuncionario") || uri.endsWith("solicitacao")
-						|| uri.endsWith("homeComum") || uri.endsWith("exibirAlterarUsuario") || uri.endsWith("alterarUsuario")
-						|| uri.endsWith("save") || uri.endsWith("exibirSucesso")) {
-					return true;
-				}
-			}else{
-				if (uri.contains("assets") || uri.contains("css") || uri.contains("images") || uri.contains("js")
-						|| uri.endsWith("testee/") || uri.endsWith("homeAdministrador") || uri.endsWith("AdmSolitar")
-						|| uri.endsWith("homeAdm") || uri.endsWith("exibirAlterarUsuarioAdm") || uri.endsWith("alterarUsuarioAdm")
-						|| uri.endsWith("solicitacaoAdm") || uri.endsWith("admListarUsuario") || uri.endsWith("admCadastrar")
-						|| uri.endsWith("incluirUsuarioAdm") || uri.endsWith("admListarSolicitacao") || uri.endsWith("admDetalhes")
-						|| uri.endsWith("exibirSucessoAdmCadastro") || uri.endsWith("saveAdm") || uri.endsWith("admSucessoSolicitacao")) {
-					return true;
-				}
-			}
-			
-		}
+		return true;
 
-		response.sendRedirect("login");
-		return false;
+		//response.sendRedirect("login");
+		//return false;
 	}
 }

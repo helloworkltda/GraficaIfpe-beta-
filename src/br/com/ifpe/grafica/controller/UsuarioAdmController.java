@@ -16,6 +16,7 @@ import br.com.ifpe.grafica.model.TipoUsuario;
 import br.com.ifpe.grafica.model.TipoUsuarioDao;
 import br.com.ifpe.grafica.model.Usuario;
 import br.com.ifpe.grafica.model.UsuarioDao;
+import br.com.ifpe.grafica.util.Util;
 
 
 @Controller
@@ -49,7 +50,7 @@ public class UsuarioAdmController {
 		dao.alterar(usuario);
 		model.addAttribute("msg", "Usuário alterado com sucesso!");
 
-		return "forward:exibirAlterarUsuarioAdm";
+		return "adm/admSucessoEdicao";
 	    }
 	 
 	 @RequestMapping("admListarUsuario")
@@ -104,7 +105,8 @@ public class UsuarioAdmController {
 		 	SolicitacaoDao dao = new SolicitacaoDao();
 			Solicitacao usuarioPreenchido = dao.buscarPorCodigo(solicitacao.getCodigo());
 			model.addAttribute("solicitacao", usuarioPreenchido);
-		 
+			
+			model.addAttribute("caminhoAnexo",Util.caminhoAnexo);
 			
 			return "adm/admDetalhes";
 		}

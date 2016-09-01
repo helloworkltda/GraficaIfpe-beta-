@@ -82,6 +82,9 @@
                 <font color="#999999">&nbsp;Administração /</font>
                 <font color="#666666">Consultar Solicitações</font>
               </h2>
+              
+              <div class="panel panel-default">
+            
               <div class="panel panel-default">
                 
                 <div class="panel-body">
@@ -92,7 +95,7 @@
                         <th>Detalhes</th>
           
                         <th>Data</th>
-                        <th>Hora</th>
+                        
                         <th width=9%>Situação</th>
                       </tr>
                     </thead>
@@ -102,7 +105,7 @@
                         <th>Detalhes</th>
           
                         <th>Data</th>
-                        <th>Hora</th>
+                        
                         <th>Situação</th>
                       </tr>
                     </tfoot>
@@ -115,51 +118,54 @@
                         <td><a href="javascript:;">Abrir Solicitação</a></td>
                         
                         <td>2011/04/25</td>
-                        <td>00:00</td>
-                        <td><span style="background-color: #cf0053; color: white">&nbsp;&nbsp;CANCELADO&nbsp;&nbsp;</span></td>
+                        
+                        <td><img src="view/assets/img/cancelado.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">2</span></td>
                       </tr>
+                      
                       <tr>
                         <td>Garrett Winters</td>
             
                         <td><a href="javascript:;">Abrir Solicitação</a></td>
                        
                         <td>2011/07/25</td>
-                        <td>00:00</td>
-                        <td><span style="background-color: #e78c00; color: white">&nbsp;&nbsp;&nbsp;PENDENTE&nbsp;&nbsp;&nbsp;</span></td>
+                       
+                        <td><img src="view/assets/img/pendente.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">1</span></td>
                       </tr>
+                      
                       <tr>
                         <td>Ashton Cox</td>
             
                         <td><a href="javascript:;">Abrir Solicitação</a></td>
                         
                         <td>2009/01/12</td>
-                        <td>00:00</td>
-                        <td><span style="background-color: #00a174; color: white">&nbsp;&nbsp;&nbsp;IMPRESSO&nbsp;&nbsp;&nbsp;</span></td>
+                        
+                        <td><img src="view/assets/img/impresso.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">3</span></td>
                       </tr>
-                      <tr>
-                      <c:forEach var="listaSolicitacao" items="${listaSolicitacao}">
+                     
+											
+											<c:forEach var="listaSolicitacao" items="${listaSolicitacao}">
 											<tr>
 												<td>${listaSolicitacao.siapeExecutor.nome}</td>
 												<td><a href="admDetalhes?codigo=${listaSolicitacao.codigo}">Abrir Solicitação</a></td>
 												<td>${listaSolicitacao.data}</td>
-												<td>${date.time}</td>
-												<td><span style="background-color: #e78c00; color: white">&nbsp;&nbsp;&nbsp;PENDENTE&nbsp;&nbsp;&nbsp;</span></td>
-											</tr>	
-										</c:forEach>
-                      
-                      </tr>
+												
+												<td>&nbsp;PENDENTE</td>
+												</tr>
+												</c:forEach>
+										
                       
                       
                      </tbody>
                   </table>
                   
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+				</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+		
     <!-- Loading Scripts -->
     <script src="view/assets/js/jquery.min.js"></script>
     <script src="view/assets/js/bootstrap-select.min.js"></script>

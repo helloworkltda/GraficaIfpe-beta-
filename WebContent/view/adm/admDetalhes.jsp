@@ -89,31 +89,26 @@
               
                       <tr>
                         <th style="background-color: #fff; color: #666; text-align: center"> Anexo #1 </th>
-                        <td style="background-color: #fff"> ${solicitacao.anexo1} </td>
+                        <td style="background-color: #fff"><a href="${caminhoAnexo}/${solicitacao.anexo1}"> Anexo1 </a></td>
                       </tr>
 
  <tr>
                         <th style="background-color: #fff; color: #666; text-align: center"> Anexo #2 </th>
-                        <td style="background-color: #fff"> ${solicitacao.anexo2} </td>
+                        <td style="background-color: #fff"> <a href="${caminhoAnexo}/${solicitacao.anexo2}"> Anexo 2 </a></td>
                       </tr>
 <tr>
                         <th style="background-color: #fff; color: #666; text-align: center"> Anexo #3 </th>
-                        <td style="background-color: #fff"> ${solicitacao.anexo3} </td>
+                        <td style="background-color: #fff"><a href="${caminhoAnexo}/${solicitacao.anexo3}"> Anexo 3 </a> </td>
                       </tr>
 
 <tr>
                         <th style="background-color: #fff; color: #666; text-align: center"> Anexo #4 </th>
-                        <td style="background-color: #fff"> ${solicitacao.anexo4} </td>
+                        <td style="background-color: #fff"> <a href="${caminhoAnexo}/${solicitacao.anexo4}"> Anexo 4 </a> </td>
                       </tr>
 
 <tr>
                         <th style="background-color: #fff; color: #666; text-align: center"> Data </th>
                         <td style="background-color: #fff"> ${solicitacao.data} </td>
-                      </tr>
-
-<tr>
-                        <th style="background-color: #fff; color: #666; text-align: center"> Hora </th>
-                        <td style="background-color: #fff"> -------- </td>
                       </tr>
 
 <tr>

@@ -1,8 +1,3 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-
-
 <html><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,7 +27,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <meta http-equiv="refresh" content="2;url=http://localhost:8080/testee/homeFuncionario"/>
+    <meta http-equiv="refresh" content="2;url=http://localhost:8080/testee/homeAdm" />
     
   </head><body>
     <div class="brand clearfix">
@@ -42,10 +37,10 @@
       </span>
       <ul class="ts-profile-nav">
         <li class="ts-account">
-          <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt="">${usuarioLogado.nome}<span>&nbsp;&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
+          <a href="#"><img src="view/assets/img/usuario.png" class="ts-avatar hidden-side" alt=""> ${usuarioLogado.nome}<span>&nbsp;&nbsp;&nbsp;</span><i class="fa fa-angle-down hidden-side"></i></a>
           <ul>
             <li>
-              <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}"">Editar Conta</a>
+              <a href="exibirAlterarUsuarioAdm?siape=${usuarioLogado.siape}">Editar Conta</a>
             </li>
             <li>
               <a href="logout">Logout</a>
@@ -59,19 +54,21 @@
         <br>
         <ul class="ts-sidebar-menu">
           <li class="ts-label">Menu</li>
-          
-          
           <li>
-            <a href="homeFuncionario"><i class="fa fa-home"></i>Home</a>
+            <a href="homeAdm"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
-            <a href="comumSolicita"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+            <a href="solicitacaoAdm"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
-          
-          <li class="open">
-            <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}"><i class="fa fa-user"></i>Editar Conta</a>
+          <li>
+            <a href="admListarSolicitacao"><i class="fa fa-table"></i>Consultar Solicitações</a>
           </li>
-          
+          <li>
+            <a href="admListarUsuario"><i class="fa fa-user"></i>Lista de Usuários</a>
+          </li>
+          <li>
+            <a href="admCadastrar"><i class="fa fa-edit"></i>Cadastrar Usuário</a>
+          </li>
         </ul>
       </nav>
       <div class="content-wrapper">
@@ -79,11 +76,10 @@
           <div class="row">
             <div class="col-md-12">
               <h2 class="page-title">
-                <font color="#999999">&nbsp;Funcionário /</font>
+                <font color="#999999">&nbsp;Administração /</font>
                 <font color="#666666">Editar Conta</font>
               </h2>
-
-<center>
+  <center>
 <br><br><br>
           <img src="view/assets/images/sucessoverde.png" height="130px">
           <br>
@@ -92,12 +88,21 @@
           Aguarde, redirecionando ao sistema...</font>
           
 </center>
-            
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+    <!-- Loading Scripts -->
+    <script src="view/assets/js/jquery.min.js"></script>
+    <script src="view/assets/js/bootstrap-select.min.js"></script>
+    <script src="view/assets/js/bootstrap.min.js"></script>
+    <script src="view/assets/js/jquery.dataTables.min.js"></script>
+    <script src="view/assets/js/dataTables.bootstrap.min.js"></script>
+    <script src="view/assets/js/Chart.min.js"></script>
+    <script src="view/assets/js/fileinput.js"></script>
+    <script src="view/assets/js/chartData.js"></script>
+    <script src="view/assets/js/main.js"></script>
+ 
 </body></html>

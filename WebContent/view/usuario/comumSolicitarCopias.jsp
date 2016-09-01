@@ -61,6 +61,11 @@
           <li class="open">
             <a href="solicitacao"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
+          
+          <li>
+            <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}"><i class="fa fa-user"></i>Editar Conta</a>
+          </li>
+          
         </ul>
       </nav>
       <div class="content-wrapper">
@@ -127,7 +132,7 @@
                           <div class="form-group">
                       
                             <div class="col-sm-8 col-sm-offset-2">
-                              <button class="btn btn-danger" type="submit">Cancelar Solicitação</button>
+                              <button class="btn btn-danger" type="submit">Cancelar Solicitação</button> &nbsp; &nbsp;
                               <button class="btn btn-primary" type="submit">Fazer Solicitação</button>
                             </div>
                           </div>
@@ -154,43 +159,7 @@
                   
        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
-       <script>
-             $(function(){
-            	 $("#form_contato").validate({
-            	       rules : {
-            	             anexo1:{
-            	                    required:true
-            	                    
-            	             },
-            	             email:{
-            	                    required:true
-            	                    
-            	             },
-            	             mensagem:{
-            	                    required:true
-            	                    
-            	             }                                
-            	       },
-            	       messages:{
-            	             anexo1:{
-            	                    required:"Por favor, informe seu nome",
-            	                    minlength:"O nome deve ter pelo menos 3 caracteres"
-            	             },
-            	             email:{
-            	                    required:"É necessário informar um email"
-            	                    
-            	             },
-            	             mensagem:{
-            	                    required:"A mensagem não pode ficar em branco"
-            	                   
-            	             }     
-            	       }
-            	});
-
-
-            	
-             });
-       </script>
+      
                 </div>
               </center>
             </div>

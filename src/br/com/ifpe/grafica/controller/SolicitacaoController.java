@@ -97,14 +97,24 @@ public class SolicitacaoController {
 			for (MultipartFile multipartFile : files) {
 
 				if (Util.fazerUploadImagem(multipartFile)) {
+					String Concatena = Calendar.getInstance().getTime().toString();
+					Concatena = Concatena.replaceAll(" ","");
+					Concatena = Concatena.replaceAll("-","");
+					Concatena = Concatena.replaceAll("_","");
+					
+					String nomeArquivo = multipartFile.getOriginalFilename();
+					nomeArquivo = nomeArquivo.replaceAll(" ","");
+					nomeArquivo = nomeArquivo.replaceAll("-","");
+					nomeArquivo = nomeArquivo.replaceAll("_","");
+					
 					if(x==1)
-						solicitacao.setAnexo1(Calendar.getInstance().getTime() + " - " + multipartFile.getOriginalFilename());
+						solicitacao.setAnexo1(Concatena + nomeArquivo);
 					if(x==2)
-						solicitacao.setAnexo2(Calendar.getInstance().getTime() + " - " + multipartFile.getOriginalFilename());
+						solicitacao.setAnexo2(Concatena + nomeArquivo);
 					if(x==3)
-						solicitacao.setAnexo3(Calendar.getInstance().getTime() + " - " + multipartFile.getOriginalFilename());
+						solicitacao.setAnexo3(Concatena + nomeArquivo);
 					if(x==4)
-						solicitacao.setAnexo4(Calendar.getInstance().getTime() + " - " + multipartFile.getOriginalFilename());
+						solicitacao.setAnexo4(Concatena + nomeArquivo);
 					
 					x++;
 				}
@@ -142,6 +152,7 @@ public class SolicitacaoController {
 		SolicitacaoDao dao = new SolicitacaoDao();
 		List<Solicitacao> listaSolicitacao = dao.listar();
 		model.addAttribute("listaSolicitacao", listaSolicitacao);
+	
 		
 	 
 		return "adm/admPedidosSolicitados";

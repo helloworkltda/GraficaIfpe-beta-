@@ -117,7 +117,7 @@
 											<tr>
 												<td>${usuario.nome}</td>
 												<td>${usuario.siape}</td>
-												<td>${usuario.email}</td>
+												<td><a href='mailto:${usuario.email}'> ${usuario.email}</a></td>
 												<td>${usuario.cargo}</td>
 												<td>
 												<c:choose>

@@ -89,7 +89,7 @@
                         <div class="col-md-3"></div>
                         <div class="col-md-3">
                           <div class="panel panel-default">
-                            <a href="#">
+                            <a href="solicitacaoAdm">
                             <div class="panel-body bk-primary text-light">
                               <div class="stat-panel text-center">
                                 <div class="stat-panel-number h1 ">
@@ -103,7 +103,7 @@
                         </div>
                         <div class="col-md-3">
                           <div class="panel panel-default">
-                            <a href="#">
+                            <a href="admListarSolicitacao">
                             <div class="panel-body bk-danger text-light">
                               <div class="stat-panel text-center">
                                 <div class="stat-panel-number h1 ">
@@ -123,7 +123,7 @@
                     <div class="col-md-3"></div>
                     <div class="col-md-3">
                       <div class="panel panel-default">
-                        <a href="#">
+                        <a href="admListarUsuario">
                         <div class="panel-body bk-info text-light">
                           <div class="stat-panel text-center">
                             <div class="stat-panel-number h1 ">
@@ -137,7 +137,7 @@
                     </div>
                     <div class="col-md-3">
                       <div class="panel panel-default">
-                        <a href="#">
+                        <a href="admCadastrar">
                         <div class="panel-body bk-warning text-light">
                           <div class="stat-panel text-center">
                             <div class="stat-panel-number h1 ">

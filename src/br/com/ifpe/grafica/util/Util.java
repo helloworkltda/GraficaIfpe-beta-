@@ -10,6 +10,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class Util {
 
+	public static String downloadAnexo = "/home/administrador/git/GraficaIfpe-beta-";
+	public static String caminhoAnexo = "/testee/view/anexos";
+	
+	
 	public static boolean fazerUploadImagem(MultipartFile imagem) {
 		
 		boolean sucessoUpload = false;
@@ -19,16 +23,27 @@ public class Util {
 				// Criando o diret�rio para armazenar o arquivo
 				//COLOCAR File.separator PARA CADA / QUE ENCONTRAR
 				// C:\Users\Suporte\git\connectwolrd
-				String workspaceProjeto =  "/home/administrador/git/GraficaIfpe-beta-";
+				String workspaceProjeto =  downloadAnexo;
 				//String workspaceProjeto = "C:" + File.separator + "Users" + File.separator +"Suporte" + File.separator+ "git" + File.separator + "connectwolrd";
 				File dir = new File(workspaceProjeto + File.separator+ "WebContent" + File.separator+ "view" + File.separator +"anexos");
 				
 				if (!dir.exists()) {
 					dir.mkdirs();
 				}
-
+				
+				String Concatena = Calendar.getInstance().getTime().toString();
+				Concatena = Concatena.replaceAll(" ","");
+				Concatena = Concatena.replaceAll("-","");
+				Concatena = Concatena.replaceAll("_","");
+				
+				
+				nomeArquivo = nomeArquivo.replaceAll(" ","");
+				nomeArquivo = nomeArquivo.replaceAll("-","");
+				nomeArquivo = nomeArquivo.replaceAll("_","");
+				
+				
 				// Criando o arquivo no diretorio
-				File serverFile = new File(workspaceProjeto + File.separator + "WebContent" + File.separator + "view" + File.separator+"anexos" +File.separator + Calendar.getInstance().getTime() + " - " + nomeArquivo);
+				File serverFile = new File(workspaceProjeto + File.separator + "WebContent" + File.separator + "view" + File.separator+"anexos" +File.separator + Concatena + nomeArquivo);
 				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
 				stream.write(imagem.getBytes()); stream.close();
 

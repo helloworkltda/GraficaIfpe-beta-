@@ -135,7 +135,7 @@
                           <div class="form-group">
                       
                             <div class="col-sm-8 col-sm-offset-2">
-                              <button class="btn btn-danger" type="submit">Cancelar Solicitação</button>
+                              <button class="btn btn-danger" type="submit">Cancelar Solicitação</button> &nbsp; &nbsp;
                               <button class="btn btn-primary" type="submit">Fazer Solicitação</button>
                             </div>
                           </div>
