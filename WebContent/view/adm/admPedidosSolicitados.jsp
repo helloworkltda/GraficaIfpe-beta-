@@ -62,7 +62,7 @@
           </li>
           <li>
             <a href="solicitacaoAdm"><i class="fa fa-copy"></i>Solicitar Cópias</a>
-          </li>
+          </li>Administrador
           <li class="open">
             <a href="admListarSolicitacao"><i class="fa fa-table"></i>Consultar Solicitações</a>
           </li>
@@ -145,7 +145,7 @@
 											
 											<c:forEach var="listaSolicitacao" items="${listaSolicitacao}">
 											<tr>
-												<td>${listaSolicitacao.siapeExecutor.nome}</td>
+												<td>${listaSolicitacao.siapeSolicitante.nome}</td>
 												<td><a href="admDetalhes?codigo=${listaSolicitacao.codigo}">Abrir Solicitação</a></td>
 												<td>${listaSolicitacao.data}</td>
 												

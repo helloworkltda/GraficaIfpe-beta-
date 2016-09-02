@@ -54,7 +54,7 @@
         <ul class="ts-sidebar-menu">
           <li class="ts-label">Menu</li>
           <li class="open">
-            <a href="homeAdm"><i class="fa fa-home"></i>Home</a>
+            <a href="javascript:;"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
             <a href="solicitacaoAdm"><i class="fa fa-copy"></i>Solicitar Cópias</a>

@@ -27,7 +27,7 @@
     <table>
                 <tr><td><label>Nome Completo</label></td></tr>
                 <tr><td>
-                  <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome e Sobrenome" maxlength="24">
+                  <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome e Sobrenome" maxlength="30">
                 </td></tr>
 
                 <tr><td><label><br>Matrícula SIAPE</label></td></tr>

@@ -83,7 +83,7 @@
                     <tbody>
                       <tr>
                         <th width=11% style="background-color: #fff; color: #666; text-align: center"> Solicitante </th>
-                        <td style="background-color: #fff; color: #4482b1"> ${solicitacao.siapeExecutor.nome} </td>
+                        <td style="background-color: #fff; color: #4482b1"> ${solicitacao.siapeSolicitante.nome} </td>
                       </tr>
                     
               

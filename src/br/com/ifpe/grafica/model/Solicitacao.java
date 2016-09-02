@@ -8,8 +8,8 @@ public class Solicitacao {
 	private Date data;
 	private String descricao;
 	private int status;
-	private int siapeSolicitante;
-	private Usuario siapeExecutor;
+	private Usuario siapeSolicitante; //troquei esse por  
+	private int siapeExecutor; // esse
 	private String anexo1;
 	private String anexo2;
 	private String anexo3;
@@ -18,16 +18,16 @@ public class Solicitacao {
 	
 	
 	
-	public int getSiapeSolicitante() {
+	public Usuario getSiapeSolicitante() {
 		return siapeSolicitante;
 	}
-	public void setSiapeSolicitante(int siapeSolicitante) {
+	public void setSiapeSolicitante(Usuario siapeSolicitante) {
 		this.siapeSolicitante = siapeSolicitante;
 	}
-	public Usuario getSiapeExecutor() {
+	public int getSiapeExecutor() {
 		return siapeExecutor;
 	}
-	public void setSiapeExecutor(Usuario siapeExecutor) {
+	public void setSiapeExecutor(int siapeExecutor) {
 		this.siapeExecutor = siapeExecutor;
 	}
 	public Usuario getUsuariofk() {

@@ -48,7 +48,7 @@ public class UsuarioController {
 		} catch (Exception e) {
 			System.out.println("OKOKOKOKOK");
 		}
-		return "forward:exibirSucessoAdmCadastro";
+		return "forward:exibirSucesso";
 
 	}
 	

@@ -66,7 +66,7 @@
           </li>
           
           <li class="open">
-            <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}"><i class="fa fa-user"></i>Editar Conta</a>
+            <a href="javascript:;"><i class="fa fa-user"></i>Editar Conta</a>
           </li>
           
         </ul>
@@ -92,7 +92,7 @@
 			
                 <tr><td><label><br>Nome Completo</label></td></tr>
                 <tr><td>
-                  <input type="text" id="nome" name="nome" class="form-control" maxlength="40" value="${usuario.nome}">
+                  <input type="text" id="nome" name="nome" class="form-control" maxlength="30" value="${usuario.nome}">
 
                 </td></tr>
 

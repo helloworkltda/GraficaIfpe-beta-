@@ -59,7 +59,7 @@
             <a href="homeComum"><i class="fa fa-home"></i>Home</a>
           </li>
           <li class="open">
-            <a href="solicitacao"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+            <a href="javascript:;"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
           
           <li>

@@ -70,7 +70,7 @@
             <a href="admListarUsuario"><i class="fa fa-user"></i>Lista de Usuários</a>
           </li>
           <li class="open">
-            <a href="admCadastrar"><i class="fa fa-edit"></i>Cadastrar Usuário</a>
+            <a href="javascript:;"><i class="fa fa-edit"></i>Cadastrar Usuário</a>
           </li>
         </ul>
       </nav>
@@ -104,7 +104,7 @@
 
                 <tr><td><label><br><br>Nome Completo</label></td></tr>
                 <tr><td>
-                  <input type="text" id="nome" name="nome" class="form-control" maxlength="40">
+                  <input type="text" id="nome" name="nome" class="form-control" maxlength="30">
 
                 </td></tr>
 
