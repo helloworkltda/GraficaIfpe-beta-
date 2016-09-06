@@ -32,7 +32,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <meta http-equiv="refresh" content="2;url=http://localhost:8080/testee/admCadastrar" />
+    <meta http-equiv="refresh" content="2;url=http://localhost:8080/grafica/admCadastrar" />
     
   </head><body>
     <div class="brand clearfix">

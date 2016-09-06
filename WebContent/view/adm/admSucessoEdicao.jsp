@@ -27,7 +27,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <meta http-equiv="refresh" content="2;url=http://localhost:8080/testee/homeAdm" />
+    <meta http-equiv="refresh" content="2;url=http://localhost:8080/grafica/homeAdm" />
     
   </head><body>
     <div class="brand clearfix">
