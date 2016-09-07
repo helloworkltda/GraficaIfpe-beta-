@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="theme-color" content="#3e454c">
-    <title>Erro inesperado</title>
+    <title>Acesso proibido - 403</title>
     <!-- Font awesome -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- Sandstone Bootstrap CSS -->
@@ -27,11 +27,23 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head><body>
-    
-    <div class="proibido">
+    <center>
+    <br><br><br>
 
-    <img src="view/assets/img/erro2.png">
+    <font style="color: #7f7f7f; font-family: Arial">
+<h1>Erro 403 - Acesso Proibido</h1>
 
-    </div>
+<br>
+
+<a href="login"><img src="view/assets/img/negado.png" width="310px"></a>
+<br><br>
+<p>
+
+<a href="login" style="color: #7f7f7f; font-family: Arial"><h3>É necessário fazer <b>Login</b> para acessar este conteúdo.</h3></a>
+
+</font>
+
+</center>
+
 
 </body></html>

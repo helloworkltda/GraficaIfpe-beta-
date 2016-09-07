@@ -129,7 +129,7 @@ public class UsuarioController {
 	@RequestMapping("logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "index";
+		return "principal/logout";
 	}
 
 }

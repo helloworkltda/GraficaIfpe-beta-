@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class Util {
 
 	public static String downloadAnexo = "/home/administrador/git/GraficaIfpe-beta-";
-	public static String caminhoAnexo = "/testee/view/anexos";
+	public static String caminhoAnexo = "/Grafica/view/anexos";
 	
 	
 	public static boolean fazerUploadImagem(MultipartFile imagem) {

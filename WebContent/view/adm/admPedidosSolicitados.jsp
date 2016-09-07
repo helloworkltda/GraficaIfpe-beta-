@@ -62,9 +62,9 @@
           </li>
           <li>
             <a href="solicitacaoAdm"><i class="fa fa-copy"></i>Solicitar Cópias</a>
-          </li>Administrador
+          </li>
           <li class="open">
-            <a href="admListarSolicitacao"><i class="fa fa-table"></i>Consultar Solicitações</a>
+            <a href="javascript:;"><i class="fa fa-table"></i>Consultar Solicitações</a>
           </li>
           <li>
             <a href="admListarUsuario"><i class="fa fa-user"></i>Lista de Usuários</a>
