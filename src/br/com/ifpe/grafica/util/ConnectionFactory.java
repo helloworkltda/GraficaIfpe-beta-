@@ -10,7 +10,7 @@ public class ConnectionFactory {
 
 	String nomeBanco = "grafica";
 	String usuario = "root";
-	String senha = "@luno1fpe";
+	String senha = "";
 
 	try {
 	    Class.forName("com.mysql.jdbc.Driver");

@@ -65,7 +65,7 @@ public class SolicitacaoController {
 			}
 			Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
 			solicitacao.setData(Calendar.getInstance().getTime());
-			solicitacao.setSiapeExecutor(usuario.getSiape());
+			solicitacao.setSiapeSolicitante(usuario.getSiape());
 			solicitacao.setStatus(1);
 			solicitacao.setDescricao(descricao);
 			dao.salvar(solicitacao);
@@ -124,7 +124,7 @@ public class SolicitacaoController {
 			}
 			Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
 			solicitacao.setData(Calendar.getInstance().getTime());
-			solicitacao.setSiapeExecutor(usuario.getSiape());
+			solicitacao.setSiapeSolicitante(usuario.getSiape());
 			solicitacao.setStatus(1);
 			solicitacao.setDescricao(descricao);
 			dao.salvar(solicitacao);
@@ -143,11 +143,8 @@ public class SolicitacaoController {
 		}
 
 	@RequestMapping("admListarSolicitacao")
-	public String admListarSolicitacao(Model model) {
-	 
-		UsuarioDao dao2 = new UsuarioDao();
-		List<Usuario> listaUsuario = dao2.listar();
-		model.addAttribute("listaUsuario", listaUsuario);
+	public String admListarSolicitacao(Model model,Solicitacao solicitacao) {
+		
 		
 		SolicitacaoDao dao = new SolicitacaoDao();
 		List<Solicitacao> listaSolicitacao = dao.listar();

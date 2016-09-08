@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;import br.com.ifpe
 import br.com.ifpe.grafica.model.TipoUsuarioDao;
 import br.com.ifpe.grafica.model.Usuario;
 import br.com.ifpe.grafica.model.UsuarioDao;
+import br.com.ifpe.grafica.util.Criptografia;
 
 @Controller
 public class UsuarioController {
@@ -41,7 +42,6 @@ public class UsuarioController {
 			}
 
 			UsuarioDao dao = new UsuarioDao();
-
 			dao.salvar(usuario);
 			model.addAttribute("mensagem", "Usuário cadastrado com sucesso");
 

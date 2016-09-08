@@ -86,7 +86,7 @@
 											style="background-color: #fff; color: #666; text-align: center">
 											Solicitante</th>
 										<td style="background-color: #fff; color: #4482b1">
-											${solicitacao.siapeSolicitante.nome}</td>
+											${solicitacao.siapeSolicitante}</td>
 									</tr>
 
 

@@ -26,14 +26,14 @@ public class SolicitacaoDao {
 	public void salvar(Solicitacao solicitacao) {
 
 		try {
-			String sql = "INSERT INTO solicitacao (anexo1,anexo2,anexo3,anexo4,descricao,siape_executor,id_status,data_solicitacao) VALUES (?,?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO solicitacao (anexo1,anexo2,anexo3,anexo4,descricao,siape_solicitante,id_status,data_solicitacao) VALUES (?,?,?,?,?,?,?,?)";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, solicitacao.getAnexo1());
 			stmt.setString(2, solicitacao.getAnexo2());
 			stmt.setString(3, solicitacao.getAnexo3());
 			stmt.setString(4, solicitacao.getAnexo4());
 			stmt.setString(5, solicitacao.getDescricao());
-			stmt.setInt(6, solicitacao.getSiapeExecutor());
+			stmt.setInt(6, solicitacao.getSiapeSolicitante());
 			stmt.setInt(7, solicitacao.getStatus());
 			stmt.setDate(8, new java.sql.Date(solicitacao.getData().getTime()));
 			stmt.execute();
@@ -96,12 +96,12 @@ public class SolicitacaoDao {
 		solicitacao.setCodigo(rs.getInt("codigo"));
 		solicitacao.setData(rs.getDate("data_solicitacao"));
 		solicitacao.setStatus(rs.getInt("id_status"));
-		solicitacao.setSiapeExecutor(rs.getInt("siape_executor"));// mudei esse
+		solicitacao.setSiapeSolicitante(rs.getInt("siape_solicitante"));
 		solicitacao.setDescricao(rs.getString("descricao"));
 		
 		UsuarioDao dao = new UsuarioDao();
-		Usuario usuarioNome = dao.buscarPorSiape(rs.getInt("siape_solicitante"));// por esse 
-		solicitacao.setSiapeSolicitante(usuarioNome);
+		Usuario usuarioNome = dao.buscarPorSiape(rs.getInt("siape_executor"));
+		solicitacao.setSiapeExecutor(usuarioNome);
 
 		//solicitacao.setSiapeExecutor(rs.getInt("siape_executor"));
 		
