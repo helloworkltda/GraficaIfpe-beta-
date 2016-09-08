@@ -34,7 +34,7 @@
           
            <div style="text-align: center; color: #fff;"> ${mensagem} </div>
            
-          <a href="exibir">Ainda não é cadastrado?</a>
+          <a href="cadastroUsuarioComum">Ainda não é cadastrado?</a>
         </form>
       </section>
     </section>

@@ -21,8 +21,8 @@ public class UsuarioController {
 	private static int USUARIOCOMUM = 1;
 	private static int USUARIOADM = 2;
 
-	@RequestMapping("exibir")
-	public String exibirUsuario(Model model) {
+	@RequestMapping("cadastroUsuarioComum")
+	public String cadastroUsuarioComum(Model model) {
 
 
 		return "usuario/cadastroUsuario";
