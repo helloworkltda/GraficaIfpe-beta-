@@ -145,7 +145,7 @@
 											
 											<c:forEach var="listaSolicitacao" items="${listaSolicitacao}">
 											<tr>
-												<td>${listaSolicitacao.siapeSolicitante}</td>
+												<td>${listaSolicitacao.siapeSolicitante.nome}</td>
 												<td><a href="admDetalhes?codigo=${listaSolicitacao.codigo}">Abrir Solicitação</a></td>
 												<td>${listaSolicitacao.data}</td>
 												

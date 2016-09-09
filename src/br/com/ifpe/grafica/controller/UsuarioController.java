@@ -42,6 +42,9 @@ public class UsuarioController {
 			}
 
 			UsuarioDao dao = new UsuarioDao();
+			usuario.setSenha((Criptografia.md5(usuario.getSenha())));
+			
+			
 			dao.salvar(usuario);
 			model.addAttribute("mensagem", "Usuário cadastrado com sucesso");
 
@@ -99,6 +102,7 @@ public class UsuarioController {
 	public String alterarUsuario(Usuario usuario, Model model) {
 
 		UsuarioDao dao = new UsuarioDao();
+		usuario.setSenha((Criptografia.md5(usuario.getSenha())));
 		dao.alterar(usuario);
 		model.addAttribute("msg", "Usuário alterado com sucesso!");
 
@@ -109,6 +113,7 @@ public class UsuarioController {
 	public String efetuarLogin(Usuario usuario, HttpSession session, Model model) {
 
 		UsuarioDao dao = new UsuarioDao();
+		//usuario.setSenha((Criptografia.md5(usuario.getSenha())));
 		Usuario usuarioLogado = dao.buscarUsuario(usuario);
 
 		if (usuarioLogado == null) {

@@ -52,12 +52,12 @@ public class Util {
 
 			} 
 			catch (Exception e) {
-				System.out.println("Voce falhou em carregar o arquivo " + nomeArquivo + " => " + e.getMessage());
+				System.out.println("Você falhou em carregar o arquivo " + nomeArquivo + " => " + e.getMessage());
 			}
 
 		}
 		else {
-			System.out.println("Voce falhou em carregar o arquivo porque ele esta vazio ");
+			System.out.println("Você falhou em carregar o arquivo porque ele está vazio ");
 		}
 
 		return sucessoUpload;

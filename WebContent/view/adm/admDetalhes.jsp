@@ -1,3 +1,9 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -86,7 +92,7 @@
 											style="background-color: #fff; color: #666; text-align: center">
 											Solicitante</th>
 										<td style="background-color: #fff; color: #4482b1">
-											${solicitacao.siapeSolicitante}</td>
+											${solicitacao.siapeSolicitante.nome}</td>
 									</tr>
 
 
@@ -113,16 +119,20 @@
 										<th
 											style="background-color: #fff; color: #666; text-align: center">
 											Anexo #3</th>
-										<td style="background-color: #fff"><a
-											href="${caminhoAnexo}/${solicitacao.anexo3}"> Anexo 3 </a></td>
+										<td style="background-color: #fff"><c:if test='${solicitacao.anexo3 != null}'>
+												<a href="${caminhoAnexo}/${solicitacao.anexo3}"> Anexo2
+												</a>
+											</c:if></td>
 									</tr>
 
 									<tr>
 										<th
 											style="background-color: #fff; color: #666; text-align: center">
 											Anexo #4</th>
-										<td style="background-color: #fff"><a
-											href="${caminhoAnexo}/${solicitacao.anexo4}"> Anexo 4 </a></td>
+										<td style="background-color: #fff"><c:if test='${solicitacao.anexo4 != null}'>
+												<a href="${caminhoAnexo}/${solicitacao.anexo4}"> Anexo2
+												</a>
+											</c:if></td>
 									</tr>
 
 									<tr>

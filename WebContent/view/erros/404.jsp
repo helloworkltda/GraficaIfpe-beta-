@@ -30,7 +30,7 @@
     
     <div class="proibido">
 
-    <img src="view/assets/img/4042.png" height="280px">
+    <a href="javascript:history.back()" target="_top"><img src="view/assets/img/4042.png" height="280px"></a>
 
     </div>
 

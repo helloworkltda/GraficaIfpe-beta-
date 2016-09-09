@@ -33,7 +33,7 @@ public class SolicitacaoDao {
 			stmt.setString(3, solicitacao.getAnexo3());
 			stmt.setString(4, solicitacao.getAnexo4());
 			stmt.setString(5, solicitacao.getDescricao());
-			stmt.setInt(6, solicitacao.getSiapeSolicitante());
+			stmt.setInt(6, solicitacao.getSiapeSolicitante().getSiape());
 			stmt.setInt(7, solicitacao.getStatus());
 			stmt.setDate(8, new java.sql.Date(solicitacao.getData().getTime()));
 			stmt.execute();
@@ -96,10 +96,13 @@ public class SolicitacaoDao {
 		solicitacao.setCodigo(rs.getInt("codigo"));
 		solicitacao.setData(rs.getDate("data_solicitacao"));
 		solicitacao.setStatus(rs.getInt("id_status"));
-		solicitacao.setSiapeSolicitante(rs.getInt("siape_solicitante"));
+		UsuarioDao dao = new UsuarioDao();
+		Usuario usuarioSolicitante = dao.buscarPorSiape(rs.getInt("siape_solicitante"));
+		
+		solicitacao.setSiapeSolicitante(usuarioSolicitante);
 		solicitacao.setDescricao(rs.getString("descricao"));
 		
-		UsuarioDao dao = new UsuarioDao();
+		
 		Usuario usuarioNome = dao.buscarPorSiape(rs.getInt("siape_executor"));
 		solicitacao.setSiapeExecutor(usuarioNome);
 
@@ -109,7 +112,7 @@ public class SolicitacaoDao {
 		solicitacao.setAnexo2(rs.getString("anexo2"));
 		solicitacao.setAnexo3(rs.getString("anexo3"));
 		solicitacao.setAnexo4(rs.getString("anexo4"));
-
+		dao.fecharConexao();
 		return solicitacao;
 	}
 }

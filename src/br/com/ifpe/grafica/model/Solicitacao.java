@@ -2,13 +2,17 @@ package br.com.ifpe.grafica.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Solicitacao {
 
 	private int codigo;
+	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date data;
 	private String descricao;
 	private int status;
-	private int siapeSolicitante; 
+	private Usuario siapeSolicitante; 
 	private Usuario siapeExecutor;
 	private String anexo1;
 	private String anexo2;
@@ -19,10 +23,11 @@ public class Solicitacao {
 	
 	
 	
-	public int getSiapeSolicitante() {
+	
+	public Usuario getSiapeSolicitante() {
 		return siapeSolicitante;
 	}
-	public void setSiapeSolicitante(int siapeSolicitante) {
+	public void setSiapeSolicitante(Usuario siapeSolicitante) {
 		this.siapeSolicitante = siapeSolicitante;
 	}
 	public Usuario getSiapeExecutor() {

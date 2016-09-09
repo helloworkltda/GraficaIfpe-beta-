@@ -65,7 +65,7 @@ public class SolicitacaoController {
 			}
 			Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
 			solicitacao.setData(Calendar.getInstance().getTime());
-			solicitacao.setSiapeSolicitante(usuario.getSiape());
+			solicitacao.setSiapeSolicitante(usuario);
 			solicitacao.setStatus(1);
 			solicitacao.setDescricao(descricao);
 			dao.salvar(solicitacao);
@@ -124,7 +124,7 @@ public class SolicitacaoController {
 			}
 			Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
 			solicitacao.setData(Calendar.getInstance().getTime());
-			solicitacao.setSiapeSolicitante(usuario.getSiape());
+			solicitacao.setSiapeSolicitante(usuario);
 			solicitacao.setStatus(1);
 			solicitacao.setDescricao(descricao);
 			dao.salvar(solicitacao);
