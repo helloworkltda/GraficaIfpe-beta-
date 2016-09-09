@@ -110,4 +110,7 @@ public class UsuarioAdmController {
 			
 			return "adm/admDetalhes";
 		}
+
+	 
+	 
 }

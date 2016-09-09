@@ -150,9 +150,26 @@ public class SolicitacaoController {
 		List<Solicitacao> listaSolicitacao = dao.listar();
 		model.addAttribute("listaSolicitacao", listaSolicitacao);
 	
-		
+		 
 	 
 		return "adm/admPedidosSolicitados";
 	}
+	
+	@RequestMapping("cancelarSolicitacao")
+	public String cancelarSolicitacao(Model model,Solicitacao solicitacao) {
+		
+		SolicitacaoDao dao = new SolicitacaoDao();
+		
+		solicitacao.setStatus(2);
+		dao.alterar(solicitacao);
+		
+		List<Solicitacao> listaSolicitacao = dao.listar();
+		model.addAttribute("listaSolicitacao", listaSolicitacao);
+		
+		
+	 
+		return "forward:admListarSolicitacao";
+	}
+ 
 
 }

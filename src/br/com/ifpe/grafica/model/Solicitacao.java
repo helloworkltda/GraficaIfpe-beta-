@@ -19,11 +19,15 @@ public class Solicitacao {
 	private String anexo3;
 	private String anexo4;
 	private Usuario usuariofk;
+	private Status id;
 	
 	
-	
-	
-	
+	public Status getId() {
+		return id;
+	}
+	public void setId(Status id) {
+		this.id = id;
+	}
 	public Usuario getSiapeSolicitante() {
 		return siapeSolicitante;
 	}

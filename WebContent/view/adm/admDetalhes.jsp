@@ -155,11 +155,12 @@
 
 						</div>
 						<center>
-							<button class="btn btn-danger" type="submit">Cancelar
-								Solicitação</button>
+						  <form method="post" action="cancelarSolicitacao">
+							<button class="btn btn-danger" type="submit">Cancelar Solicitação</button>
+							</form>
 							&nbsp; &nbsp; &nbsp;
-							<button class="btn btn-primary" type="submit" width="200px">Confirmar
-								Impressão</button>
+							
+							<button class="btn btn-primary" type="submit" width="200px">Confirmar Impressão</button>
 						</center>
 					</div>
 				</div>

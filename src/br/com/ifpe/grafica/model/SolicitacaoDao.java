@@ -89,6 +89,24 @@ public class SolicitacaoDao {
 		}
 	}
 	
+	public void alterar(Solicitacao solicitacao) {
+
+		String sql = "UPDATE solicitacao SET  id_status = ?  WHERE codigo = ?";
+
+		try {
+
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setInt(1, solicitacao.getStatus());
+			stmt.setInt(2, solicitacao.getCodigo());
+			
+			stmt.execute();
+			stmt.close();
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
 	private Solicitacao montarObjeto(ResultSet rs) throws SQLException {
 
 		Solicitacao solicitacao = new Solicitacao();
@@ -96,17 +114,17 @@ public class SolicitacaoDao {
 		solicitacao.setCodigo(rs.getInt("codigo"));
 		solicitacao.setData(rs.getDate("data_solicitacao"));
 		solicitacao.setStatus(rs.getInt("id_status"));
-		UsuarioDao dao = new UsuarioDao();
-		Usuario usuarioSolicitante = dao.buscarPorSiape(rs.getInt("siape_solicitante"));
-		
-		solicitacao.setSiapeSolicitante(usuarioSolicitante);
 		solicitacao.setDescricao(rs.getString("descricao"));
 		
-		
+		UsuarioDao dao = new UsuarioDao();
+		Usuario usuarioSolicitante = dao.buscarPorSiape(rs.getInt("siape_solicitante"));
+		solicitacao.setSiapeSolicitante(usuarioSolicitante);
 		Usuario usuarioNome = dao.buscarPorSiape(rs.getInt("siape_executor"));
 		solicitacao.setSiapeExecutor(usuarioNome);
 
-		//solicitacao.setSiapeExecutor(rs.getInt("siape_executor"));
+		StatusDao dao2 = new StatusDao();
+		Status status = dao2.buscarPorId(rs.getInt("id_status"));
+		solicitacao.setId(status);
 		
 		solicitacao.setAnexo1(rs.getString("anexo1"));
 		solicitacao.setAnexo2(rs.getString("anexo2"));

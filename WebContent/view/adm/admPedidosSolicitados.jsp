@@ -149,7 +149,7 @@
 												<td><a href="admDetalhes?codigo=${listaSolicitacao.codigo}">Abrir Solicitação</a></td>
 												<td>${listaSolicitacao.data}</td>
 												
-												<td>&nbsp;PENDENTE</td>
+												<td>&nbsp;${listaSolicitacao.id.descricao}</td>
 												</tr>
 												</c:forEach>
 										
