@@ -155,44 +155,8 @@
                   <script src="view/assets/js/fileinput.js"></script>
                   <script src="view/assets/js/chartData.js"></script>
                   <script src="view/assets/js/main.js"></script>
-                  <script>
-                  history.forward();
-                  $(function(){
-                 	 $("#form_contato").validate({
-                 	       rules : {
-                 	    	  input-43:{
-                 	                    required:true
-                 	                    
-                 	             },
-                 	             email:{
-                 	                    required:true
-                 	                    
-                 	             },
-                 	             mensagem:{
-                 	                    required:true
-                 	                    
-                 	             }                                
-                 	       },
-                 	       messages:{
-                 	    	  input-43:{
-                 	                    required:"Por favor, informe seu nome",
-                 	                    minlength:"O nome deve ter pelo menos 3 caracteres"
-                 	             },
-                 	             email:{
-                 	                    required:"É necessário informar um email"
-                 	                    
-                 	             },
-                 	             mensagem:{
-                 	                    required:"A mensagem não pode ficar em branco"
-                 	                   
-                 	             }     
-                 	       }
-                 	});
-
-
-                 	
-                  });
-                  </script>
+                 
+                 
                 </div>
               </center>
             </div>

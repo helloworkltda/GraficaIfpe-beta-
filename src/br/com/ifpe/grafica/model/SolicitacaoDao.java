@@ -89,6 +89,27 @@ public class SolicitacaoDao {
 		}
 	}
 	
+	public Solicitacao buscarPorSiape(int siape) {
+
+		try {
+			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM solicitacao WHERE siape_solicitante = ?");
+			stmt.setInt(1, siape);
+			ResultSet rs = stmt.executeQuery();
+
+			Solicitacao solicitacao = null;
+			if (rs.next()) {
+				solicitacao = montarObjeto(rs);
+			}
+
+			rs.close();
+			stmt.close();
+			
+			return solicitacao;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
 	public void alterar(Solicitacao solicitacao) {
 
 		String sql = "UPDATE solicitacao SET  id_status = ?  WHERE codigo = ?";

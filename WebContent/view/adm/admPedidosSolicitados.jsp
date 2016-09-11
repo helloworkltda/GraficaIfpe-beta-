@@ -149,7 +149,19 @@
 												<td><a href="admDetalhes?codigo=${listaSolicitacao.codigo}">Abrir Solicitação</a></td>
 												<td>${listaSolicitacao.data}</td>
 												
-												<td>&nbsp;${listaSolicitacao.id.descricao}</td>
+												<td><c:choose>
+												<c:when test="${listaSolicitacao.id.id == 1}">
+												<img src="view/assets/img/pendente.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">1</span>
+												</c:when>
+												
+												<c:when test="${listaSolicitacao.id.id == 2}">
+												<img src="view/assets/img/cancelado.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">2</span>
+												</c:when>
+												
+												<c:otherwise>
+												<img src="view/assets/img/impresso.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">3</span>
+												</c:otherwise>
+												</c:choose></td>
 												</tr>
 												</c:forEach>
 										

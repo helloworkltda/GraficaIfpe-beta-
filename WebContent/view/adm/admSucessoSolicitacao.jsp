@@ -32,7 +32,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <meta http-equiv="refresh" content="10;url=http://localhost:8080/grafica/solicitacaoAdm" />
+    <meta http-equiv="refresh" content="2;url=http://localhost:8080/grafica/solicitacaoAdm" />
     
   </head><body>
     <div class="brand clearfix">

@@ -29,7 +29,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <meta http-equiv="refresh" content="3;url=http://localhost:8080/grafica/login" />
+    <meta http-equiv="refresh" content="2;url=http://localhost:8080/grafica/login" />
     
   </head><body>
   <br><br><br><br>
@@ -39,7 +39,7 @@
     <h2>Você saiu com sucesso da aplicação</h2>
     
 
-    <a href="index">
+    <a href="login">
 
     <img src="view/assets/img/logout.png" height="230px">
 
@@ -48,6 +48,6 @@
     <h3>Redirecionando à página inicial. Aguarde...</h3>
 
     </font>
-
+<script type="text/javascript"> history.forward();</script>
 </center>
 </body></html>

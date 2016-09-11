@@ -1,3 +1,6 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
@@ -55,15 +58,15 @@
         <br>
         <ul class="ts-sidebar-menu">
           <li class="ts-label">Menu</li>
-          <li class="open">
-            <a href="javascript:;"><i class="fa fa-home"></i>Home</a>
+          <li>
+            <a href="homeFuncionario"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
             <a href="solicitacao"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
 
-          <li>
-            <a href="exibirListaPedidos?siape=${usuarioLogado.siape}"><i class="fa fa-table"></i>Pedidos Realizados</a>
+          <li class="open">
+            <a href="javascript:;"><i class="fa fa-table"></i>Pedidos Realizados</a>
           </li>
           
            <li>
@@ -78,79 +81,107 @@
             <div class="col-md-12">
               <h2 class="page-title">
                 <font color="#999999">&nbsp;Funcionário /</font>
-                <font color="#666666">Home</font>
+                <font color="#666666">Pedidos Realizados</font>
               </h2>
-              <center>
-                <font size="5">Selecione a opção desejada:</font>
-                <br>
-                <br>
-                <div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="row">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4">
-                          <div class="panel panel-default">
-                            <a href="solicitacao">
-                            <div class="panel-body bk-primary text-light">
-                              <div class="stat-panel text-center">
-                                <div class="stat-panel-number h1 ">
-                                  <i class="fa fa-copy"></i>
-                                </div>
-                              </div>
-                            </div>
-                            </a>
-                            <a href="solicitacao" class="block-anchor panel-footer text-center">Solicitar Cópias &nbsp; <i class="fa fa-arrow-right"></i></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    
-                    <div class="col-md-12">
-                      <div class="row">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4">
-                        <br>
-                          <div class="panel panel-default">
-                            <a href="exibirListaPedidos?siape=${usuarioLogado.siape}">
-                            <div class="panel-body bk-danger text-light">
-                              <div class="stat-panel text-center">
-                                <div class="stat-panel-number h1 ">
-                                  <i class="fa fa-table"></i>
-                                </div>
-                              </div>
-                            </div>
-                            </a>
-                            <a href="exibirListaPedidos?siape=${usuarioLogado.siape}" class="block-anchor panel-footer text-center">Pedidos Realizados &nbsp; <i class="fa fa-arrow-right"></i></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+              <div class="panel panel-default">
+            
+              <div class="panel panel-default">
+                
+                <div class="panel-body">
+                  <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+                    <thead>
+                      <tr>
+                        <th>Detalhes</th>
+                        <th width=50%>Descrição</th>
+          
+                        <th width=20%>Data</th>
+                        
+                        <th width=10%>Situação</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th>Detalhes</th>
+                        <th>Descrição</th>
+          
+                        <th>Data</th>
+                        
+                        <th>Situação</th>
+                      </tr>
+                    </tfoot>
 
 
-                    <div class="col-md-12">
-                      <div class="row">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4">
-                        <br>
-                          <div class="panel panel-default">
-                            <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}">
-                            <div class="panel-body bk-warning text-light">
-                              <div class="stat-panel text-center">
-                                <div class="stat-panel-number h1 ">
-                                  <i class="fa fa-user"></i>
-                                </div>
-                              </div>
-                            </div>
-                            </a>
-                            <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}" class="block-anchor panel-footer text-center">Editar Conta &nbsp; <i class="fa fa-arrow-right"></i></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <tbody>
+                      <tr>
+                        <td><a href="javascript:;">Abrir Solicitação</a></td>
+              
+                        <td>Exemplo de comentário</td>
+                        
+                        <td>2011/04/25</td>
+                        
+                        <td><img src="view/assets/img/cancelado.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">2</span></td>
+                      </tr>
+                      
+                      <tr>
+                        <td><a href="javascript:;">Abrir Solicitação</a></td>
+            
+                        <td>Comentário grande. Teste teste teste teste teste teste teste</td>
+                       
+                        <td>2011/07/25</td>
+                       
+                        <td><img src="view/assets/img/pendente.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">1</span></td>
+                      </tr>
+                      
+                      <tr>
+                        <td><a href="javascript:;">Abrir Solicitação</a></td>
+            
+                        <td>Exemplo de upload</td>
+                        
+                        <td>2009/01/12</td>
+                        
+                        <td><img src="view/assets/img/impresso.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">3</span></td>
+                      </tr>
+                     
+                      
+                      <c:forEach var="solicitacao" items="${listaSolicitacao}">
+                      <tr>
+                        <td><a href="funcionarioDetalhes?codigo=${solicitacao.codigo}">Abrir Solicitação</a></td>
+                        <td>${solicitacao.descricao}</td>
+                        <td>${solicitacao.data}</td>
+                        
+                        
+                        
+                        <td>
+												<c:choose>
+												<c:when test="${solicitacao.id.id == 1}">
+												<img src="view/assets/img/pendente.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">1</span>
+												</c:when>
+												
+												<c:when test="${solicitacao.id.id == 2}">
+												<img src="view/assets/img/cancelado.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">2</span>
+												</c:when>
+												
+												<c:otherwise>
+												<img src="view/assets/img/impresso.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">3</span>
+												</c:otherwise>
+												</c:choose>
+						</td>
+						
+                        </tr>
+                        </c:forEach>
                     
-                  </div>
+                      
+                      
+                     </tbody>
+                  </table>
+                  
+        </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
                   <!-- Loading Scripts -->
                   <script src="view/assets/js/jquery.min.js"></script>
                   <script src="view/assets/js/bootstrap-select.min.js"></script>
@@ -162,7 +193,7 @@
                   <script src="view/assets/js/chartData.js"></script>
                   <script src="view/assets/js/main.js"></script>
                   <script>
-                 
+                  
                     window.onload = function(){
                                                                           
                                                                       		// Line chart from swirlData for dashReport

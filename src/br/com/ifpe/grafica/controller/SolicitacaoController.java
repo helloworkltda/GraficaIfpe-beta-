@@ -38,12 +38,15 @@ public class SolicitacaoController {
 	public String save(
 			@ModelAttribute("uploadForm") FileUploadForm uploadForm, HttpSession session,@ModelAttribute("descricao") String descricao,
 			Model map) {
-
+		
+		
+		
 		List<MultipartFile> files = uploadForm.getFiles();
 		SolicitacaoDao dao = new SolicitacaoDao();
 		Solicitacao solicitacao =new Solicitacao();
 		List<String> fileNames = new ArrayList<String>();
 		int x=1;
+		
 		if(null != files && files.size() > 0) {
 			for (MultipartFile multipartFile : files) {
 
@@ -163,11 +166,6 @@ public class SolicitacaoController {
 		solicitacao.setStatus(2);
 		dao.alterar(solicitacao);
 		
-		List<Solicitacao> listaSolicitacao = dao.listar();
-		model.addAttribute("listaSolicitacao", listaSolicitacao);
-		
-		
-	 
 		return "forward:admListarSolicitacao";
 	}
  

@@ -62,9 +62,11 @@
             <a href="homeFuncionario"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
-            <a href="comumSolicita"><i class="fa fa-copy"></i>Solicitar Cópias</a>
+            <a href="solicitacao"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
-          
+          <li>
+            <a href="exibirListaPedidos?siape=${usuarioLogado.siape}"><i class="fa fa-table"></i>Pedidos Realizados</a>
+          </li>
           <li class="open">
             <a href="javascript:;"><i class="fa fa-user"></i>Editar Conta</a>
           </li>
@@ -161,7 +163,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
        <script>
-       history.forward();
+      
              $(function(){
             	 $("#form_contato").validate({
             	       rules : {

@@ -61,7 +61,9 @@
           <li class="open">
             <a href="javascript:;"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
-          
+          <li>
+            <a href="exibirListaPedidos?siape=${usuarioLogado.siape}"><i class="fa fa-table"></i>Pedidos Realizados</a>
+          </li>
           <li>
             <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}"><i class="fa fa-user"></i>Editar Conta</a>
           </li>
@@ -79,7 +81,7 @@
               
               <center>
                <div style="text-align: center; color: white;"> ${mensagem} </div>
-             <form:form method="post" action="save" modelAttribute="uploadForm" enctype="multipart/form-data" id="form_contato">
+             <form:form method="post" action="save" modelAttribute="uploadForm" enctype="multipart/form-data">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                   <div class="panel panel-default">
@@ -87,7 +89,7 @@
 
                       <label class="col-sm-2 control-label">Anexo #1</label>
                       
-                        <input id="input-43" type="file" name="files[0]">
+                        <input id="input-43" type="file" name="files[0]" >
 
                         <div class="help-block" id="errorBlock43"></div>
                       <br><br>
@@ -157,8 +159,7 @@
                   <script src="view/assets/js/chartData.js"></script>
                   <script src="view/assets/js/main.js"></script>
                   
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
+      
       
                 </div>
               </center>

@@ -9,11 +9,16 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestMapping;import br.com.ifpe.grafica.model.TipoUsuario;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import br.com.ifpe.grafica.model.Solicitacao;
+import br.com.ifpe.grafica.model.SolicitacaoDao;
+import br.com.ifpe.grafica.model.TipoUsuario;
 import br.com.ifpe.grafica.model.TipoUsuarioDao;
 import br.com.ifpe.grafica.model.Usuario;
 import br.com.ifpe.grafica.model.UsuarioDao;
 import br.com.ifpe.grafica.util.Criptografia;
+import br.com.ifpe.grafica.util.Util;
 
 @Controller
 public class UsuarioController {
@@ -32,7 +37,29 @@ public class UsuarioController {
 	public String index() {
 		return "index";
 	}
+	
+	@RequestMapping("efetuarLogin")
+	public String efetuarLogin(Usuario usuario, HttpSession session, Model model) {
 
+		UsuarioDao dao = new UsuarioDao();
+		//usuario.setSenha((Criptografia.md5(usuario.getSenha())));
+		Usuario usuarioLogado = dao.buscarUsuario(usuario);
+
+		if (usuarioLogado == null) {
+
+			model.addAttribute("mensagem", " Usuário não cadastrado.");
+			return "index";
+		} else if (usuarioLogado.getTipoUsuario().getId() == USUARIOCOMUM) {
+			session.setAttribute("usuarioLogado", usuarioLogado);
+			return "principal/homeFuncionario";
+
+		} else if (usuarioLogado.getTipoUsuario().getId() == USUARIOADM) {
+			session.setAttribute("usuarioLogado", usuarioLogado);
+			return "principal/homeAdministrador";
+		}
+		return "index";
+	}
+	
 	@RequestMapping("incluirUsuario")
 	public String incluirUsuario(@Valid Usuario usuario, BindingResult result, Model model) throws Exception {
 
@@ -67,10 +94,7 @@ public class UsuarioController {
 		return "principal/homeFuncionario";
 	}
 
-	@RequestMapping("comumSolicita")
-	public String SolicitarCopias() {
-		return "usuario/comumSolicitarCopias";
-	}
+	
 
 	@RequestMapping("homeComum")
 	public String homeComum() {
@@ -108,33 +132,46 @@ public class UsuarioController {
 
 		return "usuario/usuarioAlteradoSucesso";
 	}
+	
+	
+	@RequestMapping("exibirListaPedidos")
+	public String usuarioPedidosSolicitados(Solicitacao solicitacao, Model model,Usuario usuario) {
 
-	@RequestMapping("efetuarLogin")
-	public String efetuarLogin(Usuario usuario, HttpSession session, Model model) {
+		SolicitacaoDao dao = new SolicitacaoDao();
+		Solicitacao usuarioPreenchido = dao.buscarPorSiape(usuario.getSiape());
+		model.addAttribute("solicitacao", usuarioPreenchido);
+		
+		SolicitacaoDao dao2 = new SolicitacaoDao();
+		List<Solicitacao> listaSolicitacao = dao2.listar();
+		model.addAttribute("listaSolicitacao", listaSolicitacao);
 
-		UsuarioDao dao = new UsuarioDao();
-		//usuario.setSenha((Criptografia.md5(usuario.getSenha())));
-		Usuario usuarioLogado = dao.buscarUsuario(usuario);
-
-		if (usuarioLogado == null) {
-
-			model.addAttribute("mensagem", " Usuário não cadastrado.");
-			return "index";
-		} else if (usuarioLogado.getTipoUsuario().getId() == USUARIOCOMUM) {
-			session.setAttribute("usuarioLogado", usuarioLogado);
-			return "principal/homeFuncionario";
-
-		} else if (usuarioLogado.getTipoUsuario().getId() == USUARIOADM) {
-			session.setAttribute("usuarioLogado", usuarioLogado);
-			return "principal/homeAdministrador";
-		}
-		return "index";
+		return "usuario/funcionarioListaPedidos";
 	}
+	
+	@RequestMapping("funcionarioDetalhes")
+	public String funcionarioDetalhes(Model model,Solicitacao solicitacao){
+	 
+	 	SolicitacaoDao dao = new SolicitacaoDao();
+		Solicitacao usuarioPreenchido = dao.buscarPorCodigo(solicitacao.getCodigo());
+		model.addAttribute("solicitacao", usuarioPreenchido);
+		
+		model.addAttribute("caminhoAnexo",Util.caminhoAnexo);
+		
+		return "usuario/funcionarioDetalhes";
+	}
+	
+	
 
 	@RequestMapping("logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "principal/logout";
+	}
+	
+	
+	@RequestMapping("proibido")
+	public String proibido() {
+		return "erros/proibido";
 	}
 
 }

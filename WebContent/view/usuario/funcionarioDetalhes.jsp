@@ -1,3 +1,5 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
@@ -55,14 +57,14 @@
         <br>
         <ul class="ts-sidebar-menu">
           <li class="ts-label">Menu</li>
-          <li class="open">
-            <a href="javascript:;"><i class="fa fa-home"></i>Home</a>
+          <li>
+            <a href="homeFuncionario"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
             <a href="solicitacao"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
 
-          <li>
+          <li class="open">
             <a href="exibirListaPedidos?siape=${usuarioLogado.siape}"><i class="fa fa-table"></i>Pedidos Realizados</a>
           </li>
           
@@ -78,79 +80,101 @@
             <div class="col-md-12">
               <h2 class="page-title">
                 <font color="#999999">&nbsp;Funcionário /</font>
-                <font color="#666666">Home</font>
+                <font color="#666666">Pedidos Realizados</font>
               </h2>
-              <center>
-                <font size="5">Selecione a opção desejada:</font>
-                <br>
-                <br>
-                <div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="row">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4">
-                          <div class="panel panel-default">
-                            <a href="solicitacao">
-                            <div class="panel-body bk-primary text-light">
-                              <div class="stat-panel text-center">
-                                <div class="stat-panel-number h1 ">
-                                  <i class="fa fa-copy"></i>
-                                </div>
-                              </div>
-                            </div>
-                            </a>
-                            <a href="solicitacao" class="block-anchor panel-footer text-center">Solicitar Cópias &nbsp; <i class="fa fa-arrow-right"></i></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    
-                    <div class="col-md-12">
-                      <div class="row">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4">
-                        <br>
-                          <div class="panel panel-default">
-                            <a href="exibirListaPedidos?siape=${usuarioLogado.siape}">
-                            <div class="panel-body bk-danger text-light">
-                              <div class="stat-panel text-center">
-                                <div class="stat-panel-number h1 ">
-                                  <i class="fa fa-table"></i>
-                                </div>
-                              </div>
-                            </div>
-                            </a>
-                            <a href="exibirListaPedidos?siape=${usuarioLogado.siape}" class="block-anchor panel-footer text-center">Pedidos Realizados &nbsp; <i class="fa fa-arrow-right"></i></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+              <div class="panel panel-default">
 
 
-                    <div class="col-md-12">
-                      <div class="row">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4">
-                        <br>
-                          <div class="panel panel-default">
-                            <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}">
-                            <div class="panel-body bk-warning text-light">
-                              <div class="stat-panel text-center">
-                                <div class="stat-panel-number h1 ">
-                                  <i class="fa fa-user"></i>
-                                </div>
-                              </div>
-                            </div>
-                            </a>
-                            <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}" class="block-anchor panel-footer text-center">Editar Conta &nbsp; <i class="fa fa-arrow-right"></i></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                  </div>
+              <table
+                class="display table table-striped table-bordered table-hover"
+                cellspacing="0" width="100%">
+                <tbody>
+                 
+                 <tr>
+                    <th style="background-color: #fff; color: #666; text-align: center">
+                      Situação</th>
+                    <td style="background-color: #fff">
+                      <c:choose>
+												<c:when test="${solicitacao.id.id == 1}">
+												<img src="view/assets/img/pendente.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">1</span>
+												</c:when>
+												
+												<c:when test="${solicitacao.id.id == 2}">
+												<img src="view/assets/img/cancelado.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">2</span>
+												</c:when>
+												
+												<c:otherwise>
+												<img src="view/assets/img/impresso.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">3</span>
+												</c:otherwise>
+												</c:choose></td>
+                  </tr>
+                 
+                  <tr>
+                    <th width=11% style="background-color: #fff; color: #666; text-align: center">
+                      Anexo #1</th>
+                    <td style="background-color: #fff"><c:if test="${solicitacao.anexo1 != null}">
+                        <a href="${caminhoAnexo}/${solicitacao.anexo1}"> Download Anexo #1
+                        </a>
+                      </c:if></td>
+                  </tr>
+
+                  <tr>
+                    <th
+                      style="background-color: #fff; color: #666; text-align: center">
+                      Anexo #2</th>
+                    <td style="background-color: #fff"><c:if test='${solicitacao.anexo2 != null}'>
+                        <a href="${caminhoAnexo}/${solicitacao.anexo2}"> Download Anexo #2
+                        </a>
+                      </c:if></td>
+                  </tr>
+                  <tr>
+                    <th
+                      style="background-color: #fff; color: #666; text-align: center">
+                      Anexo #3</th>
+                    <td style="background-color: #fff"><c:if test='${solicitacao.anexo3 != null}'>
+                        <a href="${caminhoAnexo}/${solicitacao.anexo3}"> Download Anexo #3
+                        </a>
+                      </c:if></td>
+                  </tr>
+
+                  <tr>
+                    <th
+                      style="background-color: #fff; color: #666; text-align: center">
+                      Anexo #4</th>
+                    <td style="background-color: #fff"><c:if test='${solicitacao.anexo4 != null}'>
+                        <a href="${caminhoAnexo}/${solicitacao.anexo4}"> Download Anexo #4
+                        </a>
+                      </c:if></td>
+                  </tr>
+
+                  <tr>
+                    <th
+                      style="background-color: #fff; color: #666; text-align: center">
+                      Data</th>
+                    <td style="background-color: #fff">${solicitacao.data}</td>
+                  </tr>
+
+                  <tr>
+                    <th height="150px"
+                      style="background-color: #fff; color: #666; text-align: center">
+                      Descrição</th>
+                    <td style="background-color: #fff">
+                      ${solicitacao.descricao}</td>
+                  </tr>
+
+                  
+
+                </tbody>
+              </table>
+
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
                   <!-- Loading Scripts -->
                   <script src="view/assets/js/jquery.min.js"></script>
                   <script src="view/assets/js/bootstrap-select.min.js"></script>

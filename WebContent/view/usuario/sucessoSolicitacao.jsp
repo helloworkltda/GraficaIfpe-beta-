@@ -63,7 +63,9 @@
           <li class="open">
             <a href="comumSolicita"><i class="fa fa-copy"></i>Solicitar Cópias</a>
           </li>
-          
+          <li>
+            <a href="exibirListaPedidos?siape=${usuarioLogado.siape}"><i class="fa fa-table"></i>Pedidos Realizados</a>
+          </li> 
           <li>
             <a href="exibirAlterarUsuario?siape=${usuarioLogado.siape}"><i class="fa fa-user"></i>Editar Conta</a>
           </li>

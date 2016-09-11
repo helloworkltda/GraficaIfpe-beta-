@@ -101,7 +101,7 @@
 											style="background-color: #fff; color: #666; text-align: center">
 											Anexo #1</th>
 										<td style="background-color: #fff"><c:if test="${solicitacao.anexo1 != null}">
-												<a href="${caminhoAnexo}/${solicitacao.anexo1}"> Anexo1
+												<a href="${caminhoAnexo}/${solicitacao.anexo1}"> Anexo 1
 												</a>
 											</c:if></td>
 									</tr>
@@ -111,7 +111,7 @@
 											style="background-color: #fff; color: #666; text-align: center">
 											Anexo #2</th>
 										<td style="background-color: #fff"><c:if test='${solicitacao.anexo2 != null}'>
-												<a href="${caminhoAnexo}/${solicitacao.anexo2}"> Anexo2
+												<a href="${caminhoAnexo}/${solicitacao.anexo2}"> Anexo 2
 												</a>
 											</c:if></td>
 									</tr>
@@ -120,7 +120,7 @@
 											style="background-color: #fff; color: #666; text-align: center">
 											Anexo #3</th>
 										<td style="background-color: #fff"><c:if test='${solicitacao.anexo3 != null}'>
-												<a href="${caminhoAnexo}/${solicitacao.anexo3}"> Anexo2
+												<a href="${caminhoAnexo}/${solicitacao.anexo3}"> Anexo 3
 												</a>
 											</c:if></td>
 									</tr>
@@ -130,7 +130,7 @@
 											style="background-color: #fff; color: #666; text-align: center">
 											Anexo #4</th>
 										<td style="background-color: #fff"><c:if test='${solicitacao.anexo4 != null}'>
-												<a href="${caminhoAnexo}/${solicitacao.anexo4}"> Anexo2
+												<a href="${caminhoAnexo}/${solicitacao.anexo4}"> Anexo 4
 												</a>
 											</c:if></td>
 									</tr>
@@ -155,7 +155,7 @@
 
 						</div>
 						<center>
-						  <form method="post" action="cancelarSolicitacao">
+						   <form method="post" action="cancelarSolicitacao" role="login">
 							<button class="btn btn-danger" type="submit">Cancelar Solicitação</button>
 							</form>
 							&nbsp; &nbsp; &nbsp;
