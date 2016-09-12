@@ -11,12 +11,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import br.com.ifpe.grafica.model.Solicitacao;
 import br.com.ifpe.grafica.model.SolicitacaoDao;
 import br.com.ifpe.grafica.model.Usuario;
-import br.com.ifpe.grafica.model.UsuarioDao;
 import br.com.ifpe.grafica.util.FileUploadForm;
 import br.com.ifpe.grafica.util.Util;
 
@@ -159,11 +159,13 @@ public class SolicitacaoController {
 	}
 	
 	@RequestMapping("cancelarSolicitacao")
-	public String cancelarSolicitacao(Model model,Solicitacao solicitacao) {
+	public String cancelarSolicitacao(Model model,Solicitacao solicitacao,@RequestParam("codigo") int codigo) {
 		
 		SolicitacaoDao dao = new SolicitacaoDao();
 		
 		solicitacao.setStatus(2);
+		solicitacao.setCodigo(codigo);
+
 		dao.alterar(solicitacao);
 		
 		return "forward:admListarSolicitacao";
