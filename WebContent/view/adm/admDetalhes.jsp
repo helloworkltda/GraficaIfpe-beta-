@@ -159,8 +159,8 @@
 							<a href="cancelarSolicitacao?codigo=${solicitacao.codigo}"><button class="btn btn-danger" type="button" >Cancelar Solicitação</button></a>
 			
 							&nbsp; &nbsp; &nbsp;
+							<a href="confirmaSolicitacao?codigo=${solicitacao.codigo}"><button class="btn btn-primary" type="button" >Confirmar Impressão</button></a>
 							
-							<a href=""><button class="btn btn-primary" type="button" width="200px">Confirmar Impressão</button></a>
 						</center>
 					</div>
 				</div>

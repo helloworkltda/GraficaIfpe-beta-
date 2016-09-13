@@ -110,7 +110,49 @@ public class SolicitacaoDao {
 		}
 	}
 	
-	public void alterar(Solicitacao solicitacao) {
+	public List<Solicitacao> listarSO(int siape) {
+
+		try {
+
+			List<Solicitacao> listaSolicitacao = new ArrayList<Solicitacao>();
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM solicitacao WHERE siape_solicitante LIKE = ?");
+			
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				listaSolicitacao.add(montarObjeto(rs));
+			}
+
+			rs.close();
+			stmt.close();
+			
+
+			return listaSolicitacao;
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public void cancelar(Solicitacao solicitacao) {
+
+		String sql = "UPDATE solicitacao SET  id_status = ?  WHERE codigo = ?";
+
+		try {
+
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setInt(1, solicitacao.getStatus());
+			stmt.setInt(2, solicitacao.getCodigo());
+			
+			stmt.execute();
+			stmt.close();
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public void confirma(Solicitacao solicitacao) {
 
 		String sql = "UPDATE solicitacao SET  id_status = ?  WHERE codigo = ?";
 

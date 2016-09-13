@@ -166,10 +166,24 @@ public class SolicitacaoController {
 		solicitacao.setStatus(2);
 		solicitacao.setCodigo(codigo);
 
-		dao.alterar(solicitacao);
+		dao.cancelar(solicitacao);
 		
 		return "forward:admListarSolicitacao";
 	}
+	
+	@RequestMapping("confirmaSolicitacao")
+	public String confirmaSolicitacao(Model model,Solicitacao solicitacao,@RequestParam("codigo") int codigo) {
+		
+		SolicitacaoDao dao = new SolicitacaoDao();
+		
+		solicitacao.setStatus(3);
+		solicitacao.setCodigo(codigo);
+
+		dao.confirma(solicitacao);
+		
+		return "forward:admListarSolicitacao";
+	}
+
  
 
 }

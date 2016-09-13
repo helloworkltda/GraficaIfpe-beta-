@@ -59,7 +59,7 @@
           
           
           <li>
-            <a href="homeFuncionario"><i class="fa fa-home"></i>Home</a>
+            <a href="homeComum"><i class="fa fa-home"></i>Home</a>
           </li>
           <li>
             <a href="solicitacao"><i class="fa fa-copy"></i>Solicitar Cópias</a>

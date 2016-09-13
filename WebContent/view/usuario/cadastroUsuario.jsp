@@ -69,7 +69,7 @@
       </table><br>
           <button type="submit" name="go" class="btn btn-primary btn-block" style='height:50px'>Cadastrar</button>
           <p>
-          <a href="index">Voltar ao Início</a>
+          <a href="login">Voltar ao Início</a>
         </form>
         
         

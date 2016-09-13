@@ -16,6 +16,7 @@ import br.com.ifpe.grafica.model.TipoUsuario;
 import br.com.ifpe.grafica.model.TipoUsuarioDao;
 import br.com.ifpe.grafica.model.Usuario;
 import br.com.ifpe.grafica.model.UsuarioDao;
+import br.com.ifpe.grafica.util.Criptografia;
 import br.com.ifpe.grafica.util.Util;
 
 
@@ -47,6 +48,7 @@ public class UsuarioAdmController {
 	    public String alterarUsuarioAdm(Usuario usuario, Model model) {
 
 		UsuarioDao dao = new UsuarioDao();
+		usuario.setSenha((Criptografia.md5(usuario.getSenha())));
 		dao.alterar(usuario);
 		model.addAttribute("msg", "Usuário alterado com sucesso!");
 
@@ -66,7 +68,7 @@ public class UsuarioAdmController {
 		}
 	 
 	 @RequestMapping("admCadastrar")
-		public String admCadastrar(Model model) {
+		public String admCadastrar(Model model,Usuario usuario) {
 		 
 		    TipoUsuarioDao dao = new TipoUsuarioDao();
 			List<TipoUsuario> listaTipoUsuarioDao = dao.listar();
@@ -83,7 +85,7 @@ public class UsuarioAdmController {
 			}
 
 			UsuarioDao dao = new UsuarioDao();
-
+			usuario.setSenha((Criptografia.md5(usuario.getSenha())));
 			dao.salvar(usuario);
 
 			model.addAttribute("mensagem", "Usuário cadastrado com sucesso!");

@@ -37,7 +37,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 						|| uri.endsWith("alterarUsuarioAdm") || uri.endsWith("admListarUsuario") || uri.endsWith("admCadastrar")
 						|| uri.endsWith("incluirUsuarioAdm") || uri.endsWith("exibirSucessoAdmCadastro") || uri.endsWith("admDetalhes")
 						|| uri.endsWith("logout") ||  uri.endsWith("solicitacaoAdm") || uri.endsWith("saveAdm") || uri.endsWith("admSucessoSolicitacao")
-						|| uri.endsWith("admListarSolicitacao") || uri.endsWith("cancelarSolicitacao")) {
+						|| uri.endsWith("admListarSolicitacao") || uri.endsWith("cancelarSolicitacao") || uri.endsWith("confirmaSolicitacao")) {
 					return true;
 				}
 			}

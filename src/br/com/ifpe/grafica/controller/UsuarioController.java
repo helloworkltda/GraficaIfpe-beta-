@@ -137,12 +137,10 @@ public class UsuarioController {
 	@RequestMapping("exibirListaPedidos")
 	public String usuarioPedidosSolicitados(Solicitacao solicitacao, Model model,Usuario usuario) {
 
-		SolicitacaoDao dao = new SolicitacaoDao();
-		Solicitacao usuarioPreenchido = dao.buscarPorSiape(usuario.getSiape());
-		model.addAttribute("solicitacao", usuarioPreenchido);
+	
 		
 		SolicitacaoDao dao2 = new SolicitacaoDao();
-		List<Solicitacao> listaSolicitacao = dao2.listar();
+		List<Solicitacao> listaSolicitacao = dao2.listarSO(usuario.getSiape());
 		model.addAttribute("listaSolicitacao", listaSolicitacao);
 
 		return "usuario/funcionarioListaPedidos";
