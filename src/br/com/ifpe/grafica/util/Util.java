@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class Util {
 
 	//public static String downloadAnexo = "/home/nilson/git/GraficaIfpe-beta-/";
-	public static String downloadAnexo = "/opt/apache-tomcat-8.0.36/webapps/grafica/";
+	public static String downloadAnexo = "/home/administrador/git/GraficaIfpe-beta-";
 	public static String caminhoAnexo = "/grafica/view/anexos";
 	
 	

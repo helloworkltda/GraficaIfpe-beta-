@@ -32,7 +32,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <meta http-equiv="refresh" content="2;url=http://localhost:8080/grafica/homeComum"/>
+    <meta http-equiv="refresh" content="2;url=http://10.31.30.24:8080/grafica/homeComum"/>
     
   </head><body>
     <div class="brand clearfix">

@@ -29,7 +29,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-     <meta http-equiv="refresh" content="2;url=http://localhost:8080/grafica/solicitacao" />
+     <meta http-equiv="refresh" content="2;url=http://10.31.30.24:8080/grafica/solicitacao" />
   </head><body>
     <div class="brand clearfix">
       <span class="logo">

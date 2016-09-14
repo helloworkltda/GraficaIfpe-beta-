@@ -118,17 +118,6 @@
 
                 </td></tr>
 
-                <tr><td><label><br>Senha</label></td></tr>
-                <tr><td>
-                  <input type="password" name="senha" id="senha" class="form-control" maxlength="20" value="${usuario.senha}"/>
-
-                </td></tr>
-
-                <tr><td><label><br>Confirmar Senha</label></td></tr>
-                <tr><td>
-                  <input type="password" name="Csenha" id="Csenha" class="form-control" maxlength="20" value="${usuario.senha}"/>
-
-                </td></tr>
 
       </table><br>
 

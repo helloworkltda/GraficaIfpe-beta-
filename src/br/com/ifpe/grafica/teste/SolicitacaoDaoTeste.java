@@ -26,7 +26,7 @@ public class SolicitacaoDaoTeste {
 		solicitacao.setStatus(1);
 		
 		//solicitacao.setSiapeSolicitante(1324);
-		solicitacao.setSiapeExecutor(1234);
+		//solicitacao.setSiapeExecutor(1234);
 		
 		solicitacao.setAnexo1("1");
 		solicitacao.setAnexo2("2");

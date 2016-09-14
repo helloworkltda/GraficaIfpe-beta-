@@ -15,8 +15,8 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 		String uri = request.getRequestURI();
 		
 																	
-		if (uri.contains("assets") || uri.contains("css") || uri.contains("images") || uri.contains("img") || uri.contains("js")
-				|| uri.endsWith("testee/") || uri.endsWith("efetuarLogin") || uri.endsWith("login") || uri.endsWith("cadastroUsuarioComum")
+		if (uri.contains("assets") || uri.contains("css") || uri.contains("images") || uri.contains("img") || uri.contains("js") || uri.contains("anexo")
+				|| uri.endsWith("grafica/") || uri.endsWith("efetuarLogin") || uri.endsWith("login") || uri.endsWith("cadastroUsuarioComum")
 				|| uri.endsWith("incluirUsuario") || uri.endsWith("Erro.jsp") || uri.endsWith("404.jsp") || uri.endsWith("exibirSucesso") || uri.endsWith("proibido")) {
 			return true;
 		}
@@ -26,14 +26,14 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 			
 			if(usuario.getTipoUsuario().getId() == 1){
 				if (uri.contains("assets") || uri.contains("css") || uri.contains("images") || uri.contains("js")
-						|| uri.endsWith("testee/") || uri.endsWith("homeComum") || uri.endsWith("exibirAlterarUsuario")
+						|| uri.endsWith("grafica/") || uri.endsWith("homeComum") || uri.endsWith("exibirAlterarUsuario")
 						|| uri.endsWith("alterarUsuario") || uri.endsWith("exibirListaPedidos") || uri.endsWith("funcionarioDetalhes")
 						|| uri.endsWith("logout") ||  uri.endsWith("solicitacao") || uri.endsWith("save") || uri.endsWith("SucessoSolicitacao")) {
 					return true;
 				}
 			}else{
 				if (uri.contains("assets") || uri.contains("css") || uri.contains("images") || uri.contains("js")
-						|| uri.endsWith("testee/") || uri.endsWith("homeAdm") || uri.endsWith("exibirAlterarUsuarioAdm") 
+						|| uri.endsWith("gra/") || uri.endsWith("homeAdm") || uri.endsWith("exibirAlterarUsuarioAdm") 
 						|| uri.endsWith("alterarUsuarioAdm") || uri.endsWith("admListarUsuario") || uri.endsWith("admCadastrar")
 						|| uri.endsWith("incluirUsuarioAdm") || uri.endsWith("exibirSucessoAdmCadastro") || uri.endsWith("admDetalhes")
 						|| uri.endsWith("logout") ||  uri.endsWith("solicitacaoAdm") || uri.endsWith("saveAdm") || uri.endsWith("admSucessoSolicitacao")

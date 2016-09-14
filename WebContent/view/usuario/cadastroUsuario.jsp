@@ -50,7 +50,7 @@
 
                 <tr><td><label><br>E-mail</label></td></tr>
                 <tr><td>
-                  <input type="email" name="email" id="email" class="form-control" placeholder="E-mail válido" maxlength="50"/>
+                  <input type="email" name="email" id="email" class="form-control" placeholder="E-mail válido" maxlength="30"/>
 
                 </td></tr>
 
@@ -94,6 +94,7 @@
             	             },
             	             siape:{
             	                    required:true,
+            	                    minlength:3,
             	                    remote:"view/usuario/verificarSiape.jsp"
             	             },
             	             cargo:{
@@ -121,7 +122,8 @@
             	             },
             	             siape:{
             	                    required:"<font size='3' color='#ff4c4c'>O campo 'SIAPE' é obrigatório</font>",
-            	                    remote: "<font size='3' color='#ff4c4c'>SIAPE Existente</font>"
+            	                    remote: "<font size='3' color='#ff4c4c'>SIAPE Existente</font>",
+            	                    minlength: "<font size='3' color='#ff4c4c'>SIAPE tem que ter 7 numeros</font>"
             	             },
             	             cargo:{
          	                    required:"<font size='3' color='#ff4c4c'>O campo 'Cargo' é obrigatório</font>"

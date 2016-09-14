@@ -43,7 +43,7 @@ public class UsuarioDao {
 
 	public void alterar(Usuario usuario) {
 
-		String sql = "UPDATE usuario SET  nome = ? , cargo = ? , email  = ? , senha = ? , tipo_id = ? WHERE siape = ?";
+		String sql = "UPDATE usuario SET  nome = ? , cargo = ? , email  = ?  , tipo_id = ? WHERE siape = ?";
 
 		try {
 
@@ -51,9 +51,8 @@ public class UsuarioDao {
 			stmt.setString(1, usuario.getNome());
 			stmt.setString(2, usuario.getCargo());
 			stmt.setString(3, usuario.getEmail());
-			stmt.setString(4, usuario.getSenha());
-			stmt.setInt(5, usuario.getTipoUsuario().getId());
-			stmt.setInt(6, usuario.getSiape());
+			stmt.setInt(4, usuario.getTipoUsuario().getId());
+			stmt.setInt(5, usuario.getSiape());
 			stmt.execute();
 			stmt.close();
 			
