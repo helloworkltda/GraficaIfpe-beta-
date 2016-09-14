@@ -3,6 +3,7 @@ package br.com.ifpe.grafica.util;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Calendar;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -10,11 +11,14 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class Util {
 
-	public static String downloadAnexo = "/home/nilson/git/GraficaIfpe-beta-1/";
+	//public static String downloadAnexo = "/home/nilson/git/GraficaIfpe-beta-/";
+	public static String downloadAnexo = "/opt/apache-tomcat-8.0.36/webapps/grafica/";
 	public static String caminhoAnexo = "/grafica/view/anexos";
 	
 	
-	public static boolean fazerUploadImagem(MultipartFile imagem) {
+	public static boolean fazerUploadImagem(MultipartFile imagem) throws IOException {
+		
+		
 		
 		boolean sucessoUpload = false;
 		if (!imagem.isEmpty()) {

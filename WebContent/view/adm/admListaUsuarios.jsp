@@ -132,15 +132,6 @@
 												</td>
 											</tr>	
 										</c:forEach>
-										<tr>
-											<td>Usuário Teste</td>
-
-											<td>1234567</td>
-
-											<td><a href="javascript:;">emailteste@teste.com</a></td>
-											<td>Docente</td>
-											<td><span style="color: #cf0053"><b>ADMINISTRADOR</b></span></td>
-										</tr>
 
 									</tbody>
 								</table>

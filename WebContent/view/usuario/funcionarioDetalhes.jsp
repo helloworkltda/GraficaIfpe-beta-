@@ -169,6 +169,8 @@
 
             </div>
             
+            <center><a href="exibirListaPedidos?siape=${usuarioLogado.siape}">Voltar à Lista de Pedidos</a></center>
+            
           </div>
         </div>
       </div>

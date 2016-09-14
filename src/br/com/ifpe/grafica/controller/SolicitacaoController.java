@@ -1,6 +1,7 @@
 package br.com.ifpe.grafica.controller;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -37,7 +38,7 @@ public class SolicitacaoController {
 	@RequestMapping("save")
 	public String save(
 			@ModelAttribute("uploadForm") FileUploadForm uploadForm, HttpSession session,@ModelAttribute("descricao") String descricao,
-			Model map) {
+			Model map) throws IOException {
 		
 		
 		
@@ -89,7 +90,7 @@ public class SolicitacaoController {
 	@RequestMapping("saveAdm")
 	public String saveAdm(
 			@ModelAttribute("uploadForm") FileUploadForm uploadForm, HttpSession session,@ModelAttribute("descricao") String descricao,
-			Model map) {
+			Model map) throws IOException {
 
 		List<MultipartFile> files = uploadForm.getFiles();
 		SolicitacaoDao dao = new SolicitacaoDao();

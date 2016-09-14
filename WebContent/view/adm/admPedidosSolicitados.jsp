@@ -112,35 +112,6 @@
 
 
                     <tbody>
-                      <tr>
-                        <td>Tiger Nixon</td>
-              
-                        <td><a href="javascript:;">Abrir Solicitação</a></td>
-                        
-                        <td>2011/04/25</td>
-                        
-                        <td><img src="view/assets/img/cancelado.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">2</span></td>
-                      </tr>
-                      
-                      <tr>
-                        <td>Garrett Winters</td>
-            
-                        <td><a href="javascript:;">Abrir Solicitação</a></td>
-                       
-                        <td>2011/07/25</td>
-                       
-                        <td><img src="view/assets/img/pendente.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">1</span></td>
-                      </tr>
-                      
-                      <tr>
-                        <td>Ashton Cox</td>
-            
-                        <td><a href="javascript:;">Abrir Solicitação</a></td>
-                        
-                        <td>2009/01/12</td>
-                        
-                        <td><img src="view/assets/img/impresso.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">3</span></td>
-                      </tr>
                      
 											
 											<c:forEach var="listaSolicitacao" items="${listaSolicitacao}">

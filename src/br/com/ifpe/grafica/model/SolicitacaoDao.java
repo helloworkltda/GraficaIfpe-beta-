@@ -115,8 +115,8 @@ public class SolicitacaoDao {
 		try {
 
 			List<Solicitacao> listaSolicitacao = new ArrayList<Solicitacao>();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM solicitacao WHERE siape_solicitante LIKE = ?");
-			
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM solicitacao WHERE siape_solicitante = ?");
+			stmt.setInt(1, siape);
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {

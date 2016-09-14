@@ -42,7 +42,7 @@ public class UsuarioController {
 	public String efetuarLogin(Usuario usuario, HttpSession session, Model model) {
 
 		UsuarioDao dao = new UsuarioDao();
-		//usuario.setSenha((Criptografia.md5(usuario.getSenha())));
+		usuario.setSenha((Criptografia.md5(usuario.getSenha())));
 		Usuario usuarioLogado = dao.buscarUsuario(usuario);
 
 		if (usuarioLogado == null) {
@@ -163,7 +163,7 @@ public class UsuarioController {
 	@RequestMapping("logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "principal/logout";
+		return "index";
 	}
 	
 	

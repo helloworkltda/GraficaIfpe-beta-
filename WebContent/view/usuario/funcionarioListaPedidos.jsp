@@ -112,36 +112,6 @@
 
 
                     <tbody>
-                      <tr>
-                        <td><a href="javascript:;">Abrir Solicitação</a></td>
-              
-                        <td>Exemplo de comentário</td>
-                        
-                        <td>2011/04/25</td>
-                        
-                        <td><img src="view/assets/img/cancelado.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">2</span></td>
-                      </tr>
-                      
-                      <tr>
-                        <td><a href="javascript:;">Abrir Solicitação</a></td>
-            
-                        <td>Comentário grande. Teste teste teste teste teste teste teste</td>
-                       
-                        <td>2011/07/25</td>
-                       
-                        <td><img src="view/assets/img/pendente.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">1</span></td>
-                      </tr>
-                      
-                      <tr>
-                        <td><a href="javascript:;">Abrir Solicitação</a></td>
-            
-                        <td>Exemplo de upload</td>
-                        
-                        <td>2009/01/12</td>
-                        
-                        <td><img src="view/assets/img/impresso.png" height='19px'><span style="color: rgba(100, 100, 100, 0.0);">3</span></td>
-                      </tr>
-                     
                       
                       <c:forEach var="solicitacao" items="${listaSolicitacao}">
                       <tr>
@@ -169,8 +139,6 @@
 						
                         </tr>
                         </c:forEach>
-                    
-                      
                       
                      </tbody>
                   </table>

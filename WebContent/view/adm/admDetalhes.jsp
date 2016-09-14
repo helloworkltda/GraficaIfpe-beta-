@@ -101,7 +101,7 @@
 											style="background-color: #fff; color: #666; text-align: center">
 											Anexo #1</th>
 										<td style="background-color: #fff"><c:if test="${solicitacao.anexo1 != null}">
-												<a href="${caminhoAnexo}/${solicitacao.anexo1}"> Anexo 1
+												<a href="${caminhoAnexo}/${solicitacao.anexo1}"> Download Anexo #1
 												</a>
 											</c:if></td>
 									</tr>
@@ -111,7 +111,7 @@
 											style="background-color: #fff; color: #666; text-align: center">
 											Anexo #2</th>
 										<td style="background-color: #fff"><c:if test='${solicitacao.anexo2 != null}'>
-												<a href="${caminhoAnexo}/${solicitacao.anexo2}"> Anexo 2
+												<a href="${caminhoAnexo}/${solicitacao.anexo2}"> Download Anexo #2
 												</a>
 											</c:if></td>
 									</tr>
@@ -120,7 +120,7 @@
 											style="background-color: #fff; color: #666; text-align: center">
 											Anexo #3</th>
 										<td style="background-color: #fff"><c:if test='${solicitacao.anexo3 != null}'>
-												<a href="${caminhoAnexo}/${solicitacao.anexo3}"> Anexo 3
+												<a href="${caminhoAnexo}/${solicitacao.anexo3}"> Download Anexo #3
 												</a>
 											</c:if></td>
 									</tr>
@@ -130,7 +130,7 @@
 											style="background-color: #fff; color: #666; text-align: center">
 											Anexo #4</th>
 										<td style="background-color: #fff"><c:if test='${solicitacao.anexo4 != null}'>
-												<a href="${caminhoAnexo}/${solicitacao.anexo4}"> Anexo 4
+												<a href="${caminhoAnexo}/${solicitacao.anexo4}"> Download Anexo #4
 												</a>
 											</c:if></td>
 									</tr>
